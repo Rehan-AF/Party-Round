@@ -2,7 +2,7 @@ import { makeStyles, Typography } from "@material-ui/core";
 import React from "react";
 import CheckListCard from "../checkListCard";
 
-const Section2 = () => {
+const SectionTwo = () => {
   const classes = useStyles();
   return (
     <div className={classes.container}>
@@ -39,7 +39,7 @@ const Section2 = () => {
   );
 };
 
-export default Section2;
+export default SectionTwo;
 const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
