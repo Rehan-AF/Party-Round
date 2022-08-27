@@ -1,5 +1,6 @@
 import { makeStyles, Typography } from "@material-ui/core";
 import React from "react";
+import Section2 from "../../components/section2";
 import SectionRaise from "../../components/sectionRaise";
 
 const HomePage = () => {
@@ -8,6 +9,7 @@ const HomePage = () => {
     <div className={classes.container}>
       <div>
         <SectionRaise />
+        <Section2 />
       </div>
     </div>
   );
@@ -16,6 +18,6 @@ const HomePage = () => {
 export default HomePage;
 const useStyles = makeStyles((theme) => ({
   container: {
-    padding: "30px 180px",
+    padding: "30px 250px",
   },
 }));

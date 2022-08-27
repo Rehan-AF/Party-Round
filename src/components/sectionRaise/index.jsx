@@ -42,9 +42,11 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "12px",
     fontSize: "2rem",
     color: "hsla(0,0%,100%,.7)",
+    lineHeight: "1em",
+    fontWeight: "bold",
   },
   phone: {
-    width: "400px",
+    width: "450px",
   },
   btn: {
     marginTop: "64px",
