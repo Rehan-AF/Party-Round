@@ -1,6 +1,7 @@
-import { makeStyles, Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 import React from "react";
-import Section2 from "../../components/section2";
+import SectionTwo from "../../components/section2";
+import SectionThree from "../../components/section3";
 import SectionRaise from "../../components/sectionRaise";
 
 const HomePage = () => {
@@ -9,8 +10,11 @@ const HomePage = () => {
     <div className={classes.container}>
       <div>
         <SectionRaise />
-        <div className={classes.section2}>
-          <Section2 />
+        <div className={classes.sectionGap}>
+          <SectionTwo />
+        </div>
+        <div className={classes.sectionTwoGap}>
+          <SectionThree />
         </div>
       </div>
     </div>
@@ -20,12 +24,15 @@ const HomePage = () => {
 export default HomePage;
 const useStyles = makeStyles((theme) => ({
   container: {
-    padding: "30px 150px",
+    padding: "150px 150px 60px 150px",
     [theme.breakpoints.down("md")]: {
-      padding: "30px 100px",
+      padding: "150px 100px 60px 100px",
     },
   },
-  section2: {
+  sectionGap: {
     paddingTop: "12rem",
+  },
+  sectionTwoGap: {
+    paddingTop: "20rem",
   },
 }));
