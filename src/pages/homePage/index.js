@@ -9,7 +9,9 @@ const HomePage = () => {
     <div className={classes.container}>
       <div>
         <SectionRaise />
-        <Section2 />
+        <div className={classes.section2}>
+          <Section2 />
+        </div>
       </div>
     </div>
   );
@@ -18,6 +20,12 @@ const HomePage = () => {
 export default HomePage;
 const useStyles = makeStyles((theme) => ({
   container: {
-    padding: "30px 250px",
+    padding: "30px 150px",
+    [theme.breakpoints.down("md")]: {
+      padding: "30px 100px",
+    },
+  },
+  section2: {
+    paddingTop: "12rem",
   },
 }));
