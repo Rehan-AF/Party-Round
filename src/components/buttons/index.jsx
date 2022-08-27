@@ -11,5 +11,11 @@ const CustomBotton = withStyles(() => ({
       backgroundColor: "red",
     },
   },
+  primary: {
+    padding: "16px 32px",
+    backgroundImage: "linear-gradient(90deg,#ff002e,#ff4667)",
+    fontSize: "1rem",
+    borderRadius: "0.5rem",
+  },
 }))(Button);
 export default CustomBotton;
