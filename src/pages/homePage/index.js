@@ -5,6 +5,7 @@ import SectionThree from "../../components/section3";
 import SectionFour from "../../components/section4";
 import SectionFive from "../../components/sectionFive";
 import SectionRaise from "../../components/sectionRaise";
+import SectionSeven from "../../components/sectionSeven";
 import SectionSix from "../../components/sectionSix";
 
 const HomePage = () => {
@@ -28,6 +29,9 @@ const HomePage = () => {
         <div className={classes.sectionGap}>
           <SectionSix />
         </div>
+        <div className={classes.sectionThreeGap}>
+          <SectionSeven />
+        </div>
       </div>
     </div>
   );
@@ -46,5 +50,8 @@ const useStyles = makeStyles((theme) => ({
   },
   sectionTwoGap: {
     paddingTop: "30rem",
+  },
+  sectionThreeGap: {
+    paddingTop: "40rem",
   },
 }));
