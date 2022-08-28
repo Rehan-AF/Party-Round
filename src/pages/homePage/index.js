@@ -3,6 +3,7 @@ import React from "react";
 import SectionTwo from "../../components/section2";
 import SectionThree from "../../components/section3";
 import SectionFour from "../../components/section4";
+import SectionFive from "../../components/sectionFive";
 import SectionRaise from "../../components/sectionRaise";
 
 const HomePage = () => {
@@ -19,6 +20,9 @@ const HomePage = () => {
         </div>
         <div className={classes.sectionTwoGap}>
           <SectionFour />
+        </div>
+        <div className={classes.sectionTwoGap}>
+          <SectionFive />
         </div>
       </div>
     </div>
