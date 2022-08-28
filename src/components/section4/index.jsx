@@ -33,6 +33,9 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     position: "relative",
     justifyContent: "space-between",
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column",
+    },
   },
   title: {
     lineHeight: "1",

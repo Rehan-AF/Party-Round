@@ -1,6 +1,5 @@
 import { makeStyles, Typography } from "@material-ui/core";
 import React from "react";
-import InvestmentsCard from "../InvestmentsCard ";
 import phoneOne from "../../assets/tiltPhone1.png";
 import phoneTwo from "../../assets/tiltPhone2.png";
 const SectionSix = () => {
@@ -18,8 +17,7 @@ const SectionSix = () => {
           <Typography className={classes.typo}>
             Once privately invited, your investors can view your
             <br /> round, connect their bank or wallet, and
-            <br />
-            commit funds in seconds.
+            <br /> commit funds in seconds.
           </Typography>
         </div>
       </div>
@@ -39,6 +37,9 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     position: "relative",
     justifyContent: "space-between",
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column",
+    },
   },
   subDiv: {
     marginTop: "5rem",
