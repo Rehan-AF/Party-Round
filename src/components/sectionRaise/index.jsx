@@ -32,6 +32,9 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     gap: "60px",
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column",
+    },
   },
   title: {
     fontSize: "4rem",

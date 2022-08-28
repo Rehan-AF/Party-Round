@@ -46,6 +46,10 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "flex-end",
     justifyContent: "space-between",
     gap: "100px",
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column",
+      gap: "50px",
+    },
   },
   typo: {
     fontSize: "3rem",

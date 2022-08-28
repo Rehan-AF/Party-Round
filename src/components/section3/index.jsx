@@ -34,6 +34,9 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     position: "relative",
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column",
+    },
   },
   title: {
     lineHeight: "1",
