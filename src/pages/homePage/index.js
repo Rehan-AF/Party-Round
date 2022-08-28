@@ -5,6 +5,7 @@ import SectionThree from "../../components/section3";
 import SectionFour from "../../components/section4";
 import SectionFive from "../../components/sectionFive";
 import SectionRaise from "../../components/sectionRaise";
+import SectionSix from "../../components/sectionSix";
 
 const HomePage = () => {
   const classes = useStyles();
@@ -23,6 +24,9 @@ const HomePage = () => {
         </div>
         <div className={classes.sectionTwoGap}>
           <SectionFive />
+        </div>
+        <div className={classes.sectionGap}>
+          <SectionSix />
         </div>
       </div>
     </div>

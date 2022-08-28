@@ -1,45 +1,37 @@
 import { makeStyles, Typography } from "@material-ui/core";
 import React from "react";
 import InvestmentsCard from "../InvestmentsCard ";
-const SectionFive = () => {
+import phoneOne from "../../assets/tiltPhone1.png";
+import phoneTwo from "../../assets/tiltPhone2.png";
+const SectionSix = () => {
   const classes = useStyles();
   return (
     <div className={classes.container}>
-      <div>
+      <div className={classes.subDiv}>
         <Typography className={classes.title}>
-          Receive funds
-          <br /> instantly.
-          <br /> Manage rounds
+          Invited with a text,
           <br />
-          effortlessly.
+          invested with a tap.
         </Typography>
 
         <div>
           <Typography className={classes.typo}>
-            Access your realtime dashboard and get
-            <br /> live notifications on your raise.
+            Once privately invited, your investors can view your
+            <br /> round, connect their bank or wallet, and
+            <br />
+            commit funds in seconds.
           </Typography>
         </div>
       </div>
       <div className={classes.img}>
-        <InvestmentsCard
-          announcement="Packy McCormick just invested $10,000"
-          time="now"
-        />
-        <InvestmentsCard
-          announcement="Gaby Goldberg just invested $5,000 USDC"
-          time="now"
-        />
-        <InvestmentsCard
-          announcement="Seyi Taylor just invested $8,000"
-          time="now"
-        />
+        <img src={phoneOne} alt="Phone" className={classes.phoneOne} />
+        <img src={phoneTwo} alt="Phone" className={classes.phoneTwo} />
       </div>
     </div>
   );
 };
 
-export default SectionFive;
+export default SectionSix;
 const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
@@ -47,6 +39,9 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     position: "relative",
     justifyContent: "space-between",
+  },
+  subDiv: {
+    marginTop: "5rem",
   },
   title: {
     lineHeight: "1",
@@ -58,5 +53,21 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1.2rem",
     lineHeight: "1.1",
     color: "hsla(0,0%,100%,.8)",
+  },
+  img: {
+    display: "flex",
+  },
+  phoneOne: {
+    width: "324px",
+    position: "absolute",
+    left: "281px",
+    top: "-80px",
+  },
+  phoneTwo: {
+    width: "324px",
+    zIndex: 2,
+    position: "absolute",
+    top: "78px",
+    left: "89px",
   },
 }));
