@@ -2,6 +2,7 @@ import { makeStyles } from "@material-ui/core";
 import React from "react";
 import SectionTwo from "../../components/section2";
 import SectionThree from "../../components/section3";
+import SectionFour from "../../components/section4";
 import SectionRaise from "../../components/sectionRaise";
 
 const HomePage = () => {
@@ -15,6 +16,9 @@ const HomePage = () => {
         </div>
         <div className={classes.sectionTwoGap}>
           <SectionThree />
+        </div>
+        <div className={classes.sectionTwoGap}>
+          <SectionFour />
         </div>
       </div>
     </div>
@@ -33,6 +37,6 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: "12rem",
   },
   sectionTwoGap: {
-    paddingTop: "20rem",
+    paddingTop: "30rem",
   },
 }));
