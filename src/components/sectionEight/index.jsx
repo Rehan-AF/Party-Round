@@ -31,7 +31,7 @@ const SectionEight = () => {
             message="That was too easy. Game changing."
           />
         </div>
-        {/* <div className={classes.postTwo}>
+        <div className={classes.postTwo}>
           <PostCard
             userName="Josh Browder"
             profile={profileTwo}
@@ -54,7 +54,7 @@ const SectionEight = () => {
             title="Founder, Smirk Software"
             message="I can't imagine why a founder would use anything else."
           />
-        </div> */}
+        </div>
       </div>
     </div>
   );
@@ -92,24 +92,25 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 3,
     width: "323px",
   },
+
   postTwo: {
     position: "absolute",
-    top: "59px",
-    left: "-154px",
+    top: "-119px",
+    right: "277px",
     zIndex: 1,
     width: "324px",
   },
   postThree: {
     position: "absolute",
-    top: "226px",
-    right: "-83px",
+    top: "66px",
+    right: "117px",
     zIndex: 3,
     width: "324px",
   },
   postFour: {
     position: "absolute",
-    left: "-136px",
-    top: "292px",
+    top: "171px",
+    left: "-713px",
     width: "324px",
   },
 }));
