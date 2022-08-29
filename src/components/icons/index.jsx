@@ -10,7 +10,6 @@ const SvgIcons = ({
   USDC,
   andreessen,
   abstract,
-
   ventures,
   ...props
 }) => {

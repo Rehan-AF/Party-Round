@@ -1,5 +1,6 @@
 import { makeStyles } from "@material-ui/core";
 import React from "react";
+import JoinParty from "../../components/joinParty";
 import SectionTwo from "../../components/section2";
 import SectionThree from "../../components/section3";
 import SectionFour from "../../components/section4";
@@ -9,12 +10,12 @@ import Investors from "../../components/sectionNine";
 import SectionRaise from "../../components/sectionRaise";
 import SectionSeven from "../../components/sectionSeven";
 import SectionSix from "../../components/sectionSix";
-
+import background from "../../assets/background.svg";
 const HomePage = () => {
   const classes = useStyles();
   return (
-    <div className={classes.container}>
-      <div>
+    <div>
+      <div className={classes.container}>
         <SectionRaise />
         <div className={classes.sectionGap}>
           <SectionTwo />
@@ -22,7 +23,7 @@ const HomePage = () => {
         <div className={classes.sectionTwoGap}>
           <SectionThree />
         </div>
-        <div className={classes.sectionTwoGap}>
+        <div className={classes.customGap}>
           <SectionFour />
         </div>
         <div className={classes.sectionTwoGap}>
@@ -31,7 +32,7 @@ const HomePage = () => {
         <div className={classes.sectionGap}>
           <SectionSix />
         </div>
-        <div className={classes.sectionThreeGap}>
+        <div className={classes.sectionSeven}>
           <SectionSeven />
         </div>
         <div className={classes.sectionTwoGap}>
@@ -40,7 +41,11 @@ const HomePage = () => {
         <div className={classes.sectionTwoGap}>
           <Investors />
         </div>
+        <div className={classes.sectionTwoGap}>
+          <JoinParty />
+        </div>
       </div>
+      <img src={background} alt="background" className={classes.img} />
     </div>
   );
 };
@@ -51,6 +56,9 @@ const useStyles = makeStyles((theme) => ({
     padding: "150px 100px 60px 100px",
     [theme.breakpoints.down("md")]: {
       padding: "150px 50px 60px 50px",
+    },
+    [theme.breakpoints.down("md")]: {
+      padding: "150px 20px 60px 20px",
     },
   },
   sectionGap: {
@@ -69,6 +77,31 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: "40rem",
     [theme.breakpoints.down("md")]: {
       paddingTop: "20rem",
+    },
+  },
+  sectionSeven: {
+    paddingTop: "40rem",
+    [theme.breakpoints.down("md")]: {
+      paddingTop: "20rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      paddingTop: "40rem",
+    },
+  },
+  img: {
+    width: "100%",
+    paddingTop: "8rem",
+    [theme.breakpoints.down("sm")]: {
+      paddingTop: "3rem",
+    },
+  },
+  customGap: {
+    paddingTop: "30rem",
+    [theme.breakpoints.down("md")]: {
+      paddingTop: "20rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      paddingTop: "35rem",
     },
   },
 }));
