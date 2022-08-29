@@ -42,12 +42,18 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: "1",
     fontSize: "4rem",
     fontWeight: "bold",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "3rem",
+    },
   },
   typo: {
     marginTop: "32px",
     fontSize: "1.2rem",
     lineHeight: "1.1",
     color: "hsla(0,0%,100%,.8)",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "1rem",
+    },
   },
   img: {
     display: "flex",
@@ -57,11 +63,19 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     top: "-180px",
     right: "160px",
+    [theme.breakpoints.down("md")]: {
+      width: "190px",
+      right: "178px",
+    },
   },
   phoneTwo: {
     width: "224px",
     position: "absolute",
     right: "-35px",
     top: "-66px",
+    [theme.breakpoints.down("md")]: {
+      width: "190px",
+      right: "12px",
+    },
   },
 }));

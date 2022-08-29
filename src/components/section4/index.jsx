@@ -41,11 +41,17 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: "1",
     fontSize: "4rem",
     fontWeight: "bold",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "3rem",
+    },
   },
   typo: {
     marginTop: "32px",
     fontSize: "1.2rem",
     lineHeight: "1.1",
     color: "hsla(0,0%,100%,.8)",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "1rem",
+    },
   },
 }));

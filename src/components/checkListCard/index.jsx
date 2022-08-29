@@ -37,6 +37,10 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: "0 4px 12px 6px rgb(0 0 0 / 24%)",
     position: "relative",
     height: "227px",
+    [theme.breakpoints.down("md")]: {
+      width: "300px",
+      height: "200px",
+    },
   },
   subDiv: {
     display: "flex",
@@ -47,9 +51,15 @@ const useStyles = makeStyles((theme) => ({
   },
   icons: {
     width: "30px",
+    [theme.breakpoints.down("md")]: {
+      width: "25px",
+    },
   },
   typo: {
     fontSize: "1.7rem",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "1.2rem",
+    },
   },
   divOne: {
     padding: "15px",
@@ -62,5 +72,8 @@ const useStyles = makeStyles((theme) => ({
     padding: "17px",
     position: "absolute",
     left: "30px",
+    [theme.breakpoints.down("md")]: {
+      left: "32px",
+    },
   },
 }));
