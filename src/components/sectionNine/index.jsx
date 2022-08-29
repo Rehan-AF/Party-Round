@@ -14,11 +14,31 @@ const Investors = () => {
         <br /> and operators.
       </Typography>
       <div className={classes.investorsBox}>
-        <SvgIcons andreessen={true} width="164px" />
-        <img src={abstractLogo} alt="logo" width="164px" />
-        <img src={shrug} alt="logo" width="164px" />
-        <img src={sss} alt="logo" width="100px" height="100px" />
-        <SvgIcons ventures={true} width="164px" />
+        <SvgIcons
+          andreessen={true}
+          width="164px"
+          className={classes.iconsBig}
+        />
+        <img
+          src={abstractLogo}
+          alt="logo"
+          width="164px"
+          className={classes.iconsBig}
+        />
+        <img
+          src={shrug}
+          alt="logo"
+          width="164px"
+          className={classes.iconsBig}
+        />
+        <img
+          src={sss}
+          alt="logo"
+          width="100px"
+          height="100px"
+          className={classes.iconsSmall}
+        />
+        <SvgIcons ventures={true} width="164px" className={classes.iconsBig} />
       </div>
       <div className={classes.linksBox}>
         <Typography>Emilie Choi</Typography>
@@ -54,6 +74,10 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     gap: "60px",
+    [theme.breakpoints.down("sm")]: {
+      gap: "30px",
+      flexWrap: "wrap",
+    },
   },
   linksBox: {
     display: "flex",
@@ -61,5 +85,22 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: "wrap",
     gap: "60px",
     width: "960px",
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
+    },
+  },
+  iconsBig: {
+    width: "164px",
+    [theme.breakpoints.down("sm")]: {
+      width: "100px",
+    },
+  },
+  iconsSmall: {
+    width: "100px",
+    height: "100px",
+    [theme.breakpoints.down("sm")]: {
+      width: "80px",
+      height: "80px",
+    },
   },
 }));

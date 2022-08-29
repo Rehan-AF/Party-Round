@@ -21,5 +21,22 @@ const CustomBotton = withStyles((theme) => ({
       padding: "10px 16px",
     },
   },
+  secondary: {
+    backgroundColor: "#000",
+    color: "#fff",
+    fontSize: "1rem",
+    lineHeight: "1",
+    padding: "16px 32px",
+    borderRadius: "0.5rem",
+    textAlign: "center",
+    border: "1px solid gray",
+
+    transition: ".2s",
+    "&:hover": {
+      boxShadow: "0 3px 12px 6px rgb(0 0 0 / 12%)",
+      transform: "scale(1.01) translate(0,-2px)",
+      backgroundColor: "#000",
+    },
+  },
 }))(Button);
 export default CustomBotton;

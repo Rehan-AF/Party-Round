@@ -36,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     [theme.breakpoints.down("sm")]: {
       flexDirection: "column",
+      alignItems: "flex-start",
     },
   },
   title: {
@@ -67,6 +68,11 @@ const useStyles = makeStyles((theme) => ({
       width: "190px",
       right: "178px",
     },
+    [theme.breakpoints.down("sm")]: {
+      width: "150px",
+      left: "50px",
+      top: "244px",
+    },
   },
   phoneTwo: {
     width: "224px",
@@ -76,6 +82,11 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("md")]: {
       width: "190px",
       right: "12px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "150px",
+      top: "324px",
+      left: "182px",
     },
   },
 }));

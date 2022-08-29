@@ -45,6 +45,9 @@ const useStyles = makeStyles((theme) => ({
     width: "350px",
     display: "flex",
     justifyContent: "space-between",
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
+    },
   },
   title: {
     fontWeight: "bold",

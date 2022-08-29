@@ -61,6 +61,12 @@ const useStyles = makeStyles((theme) => ({
     top: "0",
     width: "calc(100% - 131px)",
     zIndex: 100,
+
+    // [theme.breakpoints.down("md")]: {},
+    [theme.breakpoints.down("sm")]: {
+      padding: "12px 20px",
+      width: "100%",
+    },
   },
   logo: {
     color: "white",
@@ -82,6 +88,9 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     gap: "7px",
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
   },
   line: {
     width: "1px",

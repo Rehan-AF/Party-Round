@@ -72,6 +72,10 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("md")]: {
       width: "224px",
     },
+    [theme.breakpoints.down("sm")]: {
+      left: "100px",
+      top: "400px",
+    },
   },
   phoneTwo: {
     width: "324px",
@@ -83,6 +87,11 @@ const useStyles = makeStyles((theme) => ({
       width: "224px",
       top: "49px",
       left: "152px",
+    },
+    [theme.breakpoints.down("md")]: {
+      width: "224px",
+      top: "518px",
+      left: "-5px",
     },
   },
 }));
