@@ -5,6 +5,7 @@ import SectionThree from "../../components/section3";
 import SectionFour from "../../components/section4";
 import SectionEight from "../../components/sectionEight";
 import SectionFive from "../../components/sectionFive";
+import Investors from "../../components/sectionNine";
 import SectionRaise from "../../components/sectionRaise";
 import SectionSeven from "../../components/sectionSeven";
 import SectionSix from "../../components/sectionSix";
@@ -35,6 +36,9 @@ const HomePage = () => {
         </div>
         <div className={classes.sectionTwoGap}>
           <SectionEight />
+        </div>
+        <div className={classes.sectionTwoGap}>
+          <Investors />
         </div>
       </div>
     </div>
