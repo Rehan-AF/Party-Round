@@ -6,6 +6,10 @@ export const IOSSwitch = withStyles((theme) => ({
     height: 37,
     padding: 0,
     margin: theme.spacing(1),
+    [theme.breakpoints.down("md")]: {
+      width: 55,
+      height: 30,
+    },
   },
   switchBase: {
     padding: 1,
@@ -26,6 +30,10 @@ export const IOSSwitch = withStyles((theme) => ({
   thumb: {
     width: 34,
     height: 34,
+    [theme.breakpoints.down("md")]: {
+      width: 27,
+      height: 27,
+    },
   },
   track: {
     borderRadius: 50 / 2,

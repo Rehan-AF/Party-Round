@@ -56,6 +56,9 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: "1em",
     fontWeight: "bold",
     color: "#cdcdcd",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "2.2rem",
+    },
   },
   whiteBox: {
     marginTop: "20px",
@@ -65,6 +68,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "3rem",
     lineHeight: "1em",
     fontWeight: "bold",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "2.2rem",
+    },
   },
   grayBox: {
     marginTop: "20px",
@@ -72,5 +78,8 @@ const useStyles = makeStyles((theme) => ({
   typogray: {
     color: "#cdcdcd",
     lineHeight: "1em",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "1rem",
+    },
   },
 }));

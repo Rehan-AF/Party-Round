@@ -40,6 +40,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "4rem",
     lineHeight: "1.5em",
     fontWeight: "800",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "3rem",
+    },
   },
   subTitle: {
     marginTop: "12px",
@@ -47,9 +50,15 @@ const useStyles = makeStyles((theme) => ({
     color: "hsla(0,0%,100%,.7)",
     lineHeight: "1em",
     fontWeight: "bold",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "1.2rem",
+    },
   },
   phone: {
     width: "450px",
+    [theme.breakpoints.down("md")]: {
+      width: "350px",
+    },
   },
   btn: {
     marginTop: "64px",

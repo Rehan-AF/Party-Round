@@ -44,18 +44,27 @@ const HomePage = () => {
 export default HomePage;
 const useStyles = makeStyles((theme) => ({
   container: {
-    padding: "150px 150px 60px 150px",
+    padding: "150px 100px 60px 100px",
     [theme.breakpoints.down("md")]: {
-      padding: "150px 100px 60px 100px",
+      padding: "150px 50px 60px 50px",
     },
   },
   sectionGap: {
     paddingTop: "12rem",
+    [theme.breakpoints.down("md")]: {
+      paddingTop: "10rem",
+    },
   },
   sectionTwoGap: {
     paddingTop: "30rem",
+    [theme.breakpoints.down("md")]: {
+      paddingTop: "20rem",
+    },
   },
   sectionThreeGap: {
     paddingTop: "40rem",
+    [theme.breakpoints.down("md")]: {
+      paddingTop: "20rem",
+    },
   },
 }));

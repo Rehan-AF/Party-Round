@@ -44,13 +44,23 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       transform: "rotate(0deg)",
     },
+    [theme.breakpoints.down("md")]: {
+      width: "300px",
+      padding: "15px",
+    },
   },
   icon: {
     width: "35px",
+    [theme.breakpoints.down("md")]: {
+      width: "25px",
+    },
   },
   typo: {
     color: "#000",
     fontSize: "30px",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "20px",
+    },
   },
   main: {
     display: "flex",
@@ -61,5 +71,8 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     gap: "20px",
     alignItems: "center",
+    [theme.breakpoints.down("md")]: {
+      gap: "10px",
+    },
   },
 }));

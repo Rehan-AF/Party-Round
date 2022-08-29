@@ -1,6 +1,6 @@
 import { Button, withStyles } from "@material-ui/core";
 
-const CustomBotton = withStyles(() => ({
+const CustomBotton = withStyles((theme) => ({
   root: {
     color: "white",
     backgroundColor: "red",
@@ -16,6 +16,10 @@ const CustomBotton = withStyles(() => ({
     backgroundImage: "linear-gradient(90deg,#ff002e,#ff4667)",
     fontSize: "1rem",
     borderRadius: "0.5rem",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "0.8rem",
+      padding: "10px 16px",
+    },
   },
 }))(Button);
 export default CustomBotton;
