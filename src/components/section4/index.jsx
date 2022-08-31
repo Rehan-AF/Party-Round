@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
     [theme.breakpoints.down("sm")]: {
       flexDirection: "column",
-      alignItems: "flex-start",
+      alignItems: "center",
       gap: "60px",
     },
   },

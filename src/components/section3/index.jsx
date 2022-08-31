@@ -33,10 +33,10 @@ const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
     alignItems: "center",
-    position: "relative",
     [theme.breakpoints.down("sm")]: {
       flexDirection: "column",
-      alignItems: "flex-start",
+      alignItems: "center",
+      gap: "120px",
     },
   },
   title: {
@@ -58,35 +58,40 @@ const useStyles = makeStyles((theme) => ({
   },
   img: {
     display: "flex",
+    flexGrow: 1,
+    [theme.breakpoints.down("sm")]: {
+      justifyContent: "center",
+      margin: "0 auto",
+    },
   },
   phoneOne: {
     width: "224px",
-    position: "absolute",
-    top: "-180px",
-    right: "160px",
+    position: "relative",
+    top: "-13px",
+    left: "232px",
     [theme.breakpoints.down("md")]: {
       width: "190px",
-      right: "178px",
+      // right: "178px",
     },
     [theme.breakpoints.down("sm")]: {
       width: "150px",
-      left: "50px",
-      top: "244px",
+      left: 0,
+      // top: "244px",
     },
   },
   phoneTwo: {
     width: "224px",
-    position: "absolute",
-    right: "-35px",
-    top: "-66px",
+    position: "relative",
+    top: "98px",
+    left: "204px",
     [theme.breakpoints.down("md")]: {
       width: "190px",
-      right: "12px",
+      // right: "12px",
     },
     [theme.breakpoints.down("sm")]: {
       width: "150px",
-      top: "324px",
-      left: "182px",
+      // top: "324px",
+      left: -20,
     },
   },
 }));

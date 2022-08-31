@@ -65,6 +65,9 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     gap: "64px",
+    [theme.breakpoints.down("sm")]: {
+      alignItems: "center",
+    },
   },
   title: {
     fontSize: "1.2rem",

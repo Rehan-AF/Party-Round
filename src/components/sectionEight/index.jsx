@@ -74,6 +74,9 @@ const useStyles = makeStyles((theme) => ({
       gap: "30px",
       flexWrap: "wrap",
     },
+    [theme.breakpoints.down("sm")]: {
+      justifyContent: "center",
+    },
   },
   title: {
     lineHeight: "1",

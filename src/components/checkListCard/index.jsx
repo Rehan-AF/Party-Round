@@ -41,6 +41,9 @@ const useStyles = makeStyles((theme) => ({
       width: "300px",
       height: "200px",
     },
+    [theme.breakpoints.down("sm")]: {
+      width: "270px",
+    },
   },
   subDiv: {
     display: "flex",
