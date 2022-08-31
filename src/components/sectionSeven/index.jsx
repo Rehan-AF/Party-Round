@@ -43,6 +43,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
     [theme.breakpoints.down("sm")]: {
       flexDirection: "column",
+      alignItems: "center",
     },
   },
   title: {
@@ -65,6 +66,9 @@ const useStyles = makeStyles((theme) => ({
   video: {
     [theme.breakpoints.down("md")]: {
       width: "400px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "277px",
     },
   },
 }));

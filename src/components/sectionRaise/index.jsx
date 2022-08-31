@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
     gap: "60px",
     [theme.breakpoints.down("sm")]: {
       flexDirection: "column",
+      alignItems: "center",
     },
   },
   title: {
@@ -58,6 +59,9 @@ const useStyles = makeStyles((theme) => ({
     width: "450px",
     [theme.breakpoints.down("md")]: {
       width: "350px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "270px",
     },
   },
   btn: {

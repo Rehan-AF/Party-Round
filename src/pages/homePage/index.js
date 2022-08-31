@@ -20,19 +20,19 @@ const HomePage = () => {
         <div className={classes.sectionGap}>
           <SectionTwo />
         </div>
-        <div className={classes.sectionTwoGap}>
+        <div className={classes.sectionGap}>
           <SectionThree />
         </div>
-        <div className={classes.customGap}>
+        <div className={classes.sectionGap}>
           <SectionFour />
         </div>
-        <div className={classes.sectionTwoGap}>
+        <div className={classes.sectionGap}>
           <SectionFive />
         </div>
         <div className={classes.sectionGap}>
           <SectionSix />
         </div>
-        <div className={classes.sectionSeven}>
+        <div className={classes.sectionGap}>
           <SectionSeven />
         </div>
         <div className={classes.sectionTwoGap}>
@@ -41,7 +41,7 @@ const HomePage = () => {
         <div className={classes.sectionTwoGap}>
           <Investors />
         </div>
-        <div className={classes.sectionTwoGap}>
+        <div className={classes.sectionGap}>
           <JoinParty />
         </div>
       </div>
@@ -63,9 +63,9 @@ const useStyles = makeStyles((theme) => ({
   },
   sectionGap: {
     paddingTop: "12rem",
-    [theme.breakpoints.down("md")]: {
-      paddingTop: "10rem",
-    },
+    // [theme.breakpoints.down("md")]: {
+    //   paddingTop: "10rem",
+    // },
   },
   sectionTwoGap: {
     paddingTop: "30rem",
@@ -73,21 +73,21 @@ const useStyles = makeStyles((theme) => ({
       paddingTop: "20rem",
     },
   },
-  sectionThreeGap: {
-    paddingTop: "40rem",
-    [theme.breakpoints.down("md")]: {
-      paddingTop: "20rem",
-    },
-  },
-  sectionSeven: {
-    paddingTop: "40rem",
-    [theme.breakpoints.down("md")]: {
-      paddingTop: "20rem",
-    },
-    [theme.breakpoints.down("sm")]: {
-      paddingTop: "40rem",
-    },
-  },
+  // sectionThreeGap: {
+  //   paddingTop: "40rem",
+  //   [theme.breakpoints.down("md")]: {
+  //     paddingTop: "20rem",
+  //   },
+  // },
+  // sectionSeven: {
+  //   paddingTop: "40rem",
+  //   [theme.breakpoints.down("md")]: {
+  //     paddingTop: "20rem",
+  //   },
+  //   [theme.breakpoints.down("sm")]: {
+  //     paddingTop: "40rem",
+  //   },
+  // },
   img: {
     width: "100%",
     paddingTop: "8rem",
@@ -95,13 +95,13 @@ const useStyles = makeStyles((theme) => ({
       paddingTop: "3rem",
     },
   },
-  customGap: {
-    paddingTop: "30rem",
-    [theme.breakpoints.down("md")]: {
-      paddingTop: "20rem",
-    },
-    [theme.breakpoints.down("sm")]: {
-      paddingTop: "35rem",
-    },
-  },
+  // customGap: {
+  //   paddingTop: "30rem",
+  //   [theme.breakpoints.down("md")]: {
+  //     paddingTop: "20rem",
+  //   },
+  //   [theme.breakpoints.down("sm")]: {
+  //     paddingTop: "35rem",
+  //   },
+  // },
 }));

@@ -35,10 +35,11 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "row-reverse",
     alignItems: "center",
-    position: "relative",
     justifyContent: "space-between",
     [theme.breakpoints.down("sm")]: {
       flexDirection: "column",
+      gap: "180px",
+      alignItems: "center",
     },
   },
   subDiv: {
@@ -63,35 +64,37 @@ const useStyles = makeStyles((theme) => ({
   },
   img: {
     display: "flex",
+    margin: "0 auto",
   },
   phoneOne: {
     width: "324px",
-    position: "absolute",
-    left: "281px",
+    position: "relative",
+    left: "274px",
     top: "-80px",
     [theme.breakpoints.down("md")]: {
       width: "224px",
     },
     [theme.breakpoints.down("sm")]: {
-      left: "100px",
-      top: "400px",
+      width: "167px",
+      left: "32%",
+      top: "-100px",
     },
   },
   phoneTwo: {
     width: "324px",
     zIndex: 2,
-    position: "absolute",
+    position: "relative",
     top: "78px",
-    left: "89px",
+    left: "-246px",
     [theme.breakpoints.down("md")]: {
       width: "224px",
-      top: "49px",
-      left: "152px",
+      // top: "49px",
+      // left: "152px",
     },
     [theme.breakpoints.down("md")]: {
-      width: "224px",
-      top: "518px",
-      left: "-5px",
+      width: "167px ",
+      top: 0,
+      left: -157,
     },
   },
 }));
