@@ -11,6 +11,7 @@ import SectionRaise from "../../components/sectionRaise";
 import SectionSeven from "../../components/sectionSeven";
 import SectionSix from "../../components/sectionSix";
 import background from "../../assets/background.svg";
+import Tile from "../../components/tile";
 const HomePage = () => {
   const classes = useStyles();
   return (
@@ -25,6 +26,7 @@ const HomePage = () => {
         </div>
         <div className={classes.sectionGap}>
           <SectionFour />
+          {/* <Tile color="red" duration={1000} /> */}
         </div>
         <div className={classes.sectionGap}>
           <SectionFive />
