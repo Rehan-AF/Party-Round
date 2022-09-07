@@ -32,9 +32,8 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     gap: "20px",
-    backgroundImage:
-      "linear-gradient(180deg,#fff,#fff 39%,rgba(226,228,249,.8) 82%,rgba(207,214,241,.6))",
     width: "400px",
+    backgroundColor: "white",
     padding: "32px",
     border: "2px solid rgba(0,0,0,.06)",
     borderRadius: "1.3rem",

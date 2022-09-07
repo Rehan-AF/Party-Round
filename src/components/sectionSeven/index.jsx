@@ -5,7 +5,7 @@ const SectionSeven = () => {
   const classes = useStyles();
   return (
     <div className={classes.container}>
-      <div>
+      <div className={classes.section}>
         <Typography className={classes.title}>
           Your investors can mint
           <br />
@@ -46,9 +46,12 @@ const useStyles = makeStyles((theme) => ({
       alignItems: "center",
     },
   },
+  section: {
+    width: "100%",
+  },
   title: {
     lineHeight: "1",
-    fontSize: "4rem",
+    fontSize: "3.5rem",
     fontWeight: "bold",
     [theme.breakpoints.down("md")]: {
       fontSize: "3rem",
@@ -64,6 +67,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   video: {
+    width: "100%",
     [theme.breakpoints.down("md")]: {
       width: "400px",
     },

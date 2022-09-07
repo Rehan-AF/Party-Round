@@ -80,7 +80,8 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     lineHeight: "1",
-    fontSize: "4rem",
+    fontSize: "3.5rem",
+    marginRight: "1rem",
     fontWeight: "bold",
     [theme.breakpoints.down("md")]: {
       fontSize: "3rem",
