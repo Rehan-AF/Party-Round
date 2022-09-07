@@ -1,12 +1,18 @@
 import { makeStyles, Typography } from "@material-ui/core";
 import React from "react";
 import CustomBotton from "../buttons";
+import { GridSix } from "../gridView";
 const JoinParty = () => {
   const classes = useStyles();
   return (
     <div className={classes.container}>
-      <Typography className={classes.title}>Join the Party</Typography>
-      <CustomBotton children="Join Party" variant="secondary" />
+      <div className={classes.grid}>
+        <GridSix />
+      </div>
+      <div className={classes.subContainer}>
+        <Typography className={classes.title}>Join the Party</Typography>
+        <CustomBotton children="Join Party" variant="secondary" />
+      </div>
     </div>
   );
 };
@@ -24,5 +30,20 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     gap: "44px",
+    position: "relative",
+  },
+  grid: {
+    width: "calc(100vw - 15px)",
+    // width: "100vw",
+    // position: "absolute",
+  },
+  subContainer: {
+    position: "absolute",
+    bottom: "150px",
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "column",
+    alignItems: "center",
+    gap: "15px",
   },
 }));

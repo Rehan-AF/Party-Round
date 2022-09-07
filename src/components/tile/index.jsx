@@ -31,16 +31,16 @@ function useIntersectionObserver(
   return entry;
 }
 
-export default function Tile({ color, duration = 600 }) {
+export default function Tile({ color, duration = 600, opacity = 0 }) {
   const classes = useStyles();
   const triggerRef = useRef();
   const dataRef = useIntersectionObserver(triggerRef, {
     freezeOnceVisible: false,
   });
   const headerStyle = useSpring({
-    config: { duration: 300 },
+    config: { duration: duration },
     from: {
-      opacity: 0,
+      opacity: opacity,
     },
     to: {
       opacity: dataRef?.isIntersecting ? 1 : 0,
@@ -50,7 +50,7 @@ export default function Tile({ color, duration = 600 }) {
   console.log(dataRef);
 
   return (
-    <div className={classes.box}>
+    <div>
       <animated.div style={headerStyle} className={classes.tileBox}>
         <div style={{ backgroundColor: color }} className={classes.tile}></div>
       </animated.div>
@@ -58,15 +58,15 @@ export default function Tile({ color, duration = 600 }) {
     </div>
   );
 }
+
 const useStyles = makeStyles((theme) => ({
-  box: {
-    display: "flex",
-  },
   tileBox: {
     backgroundColor: "transparent",
   },
   tile: {
-    width: 105,
+    display: "flex",
+    flexGrow: 1,
+    width: "100%",
     height: 105,
   },
 }));

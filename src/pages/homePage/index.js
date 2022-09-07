@@ -11,7 +11,7 @@ import SectionRaise from "../../components/sectionRaise";
 import SectionSeven from "../../components/sectionSeven";
 import SectionSix from "../../components/sectionSix";
 import background from "../../assets/background.svg";
-import Tile from "../../components/tile";
+import Footer from "../../components/footer";
 const HomePage = () => {
   const classes = useStyles();
   return (
@@ -24,11 +24,10 @@ const HomePage = () => {
         <div className={classes.sectionGap}>
           <SectionThree />
         </div>
-        <div className={classes.sectionGap}>
+        <div className={classes.sectionFourGap}>
           <SectionFour />
-          {/* <Tile color="red" duration={1000} /> */}
         </div>
-        <div className={classes.sectionGap}>
+        <div className={classes.sectionFiveGap}>
           <SectionFive />
         </div>
         <div className={classes.sectionGap}>
@@ -48,6 +47,7 @@ const HomePage = () => {
         </div>
       </div>
       <img src={background} alt="background" className={classes.img} />
+      <Footer />
     </div>
   );
 };
@@ -55,12 +55,12 @@ const HomePage = () => {
 export default HomePage;
 const useStyles = makeStyles((theme) => ({
   container: {
-    padding: "150px 100px 60px 100px",
+    padding: "150px 100px 0 100px",
     [theme.breakpoints.down("md")]: {
-      padding: "150px 50px 60px 50px",
+      padding: "150px 50px 0 50px",
     },
     [theme.breakpoints.down("md")]: {
-      padding: "150px 20px 60px 20px",
+      padding: "150px 20px 0 20px",
     },
   },
   sectionGap: {
@@ -71,6 +71,18 @@ const useStyles = makeStyles((theme) => ({
   },
   sectionTwoGap: {
     paddingTop: "30rem",
+    [theme.breakpoints.down("md")]: {
+      paddingTop: "20rem",
+    },
+  },
+  sectionFourGap: {
+    paddingTop: "21rem",
+    [theme.breakpoints.down("md")]: {
+      paddingTop: "20rem",
+    },
+  },
+  sectionFiveGap: {
+    paddingTop: "29rem",
     [theme.breakpoints.down("md")]: {
       paddingTop: "20rem",
     },
@@ -92,10 +104,10 @@ const useStyles = makeStyles((theme) => ({
   // },
   img: {
     width: "100%",
-    paddingTop: "8rem",
-    [theme.breakpoints.down("sm")]: {
-      paddingTop: "3rem",
-    },
+    // paddingTop: "8rem",
+    // [theme.breakpoints.down("sm")]: {
+    //   paddingTop: "3rem",
+    // },
   },
   // customGap: {
   //   paddingTop: "30rem",
