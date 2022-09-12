@@ -47,8 +47,6 @@ export default function Tile({ color, duration = 600, opacity = 0 }) {
     },
   });
 
-  console.log(dataRef);
-
   return (
     <div>
       <animated.div style={headerStyle} className={classes.tileBox}>
@@ -58,6 +56,28 @@ export default function Tile({ color, duration = 600, opacity = 0 }) {
     </div>
   );
 }
+
+export const SimpleTile = ({ color, duration = 600 }) => {
+  const classes = useStyles();
+  const headerStyle = useSpring({
+    config: { duration: duration },
+    from: {
+      opacity: 0,
+    },
+    to: {
+      opacity: 1,
+    },
+  });
+
+  return (
+    <div>
+      <animated.div style={headerStyle} className={classes.tileBox}>
+        <div style={{ backgroundColor: color }} className={classes.tile}></div>
+      </animated.div>
+      <div />
+    </div>
+  );
+};
 
 const useStyles = makeStyles((theme) => ({
   tileBox: {

@@ -1,0 +1,81 @@
+import { SideBarGrid, SmallGrid } from "../grid";
+
+export const SidebarNav = () => {
+  return (
+    <div>
+      <SideBarGrid c1="#ffffff" duration={150} />
+      <SideBarGrid c1="#ffffff" c2="#ffffff" duration={300} />
+      <SideBarGrid c1="#ffffff" c2="#ffffff" c3="#ffffff" duration={450} />
+      <SideBarGrid
+        c1="#ffffff"
+        c2="#ffffff"
+        c3="#ffffff"
+        c4="#ffffff"
+        duration={600}
+      />
+      <SideBarGrid
+        c1="#ffffff"
+        c2="#ffffff"
+        c3="#ffffff"
+        c4="#ffffff"
+        duration={750}
+      />
+      <SideBarGrid
+        c1="#ffffff"
+        c2="#ffffff"
+        c3="#ffffff"
+        c4="#ffffff"
+        duration={900}
+      />
+      <SideBarGrid
+        c1="#ffffff"
+        c2="#ffffff"
+        c3="#ffffff"
+        c4="#ffffff"
+        duration={1050}
+      />
+      <SideBarGrid
+        c1="#ffffff"
+        c2="#ffffff"
+        c3="#ffffff"
+        c4="#ffffff"
+        duration={1200}
+      />
+      <SideBarGrid
+        c1="#ffffff"
+        c2="#ffffff"
+        c3="#ffffff"
+        c4="#ffffff"
+        duration={1350}
+      />
+      <SideBarGrid
+        c1="#ffffff"
+        c2="#ffffff"
+        c3="#ffffff"
+        c4="#ffffff"
+        duration={1500}
+      />
+      <SideBarGrid
+        c1="#ffffff"
+        c2="#ffffff"
+        c3="#ffffff"
+        c4="#ffffff"
+        duration={1650}
+      />
+      <SideBarGrid
+        c1="#ffffff"
+        c2="#ffffff"
+        c3="#ffffff"
+        c4="#ffffff"
+        duration={1800}
+      />
+      <SideBarGrid
+        c1="#ffffff"
+        c2="#ffffff"
+        c3="#ffffff"
+        c4="#ffffff"
+        duration={1950}
+      />
+    </div>
+  );
+};

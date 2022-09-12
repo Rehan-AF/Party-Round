@@ -1,8 +1,8 @@
 import { makeStyles } from "@material-ui/core";
 import React from "react";
-import Tile from "../tile";
+import Tile, { SimpleTile } from "../tile";
 
-const Grid = ({
+export const Grid = ({
   c1 = "transparent",
   c2 = "transparent",
   c3 = "transparent",
@@ -36,11 +36,54 @@ const Grid = ({
     </div>
   );
 };
+export const SmallGrid = ({
+  c1 = "transparent",
+  c2 = "transparent",
+  c3 = "transparent",
+  c4 = "transparent",
+  duration,
+  opacity,
+}) => {
+  const classes = useStyles();
+  return (
+    <div className={classes.smallBox}>
+      <Tile color={c1} duration={duration} opacity={opacity} />
+      <Tile color={c2} duration={duration} opacity={opacity} />
+      <Tile color={c3} duration={duration} opacity={opacity} />
+      <Tile color={c4} duration={duration} opacity={opacity} />
+    </div>
+  );
+};
+export const SideBarGrid = ({
+  c1 = "transparent",
+  c2 = "transparent",
+  c3 = "transparent",
+  c4 = "transparent",
+  duration,
+  opacity,
+}) => {
+  const classes = useStyles();
+  return (
+    <div className={classes.smallBox}>
+      <SimpleTile color={c1} duration={duration} opacity={opacity} />
+      <SimpleTile color={c2} duration={duration} opacity={opacity} />
+      <SimpleTile color={c3} duration={duration} opacity={opacity} />
+      <SimpleTile color={c4} duration={duration} opacity={opacity} />
+    </div>
+  );
+};
 
-export default Grid;
 const useStyles = makeStyles((theme) => ({
   box: {
     display: "grid",
     gridTemplateColumns: "repeat(12 ,1fr)",
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
+  },
+  smallBox: {
+    display: "grid",
+    gridTemplateColumns: "repeat(4  ,1fr)",
+    width: "100%",
   },
 }));

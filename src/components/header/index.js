@@ -1,13 +1,35 @@
-import { makeStyles, Typography } from "@material-ui/core";
-import React from "react";
+import { Button, makeStyles, Typography } from "@material-ui/core";
+import React, { useState } from "react";
 import CustomBotton from "../buttons";
 import SvgIcons from "../icons";
 import HelpIcon from "@material-ui/icons/Help";
 import { Link } from "react-router-dom";
+import SidebarNav from "../sideBar";
+import MenuIcon from "@material-ui/icons/Menu";
+import CloseIcon from "@material-ui/icons/Close";
 const Header = () => {
+  const [show, setShow] = useState(false);
   const classes = useStyles();
+  const handleClick = () => {
+    setShow((prev) => !prev);
+  };
   return (
     <div className={classes.container}>
+      <div className={classes.drawer}>
+        <Button onClick={handleClick} className={classes.drawerBtn}>
+          {show !== true ? (
+            <MenuIcon style={{ color: "white" }} />
+          ) : (
+            <CloseIcon style={{ color: "black" }} />
+          )}
+        </Button>
+
+        {show && (
+          <div>
+            <SidebarNav />
+          </div>
+        )}
+      </div>
       <div>
         <SvgIcons logo={true} className={classes.logo} width="160px" />
       </div>
@@ -66,7 +88,22 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       padding: "12px 20px",
       width: "100%",
+      justifyContent: "flex-start",
+      gap: "30px",
     },
+  },
+  drawer: {
+    display: "none",
+    flexWrap: "noWrap",
+    [theme.breakpoints.down("sm")]: {
+      display: "flex",
+    },
+  },
+  drawerBtn: {
+    width: "35px",
+    display: "flex",
+    justifyContent: "flex-start",
+    zIndex: 20,
   },
   logo: {
     color: "white",

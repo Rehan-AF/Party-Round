@@ -1,13 +1,6 @@
 import { makeStyles } from "@material-ui/core";
 import React from "react";
-import {
-  GridFive,
-  GridFour,
-  GridOne,
-  GridSix,
-  GridThree,
-  Gridtwo,
-} from "../../components/gridView";
+import { GridLarge, GridSmall } from "../../components/gridView/Grid";
 import HomePage from "../homePage";
 
 const Home = () => {
@@ -15,11 +8,10 @@ const Home = () => {
   return (
     <div className={classes.container}>
       <div className={classes.grid}>
-        <GridOne />
-        <Gridtwo />
-        <GridThree />
-        <GridFour />
-        <GridFive />
+        <GridLarge />
+      </div>
+      <div className={classes.smallGrid}>
+        <GridSmall />
       </div>
       <div className={classes.home}>
         <HomePage />
@@ -42,5 +34,16 @@ const useStyles = makeStyles((theme) => ({
   },
   grid: {
     marginTop: "10rem",
+    // [theme.breakpoints.down("sm")]: {
+    //   display: "none",
+    // },
+  },
+  smallGrid: {
+    marginTop: "10rem",
+    display: "none",
+    width: "100vw",
+    [theme.breakpoints.down("sm")]: {
+      display: "block",
+    },
   },
 }));
