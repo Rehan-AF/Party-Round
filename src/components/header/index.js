@@ -1,4 +1,4 @@
-import { Button, makeStyles, Typography } from "@material-ui/core";
+import { IconButton, makeStyles, Typography } from "@material-ui/core";
 import React, { useState } from "react";
 import CustomBotton from "../buttons";
 import SvgIcons from "../icons";
@@ -7,28 +7,37 @@ import { Link } from "react-router-dom";
 import SidebarNav from "../sideBar";
 import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleSideBar } from "../../redux/header/header.slicer";
 const Header = () => {
-  const [show, setShow] = useState(false);
+  const { showSideBar } = useSelector((state) => state.Header);
   const classes = useStyles();
+  const dispatch = useDispatch();
+
   const handleClick = () => {
-    setShow((prev) => !prev);
+    dispatch(toggleSideBar(!showSideBar));
   };
+  let styles = {};
+  setTimeout(() => {
+    if (!showSideBar) {
+      return (styles = { display: "none" });
+    }
+  }, 1100);
+  console.log(styles, "sdajs");
   return (
     <div className={classes.container}>
       <div className={classes.drawer}>
-        <Button onClick={handleClick} className={classes.drawerBtn}>
-          {show !== true ? (
+        <IconButton onClick={handleClick} className={classes.drawerBtn}>
+          {showSideBar !== true ? (
             <MenuIcon style={{ color: "white" }} />
           ) : (
             <CloseIcon style={{ color: "black" }} />
           )}
-        </Button>
+        </IconButton>
 
-        {show && (
-          <div>
-            <SidebarNav />
-          </div>
-        )}
+        <div>
+          <SidebarNav show={showSideBar} />
+        </div>
       </div>
       <div>
         <SvgIcons logo={true} className={classes.logo} width="160px" />

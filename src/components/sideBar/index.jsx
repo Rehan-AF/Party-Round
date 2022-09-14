@@ -1,26 +1,22 @@
-import { makeStyles, Typography } from "@material-ui/core";
+import { Collapse, makeStyles } from "@material-ui/core";
 import React from "react";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { animated, useSpring } from "react-spring";
 import { Sidebar } from "../gridView/Grid";
 
 const SidebarNav = () => {
   const classes = useStyles();
-  const headerStyle = useSpring({
-    config: { duration: 2000 },
-    from: {
-      opacity: 0,
-    },
-    to: {
-      opacity: 1,
-    },
-  });
+  const { showSideBar } = useSelector((state) => state.Header);
   return (
-    <div className={classes.navBar}>
+    <Collapse
+      in={showSideBar}
+      className={classes.navBar}
+      timeout={{ appear: 1000, exit: 2200 }}
+    >
       <div className={classes.back}>
         <Sidebar />
       </div>
-      <animated.div className={classes.navLinks} style={headerStyle}>
+      <div className={classes.navLinks}>
         <NavLink to="/home" className={classes.links}>
           Home
         </NavLink>
@@ -39,8 +35,8 @@ const SidebarNav = () => {
         <NavLink to="/home" className={classes.links}>
           FAQs
         </NavLink>
-      </animated.div>
-    </div>
+      </div>
+    </Collapse>
   );
 };
 
@@ -51,7 +47,6 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     right: 0,
     width: "100%",
-    backgroundColor: "rgba(59, 59, 59, 0.54)",
     top: 0,
     height: "100vh",
   },

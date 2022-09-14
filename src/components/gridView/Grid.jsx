@@ -35,10 +35,10 @@ export const GridSmall = () => {
     </div>
   );
 };
-export const Sidebar = () => {
+export const Sidebar = ({ show }) => {
   return (
     <div>
-      <SidebarNav />
+      <SidebarNav show={show} />
     </div>
   );
 };

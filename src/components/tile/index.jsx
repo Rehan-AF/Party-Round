@@ -1,6 +1,7 @@
 import { makeStyles } from "@material-ui/core";
 import { useEffect, useRef, useState } from "react";
-import { animated, useSpring } from "react-spring";
+import { useSelector } from "react-redux";
+import { animated, useSpring, useTransition } from "react-spring";
 
 function useIntersectionObserver(
   elementRef,
@@ -57,25 +58,37 @@ export default function Tile({ color, duration = 600, opacity = 0 }) {
   );
 }
 
-export const SimpleTile = ({ color, duration = 600 }) => {
+export const SimpleTile = ({
+  color,
+  duration = 600,
+  reverseDuration = 600,
+}) => {
   const classes = useStyles();
-  const headerStyle = useSpring({
-    config: { duration: duration },
-    from: {
-      opacity: 0,
-    },
-    to: {
-      opacity: 1,
-    },
+
+  const { showSideBar } = useSelector((state) => state.Header);
+
+  const transition = useTransition(showSideBar, {
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+    reverse: showSideBar,
+    config: { duration: showSideBar ? duration : reverseDuration },
+    // onRest: () => set(!show),
   });
 
-  return (
-    <div>
-      <animated.div style={headerStyle} className={classes.tileBox}>
-        <div style={{ backgroundColor: color }} className={classes.tile}></div>
-      </animated.div>
-      <div />
-    </div>
+  return transition(
+    (styles, items) =>
+      items && (
+        <div>
+          <animated.div style={styles} className={classes.tileBox}>
+            <div
+              style={{ backgroundColor: color }}
+              className={classes.tile}
+            ></div>
+          </animated.div>
+          <div />
+        </div>
+      )
   );
 };
 
