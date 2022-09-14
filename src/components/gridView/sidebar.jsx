@@ -1,4 +1,4 @@
-import { SideBarGrid, SmallGrid } from "../grid";
+import { SideBarGrid } from "../grid";
 
 export const SidebarNav = () => {
   return (
@@ -8,14 +8,14 @@ export const SidebarNav = () => {
         c1="#ffffff"
         c2="#ffffff"
         duration={150}
-        reverseDuration={1050}
+        reverseDuration={1200}
       />
       <SideBarGrid
         c1="#ffffff"
         c2="#ffffff"
         c3="#ffffff"
         duration={250}
-        reverseDuration={950}
+        reverseDuration={1150}
       />
       <SideBarGrid
         c1="#ffffff"
@@ -23,7 +23,7 @@ export const SidebarNav = () => {
         c3="#ffffff"
         c4="#ffffff"
         duration={400}
-        reverseDuration={800}
+        reverseDuration={1000}
       />
       <SideBarGrid
         c1="#ffffff"
@@ -31,7 +31,7 @@ export const SidebarNav = () => {
         c3="#ffffff"
         c4="#ffffff"
         duration={600}
-        reverseDuration={600}
+        reverseDuration={800}
       />
       <SideBarGrid
         c1="#ffffff"
@@ -39,7 +39,7 @@ export const SidebarNav = () => {
         c3="#ffffff"
         c4="#ffffff"
         duration={800}
-        reverseDuration={400}
+        reverseDuration={600}
       />
       <SideBarGrid
         c1="#ffffff"
@@ -47,6 +47,22 @@ export const SidebarNav = () => {
         c3="#ffffff"
         c4="#ffffff"
         duration={1000}
+        reverseDuration={400}
+      />
+      <SideBarGrid
+        c1="#ffffff"
+        c2="#ffffff"
+        c3="#ffffff"
+        c4="#ffffff"
+        duration={1200}
+        reverseDuration={200}
+      />
+      <SideBarGrid
+        c1="#ffffff"
+        c2="#ffffff"
+        c3="#ffffff"
+        c4="#ffffff"
+        duration={1400}
         reverseDuration={200}
       />
     </div>

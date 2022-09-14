@@ -10,7 +10,7 @@ export const SGridOne = () => {
       <SmallGrid c4="#ff045f" />
       <SmallGrid c4="#c09dfe" />
       <SmallGrid c3="#3890ff" />
-      <SmallGrid c3="#3890ff" c5="#998cfe" />
+      <SmallGrid c3="#3890ff" />
       <SmallGrid c2="#998cfe" />
       <SmallGrid c4="#ff045f" />
       <SmallGrid />
@@ -27,11 +27,11 @@ export const SGridtwo = () => {
       <SmallGrid />
       <SmallGrid />
       <SmallGrid />
+      <SmallGrid />
       <SmallGrid c4="#ff2161" />
       <SmallGrid c4="#fe414f" />
       <SmallGrid c4="#fe4c00" />
       <SmallGrid c2="#ff80db" c3="#ffb039" />
-      <SmallGrid />
       <SmallGrid />
       <SmallGrid />
       <SmallGrid />
@@ -51,6 +51,7 @@ export const SGridThree = () => {
       <SmallGrid />
       <SmallGrid />
       <SmallGrid />
+      <SmallGrid />
       <SmallGrid c1="#ff2160" c2="#ff4150" c3="#ff46f8" />
       <SmallGrid c4="#7d55f0" />
       <SmallGrid c2="#f744f0" c3="#7d55f0" />
@@ -66,12 +67,11 @@ export const SGridFour = () => {
       <SmallGrid />
       <SmallGrid />
       <SmallGrid />
+      <SmallGrid />
       <SmallGrid c3="#998cfe" />
       <SmallGrid c4="#7192fe" />
       <SmallGrid c1="#e01fd9" />
       <SmallGrid c4="#ff045f" c2="#ff8b37" />
-      <SmallGrid />
-      <SmallGrid />
       <SmallGrid />
     </div>
   );
@@ -82,13 +82,13 @@ export const SGridFive = () => {
       <SmallGrid />
       <SmallGrid />
       <SmallGrid />
+      <SmallGrid />
+      <SmallGrid />
+      <SmallGrid />
       <SmallGrid c1="#7192fe" />
       <SmallGrid c4="#3ff1cc" />
       <SmallGrid />
       <SmallGrid c2="#3dd2dd" />
-      <SmallGrid />
-      <SmallGrid />
-      <SmallGrid />
       <SmallGrid />
     </div>
   );
@@ -99,15 +99,14 @@ export const SGridSix = () => {
       <SmallGrid />
       <SmallGrid />
       <SmallGrid />
+      <SmallGrid />
+      <SmallGrid />
+      <SmallGrid />
+      <SmallGrid />
       <SmallGrid c3="#ff045f" />
       <SmallGrid c4="#e01fd9" c1="#ff8b37" />
       <SmallGrid />
       <SmallGrid />
-      <SmallGrid />
-      <SmallGrid c2="#4ff898" />
-      <SmallGrid c4="#4dceff" />
-      <SmallGrid c2="#79ffb4" c1="#5ce6ff" />
-      <SmallGrid c3="#64e3f5" />
     </div>
   );
 };
@@ -116,9 +115,10 @@ export const SGridSeven = () => {
     <div>
       <SmallGrid />
       <SmallGrid />
-      <SmallGrid />
-      <SmallGrid />
-      <SmallGrid />
+      <SmallGrid c2="#4ff898" />
+      <SmallGrid c4="#4dceff" />
+      <SmallGrid c2="#79ffb4" c1="#5ce6ff" />
+      <SmallGrid c3="#64e3f5" />
       <SmallGrid />
       <SmallGrid />
       <SmallGrid />

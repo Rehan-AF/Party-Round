@@ -9,6 +9,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleSideBar } from "../../redux/header/header.slicer";
+import logo from "../../assets/logos/whiteLogo2.png";
 const Header = () => {
   const { showSideBar } = useSelector((state) => state.Header);
   const classes = useStyles();
@@ -39,8 +40,9 @@ const Header = () => {
           <SidebarNav show={showSideBar} />
         </div>
       </div>
-      <div>
-        <SvgIcons logo={true} className={classes.logo} width="160px" />
+      <div className={classes.sidebarBox}>
+        {/* <SvgIcons logo={true} className={classes.logo} width="160px" /> */}
+        <img src={logo} className={classes.logo} alt="logo" />
       </div>
       <div className={classes.navbarLinks}>
         <div className={classes.links}>
@@ -96,8 +98,8 @@ const useStyles = makeStyles((theme) => ({
     // [theme.breakpoints.down("md")]: {},
     [theme.breakpoints.down("sm")]: {
       padding: "12px 20px",
-      width: "100%",
-      justifyContent: "flex-start",
+      width: "100vw",
+      justifyContent: "space-around",
       gap: "30px",
     },
   },
@@ -114,10 +116,15 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "flex-start",
     zIndex: 20,
   },
+  sidebarBox: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
   logo: {
     color: "white",
     fontSize: "20px",
-    whidth: "20px",
+    width: "150px",
   },
   links: {
     display: "flex",
