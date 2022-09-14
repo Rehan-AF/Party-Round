@@ -60,15 +60,38 @@ export const SideBarGrid = ({
   c3 = "transparent",
   c4 = "transparent",
   duration,
+  reverseDuration,
   opacity,
+  show,
 }) => {
   const classes = useStyles();
   return (
     <div className={classes.smallBox}>
-      <SimpleTile color={c1} duration={duration} opacity={opacity} />
-      <SimpleTile color={c2} duration={duration} opacity={opacity} />
-      <SimpleTile color={c3} duration={duration} opacity={opacity} />
-      <SimpleTile color={c4} duration={duration} opacity={opacity} />
+      <SimpleTile
+        show={show}
+        color={c1}
+        duration={duration}
+        opacity={opacity}
+        reverseDuration={reverseDuration}
+      />
+      <SimpleTile
+        color={c2}
+        duration={duration + 50}
+        opacity={opacity}
+        reverseDuration={reverseDuration - 50}
+      />
+      <SimpleTile
+        color={c3}
+        duration={duration + 100}
+        opacity={opacity}
+        reverseDuration={reverseDuration - 100}
+      />
+      <SimpleTile
+        color={c4}
+        duration={duration + 150}
+        opacity={opacity}
+        reverseDuration={reverseDuration - 150}
+      />
     </div>
   );
 };
