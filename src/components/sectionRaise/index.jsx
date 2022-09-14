@@ -7,10 +7,10 @@ const SectionRaise = () => {
   return (
     <div className={classes.container}>
       <div>
-        <Typography className={classes.title}>Let's raise.</Typography>
+        <Typography className={classes.title}>Tick tock</Typography>
         <Typography className={classes.subTitle}>
-          Start a round, invite investors, and automate everything from open to
-          close.
+          Its time to say no to quite hours supercharge your sales with 'magic
+          hour'
         </Typography>
         <CustomBotton
           variant="primary"
