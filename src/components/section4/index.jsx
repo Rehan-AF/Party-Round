@@ -1,8 +1,8 @@
 import { makeStyles, Typography } from "@material-ui/core";
-import React from "react";
 import ToggleCard from "../togglecard";
 const SectionFour = () => {
   const classes = useStyles();
+
   return (
     <div className={classes.container}>
       <div>

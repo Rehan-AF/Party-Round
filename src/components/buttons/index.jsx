@@ -1,7 +1,7 @@
 import { Button, withStyles } from "@material-ui/core";
 
 const CustomBotton = withStyles((theme) => ({
-  root: {
+  text: {
     color: "white",
     backgroundColor: "red",
     borderRadius: "50px",
@@ -11,17 +11,18 @@ const CustomBotton = withStyles((theme) => ({
       backgroundColor: "red",
     },
   },
-  primary: {
+  outlined: {
     padding: "16px 32px",
     backgroundImage: "linear-gradient(90deg,#ff002e,#ff4667)",
     fontSize: "1rem",
     borderRadius: "0.5rem",
+    color: "white",
     [theme.breakpoints.down("md")]: {
       fontSize: "0.8rem",
       padding: "10px 16px",
     },
   },
-  secondary: {
+  contained: {
     backgroundColor: "#000",
     color: "#fff",
     fontSize: "1rem",

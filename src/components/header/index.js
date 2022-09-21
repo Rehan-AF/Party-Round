@@ -24,7 +24,6 @@ const Header = () => {
       return (styles = { display: "none" });
     }
   }, 1100);
-  console.log(styles, "sdajs");
   return (
     <div className={classes.container}>
       <div className={classes.drawer}>
@@ -41,7 +40,6 @@ const Header = () => {
         </div>
       </div>
       <div className={classes.sidebarBox}>
-        {/* <SvgIcons logo={true} className={classes.logo} width="160px" /> */}
         <img src={logo} className={classes.logo} alt="logo" />
       </div>
       <div className={classes.navbarLinks}>
@@ -72,7 +70,7 @@ const Header = () => {
         </div>
         <div className={classes.line}></div>
         <div className={classes.buttonBox}>
-          <CustomBotton variant="root" children="Get started" />
+          <CustomBotton variant="text" children="Get started" />
         </div>
       </div>
     </div>
@@ -99,7 +97,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       padding: "12px 20px",
       width: "100vw",
-      justifyContent: "space-around",
+      justifyContent: "flex-Start",
       gap: "30px",
     },
   },
@@ -117,9 +115,11 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 20,
   },
   sidebarBox: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+    [theme.breakpoints.down("sm")]: {
+      display: "flex",
+      justifyContent: "center",
+      width: "100%",
+    },
   },
   logo: {
     color: "white",

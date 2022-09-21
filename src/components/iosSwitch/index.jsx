@@ -1,4 +1,5 @@
 import { Switch, withStyles } from "@material-ui/core";
+import { useEffect, useRef, useState } from "react";
 
 export const IOSSwitch = withStyles((theme) => ({
   root: {
@@ -45,10 +46,26 @@ export const IOSSwitch = withStyles((theme) => ({
   checked: {},
   focusVisible: {},
 }))(({ classes, ...props }) => {
+  const [cardvisible, setEntryIsVesible] = useState(false);
+  const myRef = useRef();
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setEntryIsVesible(entry.isIntersecting, "entry");
+      },
+      {
+        threshold: 1,
+      }
+    );
+    observer.observe(myRef.current);
+  }, []);
   return (
     <Switch
       focusVisibleClassName={classes.focusVisible}
       disableRipple
+      ref={myRef}
+      checked={cardvisible}
       classes={{
         root: classes.root,
         switchBase: classes.switchBase,

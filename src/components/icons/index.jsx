@@ -190,7 +190,7 @@ const SvgIcons = ({
         <g
           id="Andreessen_Horowitz_new_logo"
           transform="translate(0.4)"
-          clip-path="url(#clip-path)"
+          clipPath="url(#clip-path)"
         >
           <path
             id="Path_41"

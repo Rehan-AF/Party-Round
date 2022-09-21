@@ -1,19 +1,37 @@
-import { makeStyles, Typography } from "@material-ui/core";
-import React from "react";
+import { makeStyles, Typography, Zoom } from "@material-ui/core";
+import React, { useEffect, useRef, useState } from "react";
 import img from "../../assets/flowerIcon.png";
 const InvestmentsCard = ({ time, announcement }) => {
   const classes = useStyles();
+  const [cardvisible, setEntryIsVesible] = useState(false);
+  const myRef = useRef();
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setEntryIsVesible(entry.isIntersecting, "entry");
+    });
+    observer.observe(myRef.current);
+  }, []);
   return (
-    <div className={classes.container}>
-      <img src={img} alt="icon" className={classes.icon} />
+    <Zoom
+      in={cardvisible}
+      ref={myRef}
+      className={classes.container}
+      timeout={500}
+    >
       <div>
-        <div className={classes.titleBox}>
-          <Typography className={classes.title}>New investment</Typography>
-          <Typography className={classes.time}>{time}</Typography>
+        <img src={img} alt="icon" className={classes.icon} />
+        <div>
+          <div className={classes.titleBox}>
+            <Typography className={classes.title}>New investment</Typography>
+            <Typography className={classes.time}>{time}</Typography>
+          </div>
+          <Typography className={classes.description}>
+            {announcement}
+          </Typography>
         </div>
-        <Typography className={classes.description}>{announcement}</Typography>
       </div>
-    </div>
+    </Zoom>
   );
 };
 

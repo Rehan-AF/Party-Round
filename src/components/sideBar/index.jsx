@@ -11,7 +11,7 @@ const SidebarNav = () => {
     <Collapse
       in={showSideBar}
       className={classes.navBar}
-      timeout={{ appear: 1000, exit: 2200 }}
+      timeout={{ appear: 1000, exit: 2400 }}
     >
       <div className={classes.back}>
         <Sidebar />
