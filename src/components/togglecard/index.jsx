@@ -1,10 +1,11 @@
 import { Divider, makeStyles, Typography } from "@material-ui/core";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import SvgIcons from "../icons";
 import { IOSSwitch } from "../iosSwitch";
 
 const ToggleCard = () => {
   const classes = useStyles();
+
   return (
     <div className={classes.container}>
       <div className={classes.main}>

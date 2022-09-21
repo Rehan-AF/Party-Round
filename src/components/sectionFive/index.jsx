@@ -1,8 +1,8 @@
 import { makeStyles, Typography } from "@material-ui/core";
-import React from "react";
 import InvestmentsCard from "../InvestmentsCard ";
 const SectionFive = () => {
   const classes = useStyles();
+
   return (
     <div className={classes.container}>
       <div>
@@ -22,18 +22,25 @@ const SectionFive = () => {
         </div>
       </div>
       <div className={classes.img}>
-        <InvestmentsCard
-          announcement="Packy McCormick just invested $10,000"
-          time="now"
-        />
-        <InvestmentsCard
-          announcement="Gaby Goldberg just invested $5,000 USDC"
-          time="now"
-        />
-        <InvestmentsCard
-          announcement="Seyi Taylor just invested $8,000"
-          time="now"
-        />
+        <div>
+          <InvestmentsCard
+            announcement="Packy McCormick just invested $10,000"
+            time="now"
+          />
+        </div>
+        <div>
+          <InvestmentsCard
+            announcement="Gaby Goldberg just invested $5,000 USDC"
+            time="now"
+          />
+        </div>
+
+        <div>
+          <InvestmentsCard
+            announcement="Seyi Taylor just invested $8,000"
+            time="now"
+          />
+        </div>
       </div>
     </div>
   );

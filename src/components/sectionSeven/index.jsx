@@ -27,7 +27,7 @@ const SectionSeven = () => {
           loop
           muted
           autoPlay
-          playsinline
+          playsInline
         />
       </div>
     </div>

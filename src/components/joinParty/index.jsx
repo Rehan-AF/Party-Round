@@ -15,7 +15,7 @@ const JoinParty = () => {
       </div>
       <div className={classes.subContainer}>
         <Typography className={classes.title}>Join the Party</Typography>
-        <CustomBotton children="Join Party" variant="secondary" />
+        <CustomBotton children="Join Party" variant="contained" />
       </div>
     </div>
   );

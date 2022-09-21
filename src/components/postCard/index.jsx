@@ -1,24 +1,40 @@
-import { Divider, makeStyles, Typography } from "@material-ui/core";
-import React from "react";
+import { Divider, makeStyles, Typography, Zoom } from "@material-ui/core";
+import React, { useEffect, useRef, useState } from "react";
 
 const PostCard = ({ profile, userName, title, message }) => {
   const classes = useStyles();
+  const [cardvisible, setEntryIsVesible] = useState(false);
+  const myRef = useRef();
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setEntryIsVesible(entry.isIntersecting, "entry");
+    });
+    observer.observe(myRef.current);
+  }, []);
   return (
-    <div className={classes.container}>
-      <div className={classes.userBox}>
-        <div>
-          <img src={profile} alt="profile" className={classes.profile} />
+    <Zoom
+      in={cardvisible}
+      ref={myRef}
+      className={classes.container}
+      timeout={500}
+    >
+      <div className={classes.container}>
+        <div className={classes.userBox}>
+          <div>
+            <img src={profile} alt="profile" className={classes.profile} />
+          </div>
+          <div>
+            <Typography className={classes.userName}>{userName}</Typography>
+            <Typography className={classes.title}>{title}</Typography>
+          </div>
         </div>
+        <Divider className={classes.divider} />
         <div>
-          <Typography className={classes.userName}>{userName}</Typography>
-          <Typography className={classes.title}>{title}</Typography>
+          <Typography className={classes.message}>{message}</Typography>
         </div>
       </div>
-      <Divider className={classes.divider} />
-      <div>
-        <Typography className={classes.message}>{message}</Typography>
-      </div>
-    </div>
+    </Zoom>
   );
 };
 
