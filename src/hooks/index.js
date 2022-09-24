@@ -12,9 +12,9 @@ export const useScrollDirection = () => {
     const handleNavigation = (e) => {
       const window = e.currentTarget;
       if (y > window.scrollY) {
-        setDirection("scrolling up");
+        setDirection("up");
       } else if (y < window.scrollY) {
-        setDirection("scrolling down");
+        setDirection("down");
       }
       setY(window.scrollY);
     };

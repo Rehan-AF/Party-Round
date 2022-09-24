@@ -13,25 +13,22 @@ const InvestmentsCard = ({ time, announcement }) => {
     observer.observe(myRef.current);
   }, []);
   return (
-    <Zoom
-      in={cardvisible}
-      ref={myRef}
-      className={classes.container}
-      timeout={500}
-    >
-      <div>
-        <img src={img} alt="icon" className={classes.icon} />
+    <div ref={myRef}>
+      <Zoom in={cardvisible} className={classes.container} timeout={500}>
         <div>
-          <div className={classes.titleBox}>
-            <Typography className={classes.title}>New investment</Typography>
-            <Typography className={classes.time}>{time}</Typography>
+          <img src={img} alt="icon" className={classes.icon} />
+          <div>
+            <div className={classes.titleBox}>
+              <Typography className={classes.title}>New investment</Typography>
+              <Typography className={classes.time}>{time}</Typography>
+            </div>
+            <Typography className={classes.description}>
+              {announcement}
+            </Typography>
           </div>
-          <Typography className={classes.description}>
-            {announcement}
-          </Typography>
         </div>
-      </div>
-    </Zoom>
+      </Zoom>
+    </div>
   );
 };
 

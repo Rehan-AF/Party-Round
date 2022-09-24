@@ -3,13 +3,43 @@ import React, { useRef, useEffect, useState } from "react";
 import CustomBotton from "../buttons";
 import img from "../../assets/phonr_main.png";
 import { useScrollDirection } from "../../hooks";
+import clsx from "clsx";
 
 const SectionRaise = () => {
   const classes = useStyles();
-  const myRef = useRef();
   const boxRef = useRef(null);
-  // const scrollDirection = useScrollDirection(myRef);
+  const myRef = useRef();
 
+  const scrollDirection = useScrollDirection(myRef);
+  const [entryIsVisible, setEntryIsVesible] = useState({
+    isScrolledUp: false,
+    isScrolledDown: false,
+  });
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      if (scrollDirection === "up") {
+        setEntryIsVesible((prev) => ({
+          ...prev,
+          isScrolledDown: false,
+          isScrolledUp: entry.isIntersecting,
+        }));
+      } else if (scrollDirection === "down") {
+        setEntryIsVesible((prev) => ({
+          ...prev,
+          isScrolledDown: entry.isIntersecting,
+          isScrolledUp: false,
+        }));
+      } else {
+        setEntryIsVesible((prev) => ({
+          ...prev,
+          isScrolledDown: false,
+          isScrolledUp: false,
+        }));
+      }
+    });
+    observer.observe(myRef.current);
+  }, [scrollDirection]);
   return (
     <div className={classes.container} ref={boxRef}>
       <div>
@@ -26,7 +56,15 @@ const SectionRaise = () => {
         />
       </div>
       <div>
-        <img src={img} alt="phone" className={classes.phone} ref={myRef} />
+        <img
+          src={img}
+          alt="phone"
+          className={clsx(classes.phone, {
+            [classes.scrollDownAnimation]: entryIsVisible.isScrolledDown,
+            [classes.scrollUpAnimation]: entryIsVisible.isScrolledUp,
+          })}
+          ref={myRef}
+        />
       </div>
     </div>
   );
@@ -63,13 +101,19 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   phone: {
-    width: "450px",
-    [theme.breakpoints.down("md")]: {
-      width: "350px",
-    },
+    width: "350px",
+
     [theme.breakpoints.down("sm")]: {
       width: "270px",
     },
+  },
+  scrollDownAnimation: {
+    transform: "translate(-40px,40px) rotate(-20deg)",
+    transition: "0.5s",
+  },
+  scrollUpAnimation: {
+    transform: "translate(40px,-40px)",
+    transition: "0.5s",
   },
   btn: {
     marginTop: "64px",
