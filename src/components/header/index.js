@@ -1,5 +1,4 @@
 import { IconButton, makeStyles, Typography } from "@material-ui/core";
-import React, { useState } from "react";
 import CustomBotton from "../buttons";
 import SvgIcons from "../icons";
 import HelpIcon from "@material-ui/icons/Help";
@@ -18,12 +17,7 @@ const Header = () => {
   const handleClick = () => {
     dispatch(toggleSideBar(!showSideBar));
   };
-  let styles = {};
-  setTimeout(() => {
-    if (!showSideBar) {
-      return (styles = { display: "none" });
-    }
-  }, 1100);
+
   return (
     <div className={classes.container}>
       <div className={classes.drawer}>

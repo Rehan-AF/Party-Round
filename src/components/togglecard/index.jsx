@@ -1,5 +1,4 @@
 import { Divider, makeStyles, Typography } from "@material-ui/core";
-import React, { useEffect, useRef, useState } from "react";
 import SvgIcons from "../icons";
 import { IOSSwitch } from "../iosSwitch";
 

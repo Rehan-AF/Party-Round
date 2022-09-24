@@ -55,7 +55,7 @@ const HomePage = () => {
 export default HomePage;
 const useStyles = makeStyles((theme) => ({
   container: {
-    padding: "150px 100px 0 100px",
+    padding: "0px 100px 0 100px",
     [theme.breakpoints.down("md")]: {
       padding: "150px 50px 0 50px",
     },
