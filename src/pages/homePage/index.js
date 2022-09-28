@@ -42,7 +42,7 @@ const HomePage = () => {
         <div className={classes.sectionNineGap}>
           <Investors />
         </div>
-        <div className={classes.sectionGap}>
+        <div className={classes.sectionGapLast}>
           <JoinParty />
         </div>
       </div>
@@ -89,9 +89,6 @@ const useStyles = makeStyles((theme) => ({
   },
   sectionTwoGap: {
     paddingTop: "30rem",
-    // [theme.breakpoints.down("md")]: {
-    //   paddingTop: "20rem",
-    // },
   },
   sectionEightGap: {
     paddingTop: "30rem",
@@ -107,22 +104,21 @@ const useStyles = makeStyles((theme) => ({
   },
   sectionFourGap: {
     paddingTop: "21rem",
-    // [theme.breakpoints.down("md")]: {
-    //   paddingTop: "20rem",
-    // },
   },
   sectionFiveGap: {
     paddingTop: "29rem",
-    // [theme.breakpoints.down("md")]: {
-    //   paddingTop: "20rem",
-    // },
   },
 
   img: {
     width: "100%",
-    // paddingTop: "8rem",
-    // [theme.breakpoints.down("sm")]: {
-    //   paddingTop: "3rem",
-    // },
+  },
+  sectionGapLast: {
+    paddingTop: "12rem",
+    [theme.breakpoints.down("md")]: {
+      paddingTop: "30rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      paddingTop: "10rem",
+    },
   },
 }));
