@@ -108,12 +108,28 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   scrollDownAnimation: {
-    transform: "translate(-40px,40px) rotate(-20deg)",
-    transition: "0.5s",
+    animation: `$Down 1000ms  ${theme.transitions.easing.easeInOut} 1 normal forwards`,
+  },
+  "@keyframes Down": {
+    "0%": {
+      transform: " translate(0rem, 0rem) rotate(0deg)",
+    },
+
+    "100%": {
+      transform: " translate(1rem , 5rem) rotate(-10deg)",
+    },
   },
   scrollUpAnimation: {
-    transform: "translate(40px,-40px)",
-    transition: "0.5s",
+    animation: `$Up 1000ms  ${theme.transitions.easing.easeInOut} 1 normal forwards`,
+  },
+  "@keyframes Up": {
+    "0%": {
+      transform: " translate(1rem , 5rem) rotate(-10deg)",
+    },
+
+    "100%": {
+      transform: " translate(0rem, 0rem)  rotate(0deg)",
+    },
   },
   btn: {
     marginTop: "64px",

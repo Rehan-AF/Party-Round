@@ -1,11 +1,46 @@
 import { makeStyles, Typography } from "@material-ui/core";
-import React from "react";
+import clsx from "clsx";
+import React, { useEffect, useRef, useState } from "react";
 import img1 from "../../assets/phone1.png";
 import img2 from "../../assets/phone2.png";
+import { useScrollDirection } from "../../hooks";
 const SectionThree = () => {
   const classes = useStyles();
+  const boxRef = useRef(null);
+  const myRef = useRef();
+
+  const scrollDirection = useScrollDirection(myRef);
+  const [entryIsVisible, setEntryIsVesible] = useState({
+    isScrolledUp: false,
+    isScrolledDown: false,
+  });
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      if (scrollDirection === "up") {
+        setEntryIsVesible((prev) => ({
+          ...prev,
+          isScrolledDown: false,
+          isScrolledUp: entry.isIntersecting,
+        }));
+      } else if (scrollDirection === "down") {
+        setEntryIsVesible((prev) => ({
+          ...prev,
+          isScrolledDown: entry.isIntersecting,
+          isScrolledUp: false,
+        }));
+      } else {
+        setEntryIsVesible((prev) => ({
+          ...prev,
+          isScrolledDown: false,
+          isScrolledUp: false,
+        }));
+      }
+    });
+    observer.observe(myRef.current);
+  }, [scrollDirection]);
   return (
-    <div className={classes.container}>
+    <div className={classes.container} ref={boxRef}>
       <div>
         <Typography className={classes.title}>
           Your people.
@@ -21,8 +56,24 @@ const SectionThree = () => {
         </div>
       </div>
       <div className={classes.img}>
-        <img src={img1} alt="phone" className={classes.phoneOne} />
-        <img src={img2} alt="phone" className={classes.phoneTwo} />
+        <img
+          src={img1}
+          alt="phone"
+          ref={myRef}
+          className={clsx(classes.phoneOne, {
+            [classes.scrollDownAnimationOne]: entryIsVisible.isScrolledDown,
+            [classes.scrollUpAnimationOne]: entryIsVisible.isScrolledUp,
+          })}
+        />
+        <img
+          src={img2}
+          alt="phone"
+          ref={myRef}
+          className={clsx(classes.phoneTwo, {
+            [classes.scrollDownAnimationTwo]: entryIsVisible.isScrolledDown,
+            [classes.scrollUpAnimationTwo]: entryIsVisible.isScrolledUp,
+          })}
+        />
       </div>
     </div>
   );
@@ -71,12 +122,10 @@ const useStyles = makeStyles((theme) => ({
     left: "232px",
     [theme.breakpoints.down("md")]: {
       width: "190px",
-      // right: "178px",
     },
     [theme.breakpoints.down("sm")]: {
       width: "150px",
       left: 0,
-      // top: "244px",
     },
   },
   phoneTwo: {
@@ -86,12 +135,58 @@ const useStyles = makeStyles((theme) => ({
     left: "204px",
     [theme.breakpoints.down("md")]: {
       width: "190px",
-      // right: "12px",
     },
     [theme.breakpoints.down("sm")]: {
       width: "150px",
-      // top: "324px",
       left: -20,
+    },
+  },
+  scrollDownAnimationOne: {
+    animation: `$DownOne 1000ms  ${theme.transitions.easing.easeInOut} 1 normal forwards`,
+  },
+  "@keyframes DownOne": {
+    "0%": {
+      transform: " translate(0rem, 0rem)",
+    },
+
+    "100%": {
+      transform: " translate(0rem , 2rem)",
+    },
+  },
+  scrollUpAnimationOne: {
+    animation: `$UpOne 1000ms  ${theme.transitions.easing.easeInOut} 1 normal forwards`,
+  },
+  "@keyframes UpOne": {
+    "0%": {
+      transform: " translate(0rem, 2rem)",
+    },
+
+    "100%": {
+      transform: " translate(0rem , 0rem)",
+    },
+  },
+  scrollDownAnimationTwo: {
+    animation: `$DownTwo 1000ms  ${theme.transitions.easing.easeInOut} 1 normal forwards`,
+  },
+  "@keyframes DownTwo": {
+    "0%": {
+      transform: " translate(0rem, 0rem)",
+    },
+
+    "100%": {
+      transform: " translate(0rem , -2rem)",
+    },
+  },
+  scrollUpAnimationTwo: {
+    animation: `$UpTwo 1000ms  ${theme.transitions.easing.easeInOut} 1 normal forwards`,
+  },
+  "@keyframes UpTwo": {
+    "0%": {
+      transform: " translate(0rem, -2rem)",
+    },
+
+    "100%": {
+      transform: " translate(0rem , 0rem)",
     },
   },
 }));

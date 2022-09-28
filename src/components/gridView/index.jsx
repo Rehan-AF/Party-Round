@@ -31,22 +31,22 @@ export const Gridtwo = () => {
       <Grid c10="#ff80db" c11="#ffb039" />
       <Grid />
       <Grid />
-      <Grid />
-      <Grid />
-      <Grid />
       <Grid c1="#ff4c00" />
-    </div>
-  );
-};
-export const GridThree = () => {
-  return (
-    <div>
       <Grid c2="#ff045f" />
       <Grid c9="#ff3e12" c10="#e57d32" />
       <Grid c8="#ff2172" c9="#f9205e" c10="#f53e4d" c11="#fd45f6" />
       <Grid c12="#ff46f8" />
       <Grid c8="#e01fd9" c11="#855aff" />
       <Grid c10="#7192fe" />
+    </div>
+  );
+};
+export const GridThree = () => {
+  return (
+    <div>
+      <Grid />
+      <Grid />
+      <Grid />
       <Grid />
       <Grid />
       <Grid />
@@ -59,12 +59,11 @@ export const GridThree = () => {
 export const GridFour = () => {
   return (
     <div>
-      <Grid c12="#fc2160" />
-      <Grid c12="#ff414f" />
-      <Grid c11="#ff8b37" />
-      <Grid c1="#7192fe" c2="#7192fe" />
-      <Grid c2="#4dc7f7" />
-      <Grid c2="#7192fe" />
+      <Grid />
+      <Grid />
+      <Grid c12="#fc2160" c1="#7192fe" c2="#7192fe" />
+      <Grid c12="#ff414f" c2="#4dc7f7" />
+      <Grid c11="#ff8b37" c2="#7192fe" />
       <Grid c3="#2e708c" c4="#3ff1cc" />
       <Grid />
       <Grid />
@@ -77,10 +76,11 @@ export const GridFour = () => {
 export const GridFive = () => {
   return (
     <div>
-      <Grid />
       <Grid c1="#e01fd9" />
       <Grid c2="#ff045f" c3="#ff8b37" />
       <Grid c4="#ffb039" />
+      <Grid />
+      <Grid />
       <Grid />
       <Grid />
       <Grid />
