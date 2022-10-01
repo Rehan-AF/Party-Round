@@ -1,22 +1,22 @@
 import { makeStyles, Typography } from "@material-ui/core";
 import React from "react";
 import CheckListCard from "../checkListCard";
+import Text from "../textfeild";
 
 const SectionTwo = () => {
   const classes = useStyles();
+
   return (
     <div className={classes.container}>
       <div>
-        <Typography className={classes.typo}>Start a round </Typography>
-        <Typography className={classes.typo}>Set terms</Typography>
-        <Typography className={classes.typo}>Draft legal docs</Typography>
-        <Typography className={classes.typo}>Upload to DocuSign</Typography>
-        <Typography className={classes.typo}>Collect signatures</Typography>
-        <Typography className={classes.typo}>
-          Email wire instructions
-        </Typography>
-        <Typography className={classes.typo}>Confirm funds</Typography>
-        <Typography className={classes.typo}>Track investors</Typography>
+        <Text className={classes.typo}>Start a round </Text>
+        <Text className={classes.typo}>Set terms</Text>
+        <Text className={classes.typo}>Draft legal docs</Text>
+        <Text className={classes.typo}>Upload to DocuSign</Text>
+        <Text className={classes.typo}>Collect signatures</Text>
+        <Text className={classes.typo}>Email wire instructions</Text>
+        <Text className={classes.typo}>Confirm funds</Text>
+        <Text className={classes.typo}>Track investors</Text>
         <div className={classes.whiteBox}>
           <Typography className={classes.typoWhite}>Automate all of</Typography>
           <Typography className={classes.typoWhite}>
