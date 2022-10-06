@@ -89,7 +89,7 @@ const useStyles = makeStyles((theme) => ({
 
     // [theme.breakpoints.down("md")]: {},
     [theme.breakpoints.down("sm")]: {
-      padding: "12px 20px",
+      padding: "0 20px",
       width: "100vw",
       justifyContent: "flex-Start",
       gap: "30px",

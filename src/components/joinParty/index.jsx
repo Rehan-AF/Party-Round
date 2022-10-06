@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
   },
   grid: {
-    width: "calc(100vw - 30px)",
+    width: "calc(100vw - 0px)",
     // width: "100vw",
     // position: "absolute",
     [theme.breakpoints.down("sm")]: {

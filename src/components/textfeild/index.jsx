@@ -13,12 +13,12 @@ const Text = ({ children }) => {
         setEntryIsVesible(entry.isIntersecting, "entry");
       },
       {
-        rootMargin: "-200px",
+        rootMargin: "-120px",
       }
     );
     observer.observe(myRef.current);
   }, []);
-  console.log(cardvisible);
+
   return (
     <Typography
       className={clsx(classes.typo, {

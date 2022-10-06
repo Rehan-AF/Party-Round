@@ -46,6 +46,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundImage:
       "linear-gradient(180deg,hsla(0,0%,100%,.7),hsla(0,0%,100%,.6) 39%,rgba(226,228,249,.8) 82%,rgba(207,214,241,.6))",
     margin: "10px",
+    [theme.breakpoints.down("sm")]: {
+      height: "65px",
+    },
     "&:hover": {
       transition: "all 0.4s ease-in-out",
       boxShadow: "0 4px 12px 6px rgb(0 0 0 / 24%)",

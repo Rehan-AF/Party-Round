@@ -34,15 +34,17 @@ const useStyles = makeStyles((theme) => ({
   },
   grid: {
     marginTop: "10rem",
-    // [theme.breakpoints.down("sm")]: {
-    //   display: "none",
-    // },
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "6rem",
+      display: "none",
+    },
   },
   smallGrid: {
     marginTop: "10rem",
     display: "none",
     width: "100vw",
     [theme.breakpoints.down("sm")]: {
+      marginTop: "6rem",
       display: "block",
     },
   },
