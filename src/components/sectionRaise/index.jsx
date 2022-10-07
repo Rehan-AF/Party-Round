@@ -104,7 +104,8 @@ const useStyles = makeStyles((theme) => ({
     width: "350px",
 
     [theme.breakpoints.down("sm")]: {
-      width: "270px",
+      // width: "270px",
+      width: "350px",
     },
   },
   scrollDownAnimation: {
