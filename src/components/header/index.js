@@ -81,7 +81,7 @@ const useStyles = makeStyles((theme) => ({
     backdropFilter: "blur( 10px )",
     padding: "12px 65px",
     color: "#fff",
-    height: "70px",
+    height: "49px",
     position: "fixed",
     top: "0",
     width: "calc(100% - 131px)",
@@ -101,24 +101,30 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       display: "flex",
     },
+    ".MuiIconButton-root": {
+      padding: 0,
+    },
   },
   drawerBtn: {
     width: "35px",
     display: "flex",
     justifyContent: "flex-start",
     zIndex: 20,
+    ".MuiIconButton-root": {
+      padding: 0,
+    },
   },
   sidebarBox: {
     [theme.breakpoints.down("sm")]: {
       display: "flex",
       justifyContent: "center",
-      width: "100%",
+      width: "calc(100% - 140px)",
     },
   },
   logo: {
     color: "white",
     fontSize: "20px",
-    width: "150px",
+    width: "110px",
   },
   links: {
     display: "flex",
