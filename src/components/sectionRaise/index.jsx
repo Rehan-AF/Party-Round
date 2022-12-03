@@ -49,11 +49,11 @@ const SectionRaise = () => {
           hour'
         </Typography>
 
-        <CustomBotton
+        {/* <CustomBotton
           variant="outlined"
           children="Get started"
           className={classes.btn}
-        />
+        /> */}
       </div>
       <div>
         <img

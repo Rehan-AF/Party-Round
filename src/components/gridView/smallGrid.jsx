@@ -15,7 +15,6 @@ export const SGridOne = () => {
       <SmallGrid c4="#ff045f" />
       <SmallGrid />
       <SmallGrid />
-      <SmallGrid />
     </div>
   );
 };

@@ -72,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
   sectionOneGap: {
     paddingTop: "12rem",
     [theme.breakpoints.down("md")]: {
-      paddingTop: "24rem",
+      paddingTop: "26rem",
     },
   },
   sectionThreeGap: {

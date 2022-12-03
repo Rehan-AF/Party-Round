@@ -110,15 +110,15 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "flex-start",
     zIndex: 20,
-    ".MuiIconButton-root": {
-      padding: 0,
-    },
+    padding: 0,
+    minHeight: 0,
+    minWidth: 0,
   },
   sidebarBox: {
     [theme.breakpoints.down("sm")]: {
       display: "flex",
       justifyContent: "center",
-      width: "calc(100% - 140px)",
+      width: "calc(100% - 161px)",
     },
   },
   logo: {
