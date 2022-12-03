@@ -1,6 +1,6 @@
 import { makeStyles, Typography } from "@material-ui/core";
 import React, { useRef, useEffect, useState } from "react";
-import CustomBotton from "../buttons";
+// import CustomBotton from "../buttons";
 import img from "../../assets/phonr_main.png";
 import { useScrollDirection } from "../../hooks";
 import clsx from "clsx";
