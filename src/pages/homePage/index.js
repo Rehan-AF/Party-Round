@@ -1,4 +1,4 @@
-import { makeStyles } from "@material-ui/core";
+import { createTheme, makeStyles, ThemeProvider } from "@material-ui/core";
 import React from "react";
 import JoinParty from "../../components/joinParty";
 import SectionTwo from "../../components/section2";
@@ -14,40 +14,47 @@ import background from "../../assets/background.svg";
 import Footer from "../../components/footer";
 const HomePage = () => {
   const classes = useStyles();
+  const theme = createTheme({
+    typography: {
+      fontFamily: "'Fahkwang', sans-serif",
+    },
+  });
   return (
     <div>
-      <div className={classes.container}>
-        <SectionRaise />
-        <div className={classes.sectionOneGap}>
-          <SectionTwo />
+      <ThemeProvider theme={theme}>
+        <div className={classes.container}>
+          <SectionRaise />
+          <div className={classes.sectionOneGap}>
+            <SectionTwo />
+          </div>
+          <div className={classes.sectionThreeGap}>
+            <SectionThree />
+          </div>
+          <div className={classes.sectionFourGap}>
+            <SectionFour />
+          </div>
+          <div className={classes.sectionFiveGap}>
+            <SectionFive />
+          </div>
+          <div className={classes.sectionGap}>
+            <SectionSix />
+          </div>
+          <div className={classes.sectionSevenGap}>
+            <SectionSeven />
+          </div>
+          <div className={classes.sectionEightGap}>
+            <SectionEight />
+          </div>
+          <div className={classes.sectionNineGap}>
+            <Investors />
+          </div>
+          <div className={classes.sectionGapLast}>
+            <JoinParty />
+          </div>
         </div>
-        <div className={classes.sectionThreeGap}>
-          <SectionThree />
-        </div>
-        <div className={classes.sectionFourGap}>
-          <SectionFour />
-        </div>
-        <div className={classes.sectionFiveGap}>
-          <SectionFive />
-        </div>
-        <div className={classes.sectionGap}>
-          <SectionSix />
-        </div>
-        <div className={classes.sectionSevenGap}>
-          <SectionSeven />
-        </div>
-        <div className={classes.sectionEightGap}>
-          <SectionEight />
-        </div>
-        <div className={classes.sectionNineGap}>
-          <Investors />
-        </div>
-        <div className={classes.sectionGapLast}>
-          <JoinParty />
-        </div>
-      </div>
-      <img src={background} alt="background" className={classes.img} />
-      <Footer />
+        <img src={background} alt="background" className={classes.img} />
+        <Footer />
+      </ThemeProvider>
     </div>
   );
 };
