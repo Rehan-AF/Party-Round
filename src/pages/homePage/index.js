@@ -62,6 +62,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       padding: "0 20px 0 20px",
     },
+    "&.MuiTypography-body1": {
+      fontFamily: '"Fahkwang", sans-serif!important',
+    },
   },
   sectionGap: {
     paddingTop: "12rem",
