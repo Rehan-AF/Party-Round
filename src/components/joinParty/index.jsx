@@ -27,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "3rem",
     lineHeight: "1",
     fontWeight: "600",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "2rem",
+    },
   },
   container: {
     display: "flex",
