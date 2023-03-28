@@ -1,6 +1,6 @@
-import { makeStyles, Typography } from "@material-ui/core";
-import React, { useEffect, useRef, useState } from "react";
-import SvgIcons from "../icons";
+import { makeStyles, Typography } from '@material-ui/core';
+import React, { useEffect, useRef, useState } from 'react';
+import SvgIcons from '../icons';
 const CheckListCard = () => {
   const classes = useStyles();
   const [cardvisible, setEntryIsVesible] = useState(false);
@@ -9,16 +9,16 @@ const CheckListCard = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
-        setEntryIsVesible(entry.isIntersecting, "entry");
+        setEntryIsVesible(entry.isIntersecting, 'entry');
       },
       {
-        rootMargin: "-100px",
+        rootMargin: '-100px',
       }
     );
     observer.observe(myRef.current);
   }, []);
 
-  console.log(cardvisible, "show card logic");
+  console.log(cardvisible, 'show card logic');
   return (
     <div className={classes.container}>
       <div className={classes.divOne}></div>
@@ -30,7 +30,9 @@ const CheckListCard = () => {
             <SvgIcons loading={true} className={classes.iconsLoading} />
           )}
           <div>
-            <Typography className={classes.typo}>Generating SAFE</Typography>
+            <Typography className={classes.typo}>
+              Customer engagement
+            </Typography>
           </div>
         </div>
         <div className={classes.subDiv}>
@@ -40,7 +42,7 @@ const CheckListCard = () => {
             <SvgIcons loading={true} className={classes.iconsLoading} />
           )}
           <Typography className={classes.typo} ref={myRef}>
-            Setting up round
+            Foster loyalty
           </Typography>
         </div>
         <div className={classes.subDiv}>
@@ -49,7 +51,7 @@ const CheckListCard = () => {
           ) : (
             <SvgIcons loading={true} className={classes.iconsLoading} />
           )}
-          <Typography className={classes.typo}>Round started</Typography>
+          <Typography className={classes.typo}>be buzz-worthy </Typography>
         </div>
       </div>
     </div>
@@ -59,88 +61,88 @@ const CheckListCard = () => {
 export default CheckListCard;
 const useStyles = makeStyles((theme) => ({
   container: {
-    display: "flex",
-    width: "400px",
-    backgroundColor: "#222",
-    padding: "0 32px 15px 32px",
-    border: "2px solid hsla(0,0%,100%,.06)",
-    borderRadius: "1.3rem",
-    boxShadow: "0 4px 12px 6px rgb(0 0 0 / 24%)",
-    position: "relative",
-    height: "227px",
-    [theme.breakpoints.down("md")]: {
-      width: "300px",
-      height: "200px",
+    display: 'flex',
+    width: '400px',
+    backgroundColor: '#222',
+    padding: '0 32px 15px 32px',
+    border: '2px solid hsla(0,0%,100%,.06)',
+    borderRadius: '1.3rem',
+    boxShadow: '0 4px 12px 6px rgb(0 0 0 / 24%)',
+    position: 'relative',
+    height: '227px',
+    [theme.breakpoints.down('md')]: {
+      width: '300px',
+      height: '200px',
     },
-    [theme.breakpoints.down("sm")]: {
-      width: "270px",
+    [theme.breakpoints.down('sm')]: {
+      width: '270px',
     },
   },
   subDiv: {
-    display: "flex",
-    gap: "20px",
-    fontSize: "1.1rem",
-    backgroundColor: "#222",
-    padding: "2px",
+    display: 'flex',
+    gap: '20px',
+    fontSize: '1.1rem',
+    backgroundColor: '#222',
+    padding: '2px',
   },
   icons: {
-    width: "30px",
+    width: '30px',
     animation: `$DownOne 1000ms  ${theme.transitions.easing.easeInOut} 1 normal forwards`,
 
-    [theme.breakpoints.down("md")]: {
-      width: "25px",
+    [theme.breakpoints.down('md')]: {
+      width: '25px',
     },
   },
-  "@keyframes DownOne": {
-    "0%": {
+  '@keyframes DownOne': {
+    '0%': {
       opacity: 0,
     },
 
-    "100%": {
+    '100%': {
       opacity: 1,
     },
   },
   iconsLoading: {
-    width: "30px",
+    width: '30px',
     animation: `$loading 1000ms  ${theme.transitions.easing.easeInOut}  infinite`,
 
-    [theme.breakpoints.down("md")]: {
-      width: "25px",
+    [theme.breakpoints.down('md')]: {
+      width: '25px',
     },
   },
 
-  "@keyframes loading": {
-    "0%": {
-      transform: " rotate(0)",
+  '@keyframes loading': {
+    '0%': {
+      transform: ' rotate(0)',
     },
 
-    "100%": {
-      transform: " rotate(360deg)",
+    '100%': {
+      transform: ' rotate(360deg)',
     },
   },
   typo: {
-    fontSize: "1.7rem",
-    [theme.breakpoints.down("md")]: {
-      fontSize: "1.2rem",
+    fontSize: '1.7rem',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '1.2rem',
     },
   },
   divOne: {
-    padding: "15px",
-    borderRight: "2px solid hsla(0,0%,100%,.06)",
+    padding: '15px',
+    borderRight: '2px solid hsla(0,0%,100%,.06)',
   },
   divtwo: {
-    display: "flex",
-    flexDirection: "column",
-    gap: "30px",
-    padding: "17px",
-    position: "absolute",
-    left: "30px",
-    [theme.breakpoints.down("md")]: {
-      left: "32px",
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '30px',
+    padding: '17px',
+    position: 'absolute',
+    left: '30px',
+    [theme.breakpoints.down('md')]: {
+      left: '32px',
     },
   },
   loading: {
-    width: "25px",
-    height: "25px",
+    width: '25px',
+    height: '25px',
   },
 }));
