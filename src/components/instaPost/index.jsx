@@ -60,6 +60,7 @@ const useStyle = makeStyles((theme) => ({
     fontSize: '24px',
     marginBottom: '10px',
     marginTop: '10px',
+    opacity: '90%',
     [theme.breakpoints.down('sm')]: {
       fontSize: '21px',
     },

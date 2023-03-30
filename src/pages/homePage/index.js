@@ -8,13 +8,14 @@ import SectionEight from '../../components/sectionEight';
 // import SectionFive from '../../components/sectionFive';
 import Investors from '../../components/sectionNine';
 import SectionRaise from '../../components/sectionRaise';
-import SectionSeven from '../../components/sectionSeven';
-import SectionSix from '../../components/sectionSix';
+// import SectionSeven from '../../components/sectionSeven';
+// import SectionSix from '../../components/sectionSix';
 import background from '../../assets/background.svg';
 import Footer from '../../components/footer';
 import StepsSection from '../../components/steps';
 import InstaPost from '../../components/instaPost';
 import Drops from '../../components/drops';
+import Pricing from '../../components/pricing';
 const HomePage = () => {
   const classes = useStyles();
 
@@ -39,11 +40,10 @@ const HomePage = () => {
           <Drops />
           {/* <SectionFive /> */}
         </div>
-        <div className={classes.sectionGap}>
-          <SectionSix />
-        </div>
+        {/* <div className={classes.sectionGap}><SectionSix /></div> */}
         <div className={classes.sectionSevenGap}>
-          <SectionSeven />
+          {/* <SectionSeven /> */}
+          <Pricing />
         </div>
         <div className={classes.sectionEightGap}>
           <SectionEight />
