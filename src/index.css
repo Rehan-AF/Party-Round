@@ -11,7 +11,14 @@ body {
   width: 100vw;
   overflow-x: hidden;
 }
-
-code {
-  /* font-family: 'Fahkwang', sans-serif; */
+.kRZswa .buttons button {
+  display: none;
+}
+.kRZswa {
+  margin: auto;
+  /* max-width: 1200px; */
+  width: 100vw;
+  overflow-x: scroll;
+  display: flex;
+  scroll-behavior: smooth;
 }

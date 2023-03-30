@@ -114,7 +114,7 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: '50px',
     fontWeight: '800',
     [theme.breakpoints.down('md')]: {
-      fontSize: '3rem',
+      fontSize: '1.8rem',
     },
   },
   subTitle: {
@@ -124,7 +124,8 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: '40px',
     fontWeight: 'bold',
     [theme.breakpoints.down('md')]: {
-      fontSize: '1.2rem',
+      fontSize: '1rem',
+      lineHeight: '20px',
     },
     '& span': {
       color: '#4484FF',

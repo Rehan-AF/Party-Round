@@ -9,8 +9,8 @@ const SectionTwo = () => {
   return (
     <div className={classes.container}>
       <div>
-        <Text className={classes.typo}>“Almost 50% of global consumers</Text>
-        <Text className={classes.typo}> want brands to innovate.”</Text>
+        <Text className={classes.typo8}>“Almost 50% of global consumers</Text>
+        <Text className={classes.typo8}> want brands to innovate.”</Text>
 
         <div className={classes.grayBox}>
           <Typography className={classes.typogray}>
@@ -32,19 +32,24 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'flex-end',
     justifyContent: 'space-between',
     gap: '100px',
+
+    [theme.breakpoints.down('md')]: {
+      gap: '82px',
+      alignItems: 'center',
+    },
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
       gap: '50px',
       alignItems: 'center',
     },
   },
-  typo: {
+  typo8: {
     fontSize: '45px',
     lineHeight: '1em',
     fontWeight: 'bold',
     color: '#cdcdcd',
     [theme.breakpoints.down('md')]: {
-      fontSize: '2.2rem',
+      fontSize: '1.8rem',
     },
   },
   whiteBox: {
@@ -56,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: '1em',
     fontWeight: 'bold',
     [theme.breakpoints.down('md')]: {
-      fontSize: '2.2rem',
+      fontSize: '1.2rem',
     },
   },
   grayBox: {
@@ -66,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
     color: '#49A1F2E5',
     lineHeight: '1em',
     [theme.breakpoints.down('md')]: {
-      fontSize: '1rem',
+      fontSize: '0.8rem',
     },
   },
 }));

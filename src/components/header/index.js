@@ -90,7 +90,9 @@ const useStyles = makeStyles((theme) => ({
     width: 'calc(100% - 131px)',
     zIndex: 100,
 
-    // [theme.breakpoints.down("md")]: {},
+    [theme.breakpoints.down('md')]: {
+      padding: '12px 50px',
+    },
     [theme.breakpoints.down('sm')]: {
       padding: '0 20px',
       width: '100vw',

@@ -18,7 +18,6 @@ const CheckListCard = () => {
     observer.observe(myRef.current);
   }, []);
 
-  console.log(cardvisible, 'show card logic');
   return (
     <div className={classes.container}>
       <div className={classes.divOne}></div>

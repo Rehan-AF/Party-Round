@@ -21,9 +21,15 @@ const useStyles = makeStyles((theme) => ({
     width: 400,
     display: 'flex',
     flexDirection: 'column',
+    [theme.breakpoints.down('md')]: {
+      width: '350px',
+    },
   },
   img: {
     width: 400,
+    [theme.breakpoints.down('md')]: {
+      width: '350px',
+    },
   },
   borderMain: {
     backgroundImage:

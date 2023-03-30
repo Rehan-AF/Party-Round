@@ -1,9 +1,10 @@
 import { makeStyles, Typography } from '@material-ui/core';
 import React from 'react';
-import StepCard from '../stepCard';
 import img1 from '../../assets/ss1.png';
 import img2 from '../../assets/ss2.png';
 import img3 from '../../assets/ss3.png';
+import MobileCarousel from '../Carousel';
+import StepCard from '../stepCard';
 const StepsSection = () => {
   const classes = useStyles();
   return (
@@ -13,6 +14,9 @@ const StepsSection = () => {
         <br /> Redefine your value proposition.
       </Typography>
       <div className={classes.StepCardBox}>
+        <MobileCarousel item={1} />
+      </div>
+      <div className={classes.StepCardBox2}>
         <StepCard
           img={img1}
           nmbr={1}
@@ -52,8 +56,19 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
   },
   StepCardBox: {
-    display: 'flex',
-    justifyContent: 'center',
+    display: 'none',
     marginTop: '40px',
+    [theme.breakpoints.down('md')]: {
+      display: 'flex',
+      justifyContent: 'center',
+    },
+  },
+  StepCardBox2: {
+    display: 'flex',
+    marginTop: '40px',
+    justifyContent: 'center',
+    [theme.breakpoints.down('md')]: {
+      display: 'none',
+    },
   },
 }));
