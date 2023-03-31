@@ -47,6 +47,7 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: '45px',
     [theme.breakpoints.down('md')]: {
       fontSize: '28px',
+      lineHeight: '28px',
     },
   },
   typo: {

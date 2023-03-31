@@ -49,7 +49,8 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 'bold',
     color: '#cdcdcd',
     [theme.breakpoints.down('md')]: {
-      fontSize: '1.8rem',
+      fontSize: '28px',
+      fontWeight: '600',
     },
   },
   whiteBox: {
@@ -71,7 +72,9 @@ const useStyles = makeStyles((theme) => ({
     color: '#49A1F2E5',
     lineHeight: '1em',
     [theme.breakpoints.down('md')]: {
-      fontSize: '0.8rem',
+      fontSize: '16px',
+      lineHeight: '24px',
+      fontWeight: '600',
     },
   },
 }));

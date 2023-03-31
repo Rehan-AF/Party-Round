@@ -40,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     [theme.breakpoints.down('md')]: {
       fontSize: '28px',
+      lineHeight: '28px',
     },
   },
   container: {

@@ -22,13 +22,13 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     [theme.breakpoints.down('md')]: {
-      width: '350px',
+      width: '300px',
     },
   },
   img: {
     width: 400,
     [theme.breakpoints.down('md')]: {
-      width: '350px',
+      width: '300px',
     },
   },
   borderMain: {

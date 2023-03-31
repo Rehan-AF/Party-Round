@@ -54,6 +54,13 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 600,
     letterSpacing: '0.6px',
     textAlign: 'center',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '28px',
+      textAlign: 'start',
+      '& br': {
+        display: 'none  ',
+      },
+    },
   },
   StepCardBox: {
     display: 'none',

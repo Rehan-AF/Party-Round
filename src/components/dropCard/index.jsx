@@ -36,6 +36,10 @@ const useStyles = makeStyles((theme) => ({
     height: '554.67px',
     borderRadius: '20px ',
     marginRight: '16px',
+    [theme.breakpoints.down('md')]: {
+      width: '295px',
+      height: '502px',
+    },
   },
   subContainer: {
     background:

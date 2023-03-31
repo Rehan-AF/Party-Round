@@ -71,8 +71,8 @@ const useStyles = makeStyles((theme) => ({
   container: {
     padding: '0px 100px 0 100px',
 
-    [theme.breakpoints.down('sm')]: {
-      padding: '0 20px 0 20px',
+    [theme.breakpoints.down('md')]: {
+      padding: '0 15px 0 15px',
     },
     '&.MuiTypography-body1': {
       // fontFamily: '"Fahkwang", sans-serif!important',
