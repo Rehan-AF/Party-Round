@@ -1,33 +1,52 @@
-import { makeStyles, Typography } from "@material-ui/core";
-import React from "react";
-import { NavLink } from "react-router-dom";
-
+import { makeStyles, Typography } from '@material-ui/core';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import footerLogo from '../../assets/logos/footer.png';
+import logoText from '../../assets/logos/image38.png';
 const Footer = () => {
   const classes = useStyles();
   return (
     <div className={classes.container}>
-      <Typography className={classes.title}>Party Round</Typography>
-      <div className={classes.linksBox}>
-        <NavLink to="/" className={classes.links}>
-          FAQs
-        </NavLink>
-        <NavLink to="/" className={classes.links}>
-          Team
-        </NavLink>
-        <NavLink to="/" className={classes.links}>
-          Privacy Policy
-        </NavLink>
-        <NavLink to="/" className={classes.links}>
-          Terms of Use
-        </NavLink>
-        <Typography className={classes.links}>
-          © 2022 Party Round Inc
-        </Typography>
+      <div className={classes.imgBox}>
+        <img src={footerLogo} alt="" className={classes.logos} />
       </div>
-      <Typography className={classes.typo}>
-        Party Round is a financial technology company and is not a bank.
-        <br /> Banking services provided by Blue Ridge Bank, N.A.; Member FDIC.
-      </Typography>
+      <div className={classes.subContainer}>
+        <div>
+          <Typography className={classes.typo1}>
+            Playe and all representations of its logo, brand mark and icon{' '}
+            <br /> are held solely by Playe Limited. All rights reserved.
+          </Typography>
+        </div>
+        <div className={classes.centerBox}>
+          <img src={logoText} alt="logo" />
+          <Typography className={classes.typo2}>
+            Copyright © 2023 Playe, Limited.
+          </Typography>
+          <div className={classes.linksBox}>
+            <Link to="/" className={classes.links}>
+              <Typography>Legal Stuff</Typography>
+            </Link>
+            <span></span>
+            <Link to="/" className={classes.links}>
+              <Typography>Privacy Policy</Typography>
+            </Link>
+            <span></span>
+            <Link to="/" className={classes.links}>
+              <Typography>Security</Typography>
+            </Link>
+          </div>
+        </div>
+        <div className={classes.link2Box}>
+          <Typography className={classes.head}>Company </Typography>
+          <Typography className={classes.subHead}>About us </Typography>
+          <Typography className={classes.subHead}>Roadmap </Typography>
+        </div>
+        <div className={classes.link2Box}>
+          <Typography className={classes.head}>Discover </Typography>
+          <Typography className={classes.subHead}>Case studies</Typography>
+          <Typography className={classes.subHead}>Product Roadmap</Typography>
+        </div>
+      </div>
     </div>
   );
 };
@@ -35,40 +54,67 @@ const Footer = () => {
 export default Footer;
 const useStyles = makeStyles((theme) => ({
   container: {
-    display: "flex",
-    flexDirection: "column",
-    gap: "24px",
-    padding: "150px 100px 60px 100px",
-    [theme.breakpoints.down("md")]: {
-      padding: "150px 50px 60px 50px",
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+
+    padding: '80px 100px 20px 100px',
+    [theme.breakpoints.down('md')]: {
+      padding: '20px 20px 20px 20px',
     },
   },
+  imgBox: {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  subContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: '50px',
+    flexWrap: 'wrap',
+    [theme.breakpoints.down('md')]: {
+      paddingTop: '30px',
+    },
+  },
+  logos: {
+    width: 'calc(100% - 300px)',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+    },
+    position: 'center',
+  },
+  typo1: {
+    fontSize: '12px',
+    color: '#CACFDB',
+    flex: '1 1 auto',
+    textAlign: 'center',
+  },
+  centerBox: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlign: 'center',
+    gap: '11px  ',
+  },
+  typo2: {
+    fontSize: '12px',
+    fontWeight: '500',
+    color: '#CACFDB',
+  },
+
   linksBox: {
-    display: "flex",
-    gap: "40px",
-    [theme.breakpoints.down("sm")]: {
-      flexWrap: "wrap",
-      gap: 0,
-      padding: "20px 40px 20px 0",
+    display: 'flex',
+    gap: '10px',
+    '& span': {
+      borderLeft: '1px solid #7691AD',
     },
   },
   links: {
-    textDecoration: "none",
-    fontSize: "14px",
-    color: "#fff",
-    padding: "20px 0",
-    opacity: 0.8,
-    [theme.breakpoints.down("sm")]: {
-      padding: "20px 20px 20px 0",
-    },
-  },
-  title: {
-    fontSize: "1.7rem",
-    fontWeight: "bold",
-  },
-  typo: {
-    fontSize: "14px",
-    lineHeight: "1.2",
-    opacity: 0.8,
+    textDecoration: 'underline',
+    fontWeight: '600',
+    color: '#FFFFFF',
   },
 }));

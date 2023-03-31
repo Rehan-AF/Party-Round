@@ -13,11 +13,11 @@ const IOSSwitch = withStyles((theme) => ({
     padding: '2px 1px',
     '&$checked': {
       transform: 'translateX(16px)',
-      color: '#997F7E',
+      color: 'white',
       '& + $track': {
-        backgroundColor: 'transparent',
+        backgroundColor: '#afafaf',
         opacity: 1,
-        border: `1px solid #997F7E`,
+        border: `1px solid #afafaf`,
       },
     },
     '&$focusVisible $thumb': {
@@ -28,12 +28,12 @@ const IOSSwitch = withStyles((theme) => ({
   thumb: {
     width: 24,
     height: 24,
-    backgroundColor: '#997F7E',
+    backgroundColor: '#fff',
   },
   track: {
     borderRadius: 26 / 2,
-    border: `1px solid #997F7E`,
-    backgroundColor: 'transparent',
+    border: `1px solid #afafaf`,
+    backgroundColor: '#afafaf',
     opacity: 1,
     transition: theme.transitions.create(['background-color', 'border']),
   },

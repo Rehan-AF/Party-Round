@@ -7,99 +7,6 @@ import RangeSlider from 'react-bootstrap-range-slider';
 import { Button, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
-const useStyles = makeStyles((theme) => ({
-  fix: {
-    width: '55px',
-  },
-  slider: {
-    '& div div': {
-      maxWidth: 586 + 16,
-    },
-  },
-  SliderBox: {
-    padding: '0 100px',
-    [theme.breakpoints.down('md')]: {
-      padding: '0px',
-    },
-  },
-  sliderInfoBox: {
-    display: 'flex',
-    justifyContent: 'space-between',
-  },
-  sliderInfo: {
-    fontSize: '30px',
-    fontWeight: '600',
-    [theme.breakpoints.down('md')]: {
-      fontSize: '18px',
-    },
-  },
-  sliderTypo: {
-    fontSize: '18px',
-    opacity: '90%',
-    textAlign: 'center',
-    marginTop: '22px',
-  },
-  switchBox: {
-    display: 'flex',
-    justifyContent: 'center',
-    gap: '10px',
-    alignItems: 'center',
-  },
-  priceType: {
-    fontSize: '15px',
-  },
-  PriceingCard: {
-    width: '292.5px',
-    marginRight: '16px !important',
-    backgroundColor: 'white',
-    color: 'black',
-    padding: '21px 25px',
-    borderRadius: '16px',
-    zIndex: 100,
-  },
-  pricingBox: {
-    textAlign: 'center',
-  },
-  priceTitle: {
-    fontSize: '27px',
-    fontWeight: '900',
-    marginBottom: '15px',
-  },
-  price: {
-    fontWeight: '900',
-    fontSize: '46px',
-    marginBottom: '12px',
-    '& span': {
-      fontSize: '16px',
-    },
-  },
-  priceSub: {
-    marginBottom: '67px',
-    fontSize: '15px',
-    opacity: '90%',
-  },
-  priceDetails: {
-    listStyle: 'none',
-    paddingLeft: '10px',
-    marginBottom: '57px',
-  },
-  priceList: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '14px',
-    marginBottom: '13px',
-  },
-  btnBox: {
-    width: '100%',
-    borderRadius: '8px',
-    backgroundColor: '#414CD3',
-    color: 'white',
-    '&:hover': {
-      backgroundColor: '#414CD3',
-    },
-  },
-}));
-
 export const MonthlySlider = ({ button }) => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [value, setValue] = useState(1000);
@@ -158,8 +65,10 @@ export const MonthlySlider = ({ button }) => {
           activeSlideIndex={activeSlide}
           activeSlideProps={{
             style: {
-              background: '#01004e',
+              background: '#222',
               color: 'white',
+              border: '1px solid hsla(0,0%,100%,.06)',
+              boxShadow: '0 2px 10px 4px rgb(0 0 0 / 32%)',
             },
           }}
           onRequestChange={setActiveSlide}
@@ -204,7 +113,7 @@ export const MonthlySlider = ({ button }) => {
             },
           }}
           itemsToShow={4}
-          speed={400}
+          speed={500}
         >
           <div className={classes.PriceingCard}>
             <div className={classes.pricingBox}>
@@ -403,8 +312,10 @@ export const AnnualSlider = ({ button }) => {
           activeSlideIndex={activeSlide}
           activeSlideProps={{
             style: {
-              background: '#01004e',
+              background: '#222',
               color: 'white',
+              border: '1px solid hsla(0,0%,100%,.06)',
+              boxShadow: '0 2px 10px 4px rgb(0 0 0 / 32%)',
             },
           }}
           onRequestChange={setActiveSlide}
@@ -449,7 +360,7 @@ export const AnnualSlider = ({ button }) => {
             },
           }}
           itemsToShow={4}
-          speed={400}
+          speed={500}
         >
           <div className={classes.PriceingCard}>
             <div className={classes.pricingBox}>
@@ -648,8 +559,10 @@ export const MobileMonthlySlider = ({ button }) => {
           activeSlideIndex={activeSlide}
           activeSlideProps={{
             style: {
-              background: '#01004e',
+              background: '#222',
               color: 'white',
+              border: '1px solid hsla(0,0%,100%,.06)',
+              boxShadow: '0 2px 10px 4px rgb(0 0 0 / 32%)',
             },
           }}
           onRequestChange={setActiveSlide}
@@ -694,7 +607,7 @@ export const MobileMonthlySlider = ({ button }) => {
             },
           }}
           itemsToShow={1}
-          speed={400}
+          speed={500}
         >
           <div className={classes.PriceingCard}>
             <div className={classes.pricingBox}>
@@ -892,8 +805,10 @@ export const MobileAnnualSlider = ({ button }) => {
           activeSlideIndex={activeSlide}
           activeSlideProps={{
             style: {
-              background: '#01004e',
+              background: '#222',
               color: 'white',
+              border: '1px solid hsla(0,0%,100%,.06)',
+              boxShadow: '0 2px 10px 4px rgb(0 0 0 / 32%)',
             },
           }}
           onRequestChange={setActiveSlide}
@@ -938,7 +853,7 @@ export const MobileAnnualSlider = ({ button }) => {
             },
           }}
           itemsToShow={1}
-          speed={400}
+          speed={500}
         >
           <div className={classes.PriceingCard}>
             <div className={classes.pricingBox}>
@@ -1078,3 +993,96 @@ export const MobileAnnualSlider = ({ button }) => {
     </div>
   );
 };
+
+const useStyles = makeStyles((theme) => ({
+  fix: {
+    width: '55px',
+  },
+  slider: {
+    '& div div': {
+      maxWidth: 586 + 16,
+    },
+  },
+  SliderBox: {
+    padding: '0 100px',
+    [theme.breakpoints.down('md')]: {
+      padding: '0px',
+    },
+  },
+  sliderInfoBox: {
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
+  sliderInfo: {
+    fontSize: '30px',
+    fontWeight: '600',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '18px',
+    },
+  },
+  sliderTypo: {
+    fontSize: '18px',
+    opacity: '90%',
+    textAlign: 'center',
+    marginTop: '22px',
+  },
+  switchBox: {
+    display: 'flex',
+    justifyContent: 'center',
+    gap: '10px',
+    alignItems: 'center',
+  },
+  priceType: {
+    fontSize: '15px',
+  },
+  PriceingCard: {
+    width: '292.5px',
+    marginRight: '16px !important',
+    backgroundColor: 'white',
+    color: 'black',
+    padding: '21px 25px',
+    borderRadius: '16px',
+    zIndex: 100,
+  },
+  pricingBox: {
+    textAlign: 'center',
+  },
+  priceTitle: {
+    fontSize: '27px',
+    fontWeight: '900',
+    marginBottom: '15px',
+  },
+  price: {
+    fontWeight: '900',
+    fontSize: '46px',
+    marginBottom: '12px',
+    '& span': {
+      fontSize: '16px',
+    },
+  },
+  priceSub: {
+    marginBottom: '67px',
+    fontSize: '15px',
+    opacity: '90%',
+  },
+  priceDetails: {
+    listStyle: 'none',
+    paddingLeft: '10px',
+    marginBottom: '57px',
+  },
+  priceList: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '14px',
+    marginBottom: '13px',
+  },
+  btnBox: {
+    width: '100%',
+    borderRadius: '8px',
+    backgroundColor: '#414CD3',
+    color: 'white',
+    '&:hover': {
+      backgroundColor: '#414CD3',
+    },
+  },
+}));

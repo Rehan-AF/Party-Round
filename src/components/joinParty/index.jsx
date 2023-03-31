@@ -1,8 +1,8 @@
-import { makeStyles, Typography } from "@material-ui/core";
-import React from "react";
-import CustomBotton from "../buttons";
-import { GridSix } from "../gridView";
-import { SGridEight } from "../gridView/smallGrid";
+import { makeStyles, Typography } from '@material-ui/core';
+import React from 'react';
+import CustomBotton from '../buttons';
+import { GridSix } from '../gridView';
+import { SGridEight } from '../gridView/smallGrid';
 const JoinParty = () => {
   const classes = useStyles();
   return (
@@ -14,7 +14,9 @@ const JoinParty = () => {
         <SGridEight />
       </div>
       <div className={classes.subContainer}>
-        <Typography className={classes.title}>Join the Party</Typography>
+        <Typography className={classes.title}>
+          create an unmatched experience with playe
+        </Typography>
         <CustomBotton children="Join Party" variant="contained" />
       </div>
     </div>
@@ -24,43 +26,45 @@ const JoinParty = () => {
 export default JoinParty;
 const useStyles = makeStyles((theme) => ({
   title: {
-    fontSize: "3rem",
-    lineHeight: "1",
-    fontWeight: "600",
-    [theme.breakpoints.down("sm")]: {
-      fontSize: "2rem",
+    fontSize: '3rem',
+    lineHeight: '1',
+    fontWeight: '600',
+    textAlign: 'center',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '24px',
+      marginBottom: '50px',
     },
   },
   container: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    gap: "44px",
-    position: "relative",
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: '44px',
+    position: 'relative',
   },
   grid: {
-    width: "calc(100vw - 0px)",
+    width: 'calc(100vw - 0px)',
     // width: "100vw",
     // position: "absolute",
-    [theme.breakpoints.down("sm")]: {
-      display: "none",
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
     },
   },
   gridSmall: {
-    width: "100vw",
-    display: "none",
-    [theme.breakpoints.down("sm")]: {
-      display: "block",
+    width: '100vw',
+    display: 'none',
+    [theme.breakpoints.down('sm')]: {
+      display: 'block',
     },
   },
   subContainer: {
-    position: "absolute",
-    bottom: "150px",
-    display: "flex",
-    justifyContent: "center",
-    flexDirection: "column",
-    alignItems: "center",
-    gap: "15px",
+    position: 'absolute',
+    bottom: '150px',
+    display: 'flex',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '15px',
   },
 }));
