@@ -69,7 +69,7 @@ const MobileCarousel = () => {
           },
         }}
         itemsToShow={1}
-        speed={400}
+        speed={500}
       >
         <StepCard
           img={img1}

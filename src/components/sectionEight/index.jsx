@@ -1,10 +1,10 @@
-import { makeStyles, Typography } from "@material-ui/core";
-import React from "react";
-import PostCard from "../postCard";
-import profileOne from "../../assets/profile/profile1.jpeg";
-import profileTwo from "../../assets/profile/profile2.jpeg";
-import profileThree from "../../assets/profile/profile3.jpeg";
-import profileFour from "../../assets/profile/profile4.jpeg";
+import { makeStyles, Typography } from '@material-ui/core';
+import React from 'react';
+import PostCard from '../postCard';
+import profileOne from '../../assets/profile/profile1.jpeg';
+import profileTwo from '../../assets/profile/profile2.jpeg';
+import profileThree from '../../assets/profile/profile3.jpeg';
+import profileFour from '../../assets/profile/profile4.jpeg';
 const SectionEight = () => {
   const classes = useStyles();
   return (
@@ -65,84 +65,85 @@ const SectionEight = () => {
 export default SectionEight;
 const useStyles = makeStyles((theme) => ({
   container: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    position: "relative",
-    justifyContent: "space-between",
-    [theme.breakpoints.down("md")]: {
-      gap: "30px",
-      flexWrap: "wrap",
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    position: 'relative',
+    justifyContent: 'space-between',
+    [theme.breakpoints.down('md')]: {
+      gap: '30px',
+      flexWrap: 'wrap',
     },
-    [theme.breakpoints.down("sm")]: {
-      justifyContent: "center",
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: 'center',
     },
   },
   title: {
-    lineHeight: "1",
-    fontSize: "3.5rem",
-    marginRight: "1rem",
-    fontWeight: "bold",
-    [theme.breakpoints.down("md")]: {
-      fontSize: "3rem",
+    lineHeight: '1',
+    fontSize: '3.5rem',
+    marginRight: '1rem',
+    fontWeight: 'bold',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '28px',
+      textAlign: 'center',
     },
   },
   typo: {
-    marginTop: "32px",
-    fontSize: "1.2rem",
-    lineHeight: "1.1",
-    color: "hsla(0,0%,100%,.8)",
-    [theme.breakpoints.down("md")]: {
-      fontSize: "1rem",
+    marginTop: '32px',
+    fontSize: '1.2rem',
+    lineHeight: '1.1',
+    color: 'hsla(0,0%,100%,.8)',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '1rem',
     },
   },
   postBox: {
-    position: "relative",
-    [theme.breakpoints.down("md")]: {
-      display: "flex",
-      justifyContent: "center",
-      gap: "20px",
-      flexWrap: "wrap",
+    position: 'relative',
+    [theme.breakpoints.down('md')]: {
+      display: 'flex',
+      justifyContent: 'center',
+      gap: '20px',
+      flexWrap: 'wrap',
     },
   },
   postOne: {
-    position: "absolute",
-    top: "-256px",
-    right: "0",
+    position: 'absolute',
+    top: '-256px',
+    right: '0',
     zIndex: 3,
-    width: "323px",
-    [theme.breakpoints.down("md")]: {
-      position: "static",
+    width: '323px',
+    [theme.breakpoints.down('md')]: {
+      position: 'static',
     },
   },
 
   postTwo: {
-    position: "absolute",
-    top: "-119px",
-    right: "188px",
+    position: 'absolute',
+    top: '-119px',
+    right: '188px',
     zIndex: 1,
-    width: "324px",
-    [theme.breakpoints.down("md")]: {
-      position: "static",
+    width: '324px',
+    [theme.breakpoints.down('md')]: {
+      position: 'static',
     },
   },
   postThree: {
-    position: "absolute",
-    top: "66px",
-    right: "10px",
+    position: 'absolute',
+    top: '66px',
+    right: '10px',
     zIndex: 3,
-    width: "324px",
-    [theme.breakpoints.down("md")]: {
-      position: "static",
+    width: '324px',
+    [theme.breakpoints.down('md')]: {
+      position: 'static',
     },
   },
   postFour: {
-    position: "absolute",
-    top: "171px",
-    left: "-607px",
-    width: "324px",
-    [theme.breakpoints.down("md")]: {
-      position: "static",
+    position: 'absolute',
+    top: '171px',
+    left: '-607px',
+    width: '324px',
+    [theme.breakpoints.down('md')]: {
+      position: 'static',
     },
   },
 }));
