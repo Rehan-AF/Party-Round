@@ -829,7 +829,6 @@ export const MobileMonthlySlider = ({ button }) => {
               </Button>
             </div>
           </div>
-          <div className={classes.fix}></div>
         </Carousel>
       </div>
     </div>
@@ -1074,7 +1073,6 @@ export const MobileAnnualSlider = ({ button }) => {
               </Button>
             </div>
           </div>
-          <div className={classes.fix}></div>
         </Carousel>
       </div>
     </div>
