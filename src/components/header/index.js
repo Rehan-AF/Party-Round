@@ -39,6 +39,8 @@ const Header = () => {
         <img src={logo} className={classes.logoM} alt="logo" />
         <img src={logoText} className={classes.logo} alt="logo" />
       </div>
+      <img src={logoText} className={classes.Mlogo} alt="logo" />
+      <img src={logo} className={classes.MlogoM} alt="logo" />
       <div className={classes.navbarLinks}>
         <div className={classes.links}>
           <Link to="/" className={classes.reactLink}>
@@ -89,21 +91,21 @@ const useStyles = makeStyles((theme) => ({
     top: '0',
     width: 'calc(100% - 131px)',
     zIndex: 100,
-
     [theme.breakpoints.down('md')]: {
       padding: '12px 50px',
+      width: 'calc(100% - 40px)',
     },
     [theme.breakpoints.down('sm')]: {
       padding: '0 20px',
-      width: '100vw',
-      justifyContent: 'flex-Start',
+      // width: '100vw',
+      // justifyContent: 'flex-Start',
       gap: '30px',
     },
   },
   drawer: {
     display: 'none',
     flexWrap: 'noWrap',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       display: 'flex',
     },
     '.MuiIconButton-root': {
@@ -123,16 +125,32 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     gap: '3px',
-    [theme.breakpoints.down('sm')]: {
-      justifyContent: 'center',
-      width: 'calc(100% - 161px)',
+    [theme.breakpoints.down('md')]: {
+      // flexDirection: 'row-reverse',
+      // justifyContent: 'space-between',
+      // width: 'calc(100% - 48px)',
+      display: 'none',
     },
   },
   logo: {
     width: '117px',
   },
+  Mlogo: {
+    display: 'none',
+    [theme.breakpoints.down('md')]: {
+      display: 'block',
+      width: '117px',
+    },
+  },
   logoM: {
     width: '34px',
+  },
+  MlogoM: {
+    display: 'none',
+    [theme.breakpoints.down('md')]: {
+      display: 'block',
+      width: '34px',
+    },
   },
   links: {
     display: 'flex',
@@ -149,7 +167,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     gap: '7px',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       display: 'none',
     },
   },

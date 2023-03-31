@@ -52,11 +52,12 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 36,
     color: '#FFFFFFE5',
     fontWeight: 600,
-    letterSpacing: '0.6px',
+    letterSpacing: '0',
     textAlign: 'center',
     [theme.breakpoints.down('md')]: {
       fontSize: '28px',
       textAlign: 'start',
+      lineHeight: '28px',
       '& br': {
         display: 'none  ',
       },
