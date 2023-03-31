@@ -1,5 +1,5 @@
-import { makeStyles, Typography } from "@material-ui/core";
-import ToggleCard from "../togglecard";
+import { makeStyles, Typography } from '@material-ui/core';
+import ToggleCard from '../togglecard';
 const SectionFour = () => {
   const classes = useStyles();
 
@@ -7,15 +7,16 @@ const SectionFour = () => {
     <div className={classes.container}>
       <div>
         <Typography className={classes.title}>
-          Raise in cash
-          <br /> or crypto
-          <br /> or both
+          Your business,
+          <br />
+          your tournament,
+          <br /> on your terms - effortlessly <spna>with a toggle</spna>
         </Typography>
 
         <div>
           <Typography className={classes.typo}>
-            with USD and USDC supporte, you can raise
-            <br /> from anyone,anywhere
+            Customise every constraint - from minimum purchase value for each
+            qualifying receipt, duration to prize pool.
           </Typography>
         </div>
       </div>
@@ -29,31 +30,32 @@ const SectionFour = () => {
 export default SectionFour;
 const useStyles = makeStyles((theme) => ({
   container: {
-    display: "flex",
-    alignItems: "center",
-    position: "relative",
-    justifyContent: "space-between",
-    [theme.breakpoints.down("sm")]: {
-      flexDirection: "column",
-      alignItems: "center",
-      gap: "60px",
+    display: 'flex',
+    alignItems: 'center',
+    position: 'relative',
+    gap: '23px',
+    justifyContent: 'space-between',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: '60px',
     },
   },
   title: {
-    lineHeight: "1",
-    fontSize: "4rem",
-    fontWeight: "bold",
-    [theme.breakpoints.down("md")]: {
-      fontSize: "3rem",
+    fontSize: '35px',
+    fontWeight: 'bold',
+    lineHeight: '45px',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '28px',
     },
   },
   typo: {
-    marginTop: "32px",
-    fontSize: "1.2rem",
-    lineHeight: "1.1",
-    color: "hsla(0,0%,100%,.8)",
-    [theme.breakpoints.down("md")]: {
-      fontSize: "1rem",
+    marginTop: '32px',
+    fontSize: '24px',
+    lineHeight: '1.1',
+    color: 'hsla(0,0%,100%,.8)',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '21px',
     },
   },
 }));

@@ -1,6 +1,9 @@
 body {
   margin: 0;
-  font-family: "Fahkwang", sans-serif;
+  /* font-family: "Fahkwang", sans-serif; */
+  /* font-family: 'Poppins', sans-serif; */
+  font-family: 'Inter', sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: black;
@@ -8,7 +11,14 @@ body {
   width: 100vw;
   overflow-x: hidden;
 }
-
-code {
-  font-family: "Fahkwang", sans-serif;
+.kRZswa .buttons button {
+  display: none;
+}
+.kRZswa {
+  margin: auto;
+  /* max-width: 1200px; */
+  width: 100vw;
+  overflow-x: scroll;
+  display: flex;
+  scroll-behavior: smooth;
 }

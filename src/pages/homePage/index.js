@@ -1,60 +1,62 @@
-import { createTheme, makeStyles, ThemeProvider } from "@material-ui/core";
-import React from "react";
-import JoinParty from "../../components/joinParty";
-import SectionTwo from "../../components/section2";
-import SectionThree from "../../components/section3";
-import SectionFour from "../../components/section4";
-import SectionEight from "../../components/sectionEight";
-import SectionFive from "../../components/sectionFive";
-import Investors from "../../components/sectionNine";
-import SectionRaise from "../../components/sectionRaise";
-import SectionSeven from "../../components/sectionSeven";
-import SectionSix from "../../components/sectionSix";
-import background from "../../assets/background.svg";
-import Footer from "../../components/footer";
+import { makeStyles } from '@material-ui/core';
+import React from 'react';
+import JoinParty from '../../components/joinParty';
+import SectionTwo from '../../components/section2';
+// import SectionThree from '../../components/section3';
+import SectionFour from '../../components/section4';
+import SectionEight from '../../components/sectionEight';
+// import SectionFive from '../../components/sectionFive';
+import Investors from '../../components/sectionNine';
+import SectionRaise from '../../components/sectionRaise';
+// import SectionSeven from '../../components/sectionSeven';
+// import SectionSix from '../../components/sectionSix';
+import background from '../../assets/background.svg';
+import Footer from '../../components/footer';
+import StepsSection from '../../components/steps';
+import InstaPost from '../../components/instaPost';
+import Drops from '../../components/drops';
+import Pricing from '../../components/pricing';
 const HomePage = () => {
   const classes = useStyles();
-  const theme = createTheme({
-    typography: {
-      fontFamily: "'Fahkwang', sans-serif",
-    },
-  });
+
   return (
     <div>
-      <ThemeProvider theme={theme}>
-        <div className={classes.container}>
-          <SectionRaise />
-          <div className={classes.sectionOneGap}>
-            <SectionTwo />
-          </div>
-          <div className={classes.sectionThreeGap}>
-            <SectionThree />
-          </div>
-          <div className={classes.sectionFourGap}>
-            <SectionFour />
-          </div>
-          <div className={classes.sectionFiveGap}>
-            <SectionFive />
-          </div>
-          <div className={classes.sectionGap}>
-            <SectionSix />
-          </div>
-          <div className={classes.sectionSevenGap}>
-            <SectionSeven />
-          </div>
-          <div className={classes.sectionEightGap}>
-            <SectionEight />
-          </div>
-          <div className={classes.sectionNineGap}>
-            <Investors />
-          </div>
-          <div className={classes.sectionGapLast}>
-            <JoinParty />
-          </div>
+      <div className={classes.container}>
+        <SectionRaise />
+        <div style={{ paddingTop: '177px' }}>
+          <StepsSection />
         </div>
-        <img src={background} alt="background" className={classes.img} />
-        <Footer />
-      </ThemeProvider>
+        <div className={classes.sectionOneGap}>
+          <SectionTwo />
+        </div>
+        <div className={classes.sectionThreeGap}>
+          <InstaPost />
+          {/* <SectionThree /> */}
+        </div>
+        <div className={classes.sectionFourGap}>
+          <SectionFour />
+        </div>
+        <div className={classes.sectionFiveGap}>
+          <Drops />
+          {/* <SectionFive /> */}
+        </div>
+        {/* <div className={classes.sectionGap}><SectionSix /></div> */}
+        <div className={classes.sectionSevenGap}>
+          {/* <SectionSeven /> */}
+          <Pricing />
+        </div>
+        <div className={classes.sectionEightGap}>
+          <SectionEight />
+        </div>
+        <div className={classes.sectionNineGap}>
+          <Investors />
+        </div>
+        <div className={classes.sectionGapLast}>
+          <JoinParty />
+        </div>
+      </div>
+      <img src={background} alt="background" className={classes.img} />
+      <Footer />
     </div>
   );
 };
@@ -62,73 +64,71 @@ const HomePage = () => {
 export default HomePage;
 const useStyles = makeStyles((theme) => ({
   container: {
-    padding: "0px 100px 0 100px",
-    [theme.breakpoints.down("md")]: {
-      padding: "150px 50px 0 50px",
+    padding: '0px 100px 0 100px',
+
+    [theme.breakpoints.down('sm')]: {
+      padding: '0 20px 0 20px',
     },
-    [theme.breakpoints.down("sm")]: {
-      padding: "0 20px 0 20px",
-    },
-    "&.MuiTypography-body1": {
-      fontFamily: '"Fahkwang", sans-serif!important',
+    '&.MuiTypography-body1': {
+      // fontFamily: '"Fahkwang", sans-serif!important',
     },
   },
   sectionGap: {
-    paddingTop: "12rem",
-    [theme.breakpoints.down("md")]: {
-      paddingTop: "30rem",
+    paddingTop: '12rem',
+    [theme.breakpoints.down('md')]: {
+      paddingTop: '30rem',
     },
   },
   sectionOneGap: {
-    paddingTop: "12rem",
-    [theme.breakpoints.down("md")]: {
-      paddingTop: "26rem",
+    paddingTop: '12rem',
+    [theme.breakpoints.down('md')]: {
+      paddingTop: '26rem',
     },
   },
   sectionThreeGap: {
-    paddingTop: "12rem",
-    [theme.breakpoints.down("md")]: {
-      paddingTop: "20rem",
+    paddingTop: '12rem',
+    [theme.breakpoints.down('md')]: {
+      paddingTop: '20rem',
     },
   },
   sectionSevenGap: {
-    paddingTop: "12rem",
-    [theme.breakpoints.down("md")]: {
-      paddingTop: "10rem",
+    paddingTop: '12rem',
+    [theme.breakpoints.down('md')]: {
+      paddingTop: '10rem',
     },
   },
   sectionTwoGap: {
-    paddingTop: "30rem",
+    paddingTop: '30rem',
   },
   sectionEightGap: {
-    paddingTop: "30rem",
-    [theme.breakpoints.down("md")]: {
-      paddingTop: "20rem",
+    paddingTop: '30rem',
+    [theme.breakpoints.down('md')]: {
+      paddingTop: '20rem',
     },
   },
   sectionNineGap: {
-    paddingTop: "30rem",
-    [theme.breakpoints.down("md")]: {
-      paddingTop: "6rem",
+    paddingTop: '30rem',
+    [theme.breakpoints.down('md')]: {
+      paddingTop: '6rem',
     },
   },
   sectionFourGap: {
-    paddingTop: "21rem",
+    paddingTop: '21rem',
   },
   sectionFiveGap: {
-    paddingTop: "29rem",
+    paddingTop: '6rem',
   },
 
   img: {
-    width: "100%",
+    width: '100%',
   },
   sectionGapLast: {
-    paddingTop: "12rem",
-    [theme.breakpoints.down("md")]: {
-      paddingTop: "30rem",
+    paddingTop: '12rem',
+    [theme.breakpoints.down('md')]: {
+      paddingTop: '30rem',
     },
-    [theme.breakpoints.down("xs")]: {
-      paddingTop: "10rem",
+    [theme.breakpoints.down('xs')]: {
+      paddingTop: '10rem',
     },
   },
 }));
