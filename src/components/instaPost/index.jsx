@@ -108,7 +108,7 @@ const useStyle = makeStyles((theme) => ({
     display: 'none',
     [theme.breakpoints.down('sm')]: {
       display: 'block',
-      fontSize: '2.2rem',
+      fontSize: '28px',
       fontWeight: 600,
     },
   },

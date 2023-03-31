@@ -48,6 +48,10 @@ const SectionRaise = () => {
           Power-up your receipts and drive <br /> <i>engagement </i> <i> </i>to
           new heights.
         </Typography>
+        <Typography className={classes.mobTitle}>
+          Power-up your receipts and drive <i>engagement </i> <i> </i>to new
+          heights.
+        </Typography>
         <Typography className={classes.subTitle}>
           Reinvent your customer roadmap by introducing in-browser gameplays
           with qualifying purchases. <span>#GoodGame</span> <span>#GG</span>
@@ -59,24 +63,40 @@ const SectionRaise = () => {
             <ArrowRightAltIcon />
           </Typography>
         </div>
+        <div className={classes.mobileBtnBox}>
+          <CustomBotton
+            variant="simple"
+            children="Join Waitlist"
+            style={{
+              width: '250px',
+              height: '38px',
+              boxShadow: '4px 4px 8px rgba(0,0,0,0.5)',
+            }}
+          />
+          <Typography
+            className={classes.typo}
+            style={{
+              width: '186px',
+              textShadow: '2px 2px 1px rgba(0,0,0,0.8)',
+            }}
+          >
+            Schedule a product demo
+          </Typography>
+        </div>
         <div className={classes.linksBox}>
           <Typography className={classes.linksType}>
-            <CheckCircleOutlineIcon className={classes.check} />
-            {/* <img src={check} alt="tick" />*/}7 day free trial
+            <CheckCircleOutlineIcon className={classes.check} />7 day free trial
           </Typography>
           <Typography className={classes.linksType}>
             <CheckCircleOutlineIcon className={classes.check} />
-            {/* <img src={check} alt="tick" /> */}
             No cookie notices required
           </Typography>
           <Typography className={classes.linksType}>
             <CheckCircleOutlineIcon className={classes.check} />
-            {/* <img src={check} alt="tick" /> */}
             GDPR compliant
           </Typography>
           <Typography className={classes.linksType}>
             <CheckCircleOutlineIcon className={classes.check} />
-            {/* <img src={check} alt="tick" /> */}
             No apps required
           </Typography>
         </div>
@@ -91,6 +111,23 @@ const SectionRaise = () => {
           })}
           ref={myRef}
         />
+      </div>
+      <div className={classes.MobilelinksBox}>
+        <Typography className={classes.linksType}>
+          <CheckCircleOutlineIcon className={classes.check} />7 day free trial
+        </Typography>
+        <Typography className={classes.linksType}>
+          <CheckCircleOutlineIcon className={classes.check} />
+          No cookie notices required
+        </Typography>
+        <Typography className={classes.linksType}>
+          <CheckCircleOutlineIcon className={classes.check} />
+          GDPR compliant
+        </Typography>
+        <Typography className={classes.linksType}>
+          <CheckCircleOutlineIcon className={classes.check} />
+          No apps required
+        </Typography>
       </div>
     </div>
   );
@@ -110,11 +147,25 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   title: {
+    display: 'block',
     fontSize: '40px',
     lineHeight: '50px',
     fontWeight: '800',
     [theme.breakpoints.down('md')]: {
-      fontSize: '1.8rem',
+      fontSize: '28px',
+      lineHeight: '28px  ',
+      display: 'none',
+    },
+  },
+  mobTitle: {
+    display: 'none',
+    fontSize: '40px',
+    lineHeight: '50px',
+    fontWeight: '800',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '28px',
+      lineHeight: '28px  ',
+      display: 'block',
     },
   },
   subTitle: {
@@ -124,8 +175,10 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: '40px',
     fontWeight: 'bold',
     [theme.breakpoints.down('md')]: {
-      fontSize: '1rem',
+      marginTop: '15px',
+      fontSize: '17px',
       lineHeight: '20px',
+      fontWeight: '400',
     },
     '& span': {
       color: '#4484FF',
@@ -136,6 +189,22 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     gap: '10px',
     marginTop: '64px',
+    [theme.breakpoints.down('md')]: {
+      display: 'none',
+    },
+  },
+  mobileBtnBox: {
+    display: 'none',
+    [theme.breakpoints.down('md')]: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      position: 'fixed',
+      zIndex: 10,
+      left: '50%',
+      right: '50%',
+      bottom: '50px',
+    },
   },
   typo: {
     letterSpacing: '0.13132px',
@@ -148,15 +217,24 @@ const useStyles = makeStyles((theme) => ({
     width: '350px',
 
     [theme.breakpoints.down('sm')]: {
-      width: '350px',
+      width: '234.94px',
     },
   },
   linksBox: {
     display: 'flex',
     gap: '36px',
     [theme.breakpoints.down('md')]: {
+      display: 'none',
+    },
+  },
+  MobilelinksBox: {
+    display: 'none',
+    [theme.breakpoints.down('md')]: {
       gap: '15px',
       flexWrap: 'wrap',
+      display: 'flex',
+      marginTop: '40px',
+      width: '100%',
     },
     [theme.breakpoints.down('sm')]: {
       flexWrap: 'wrap',
@@ -164,7 +242,6 @@ const useStyles = makeStyles((theme) => ({
       gap: '0px',
     },
   },
-
   linksType: {
     display: 'flex',
     marginTop: '73px',
@@ -173,10 +250,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
 
     [theme.breakpoints.down('md')]: {
-      marginTop: '30px',
-    },
-    [theme.breakpoints.down('sm')]: {
-      marginTop: '30px',
+      marginTop: '10px',
     },
   },
   check: {

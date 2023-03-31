@@ -15,7 +15,7 @@ const MobileCarousel = () => {
         containerProps={{
           style: {
             width: '100%',
-            justifyContent: 'space-between',
+            justifyContent: 'center',
             userSelect: 'none',
           },
         }}
@@ -49,22 +49,25 @@ const MobileCarousel = () => {
           },
         }}
         dotsNav={{
-          show: false,
+          show: true,
           itemBtnProps: {
             style: {
-              height: 16,
-              width: 16,
+              margin: '10px 3px',
+              height: 8,
+              width: 8,
               borderRadius: '50%',
               border: 0,
+              background: 'rgb(34 34 34)',
             },
           },
           activeItemBtnProps: {
             style: {
-              height: 16,
-              width: 16,
+              height: 8,
+              width: 8,
               borderRadius: '50%',
               border: 0,
-              // background: "black"
+              margin: '10px 3px',
+              background: 'rgb(100 100 100)',
             },
           },
         }}
