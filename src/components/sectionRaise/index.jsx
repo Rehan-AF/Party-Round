@@ -54,7 +54,8 @@ const SectionRaise = () => {
         </Typography>
         <Typography className={classes.subTitle}>
           Reinvent your customer roadmap by introducing in-browser gameplays
-          with qualifying purchases. <span>#GoodGame</span> <span>#GG</span>
+          with qualifying purchases.
+          <br /> <span>#GoodGame</span> <span>#GG</span>
         </Typography>
         <div className={classes.btnBox}>
           <CustomBotton variant="simple" children="Get started" />
@@ -174,11 +175,17 @@ const useStyles = makeStyles((theme) => ({
     color: 'hsla(0,0%,100%,.7)',
     lineHeight: '40px',
     fontWeight: 'bold',
+    '& br': {
+      display: 'none',
+    },
     [theme.breakpoints.down('md')]: {
       marginTop: '15px',
       fontSize: '17px',
       lineHeight: '20px',
       fontWeight: '400',
+      '& br': {
+        display: 'block',
+      },
     },
     '& span': {
       color: '#4484FF',
@@ -217,7 +224,7 @@ const useStyles = makeStyles((theme) => ({
     width: '350px',
 
     [theme.breakpoints.down('sm')]: {
-      width: '234.94px',
+      width: '260px',
     },
   },
   linksBox: {

@@ -52,9 +52,9 @@ const MobileCarousel = () => {
           show: true,
           itemBtnProps: {
             style: {
-              margin: '10px 3px',
-              height: 8,
-              width: 8,
+              margin: '20px 3px',
+              height: 11,
+              width: 10,
               borderRadius: '50%',
               border: 0,
               background: 'rgb(34 34 34)',
@@ -62,11 +62,11 @@ const MobileCarousel = () => {
           },
           activeItemBtnProps: {
             style: {
-              height: 8,
-              width: 8,
+              height: 11,
+              width: 10,
               borderRadius: '50%',
               border: 0,
-              margin: '10px 3px',
+              margin: '20px 3px',
               background: 'rgb(100 100 100)',
             },
           },

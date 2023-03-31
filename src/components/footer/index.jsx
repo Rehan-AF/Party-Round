@@ -18,7 +18,7 @@ const Footer = () => {
           </Typography>
         </div>
         <div className={classes.centerBox}>
-          <img src={logoText} alt="logo" />
+          <img src={logoText} alt="logo" className={classes.logo} />
           <Typography className={classes.typo2}>
             Copyright © 2023 Playe, Limited.
           </Typography>
@@ -77,6 +77,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       paddingTop: '30px',
     },
+  },
+  logo: {
+    width: '86px',
   },
   logos: {
     width: 'calc(100% - 300px)',
