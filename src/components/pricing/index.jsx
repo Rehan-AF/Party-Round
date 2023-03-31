@@ -1,8 +1,22 @@
 import { makeStyles, Typography } from '@material-ui/core';
 import React, { useState } from 'react';
+import {
+  MonthlySlider,
+  AnnualSlider,
+  MobileAnnualSlider,
+  MobileMonthlySlider,
+} from '../slider';
+import IOSSwitch from '../Switch';
 
 const Pricing = () => {
   const classes = useStyles();
+  const [state, setState] = useState({
+    checkedB: false,
+  });
+  const handleChange = (event) => {
+    setState({ ...state, [event.target.name]: event.target.checked });
+  };
+  console.log(state.checkedB);
   return (
     <div>
       <div className={classes.top}>
@@ -17,6 +31,52 @@ const Pricing = () => {
           Each plan includes a 7-day trial and you can cancel at any time.
         </Typography>
       </div>
+      <div className={classes.desktopSlider}>
+        {state.checkedB ? (
+          <AnnualSlider
+            button={
+              <IOSSwitch
+                checked={state.checkedB}
+                name="checkedB"
+                onChange={handleChange}
+              />
+            }
+          />
+        ) : (
+          <MonthlySlider
+            button={
+              <IOSSwitch
+                checked={state.checkedB}
+                name="checkedB"
+                onChange={handleChange}
+              />
+            }
+          />
+        )}
+      </div>
+      <div className={classes.mobileSlider}>
+        {state.checkedB ? (
+          <MobileAnnualSlider
+            button={
+              <IOSSwitch
+                checked={state.checkedB}
+                name="checkedB"
+                onChange={handleChange}
+              />
+            }
+          />
+        ) : (
+          <MobileMonthlySlider
+            button={
+              <IOSSwitch
+                checked={state.checkedB}
+                name="checkedB"
+                onChange={handleChange}
+              />
+            }
+          />
+        )}
+      </div>
     </div>
   );
 };
@@ -24,47 +84,6 @@ const Pricing = () => {
 export default Pricing;
 
 const useStyles = makeStyles((theme) => ({
-  pricingBox: {
-    textAlign: 'center',
-  },
-  priceTitle: {
-    fontSize: '27px',
-    fontWeight: '900',
-    marginBottom: '15px',
-  },
-  price: {
-    fontWeight: '900',
-    fontSize: '46px',
-    marginBottom: '12px',
-    '& span': {
-      fontSize: '16px',
-    },
-  },
-  priceSub: {
-    marginBottom: '67px',
-    fontSize: '15px',
-    opacity: '90%',
-  },
-  priceDetails: {
-    listStyle: 'none',
-    paddingLeft: '10px',
-    marginBottom: '57px',
-  },
-  priceList: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '14px',
-    marginBottom: '13px',
-  },
-  btnBox: {
-    width: '100%',
-    borderRadius: '8px',
-    backgroundColor: '#414CD3',
-    color: 'white',
-    '&:hover': {
-      backgroundColor: '#414CD3',
-    },
-  },
   top: {
     textAlign: 'center',
   },
@@ -95,44 +114,16 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '12px',
     },
   },
-  SliderBox: {
-    padding: '0 100px',
+  desktopSlider: {
+    display: 'block',
     [theme.breakpoints.down('md')]: {
-      padding: '0px',
+      display: 'none',
     },
   },
-  sliderInfoBox: {
-    display: 'flex',
-    justifyContent: 'space-between',
-  },
-  sliderInfo: {
-    fontSize: '30px',
-    fontWeight: '600',
+  mobileSlider: {
+    display: 'none',
     [theme.breakpoints.down('md')]: {
-      fontSize: '18px',
+      display: 'block',
     },
-  },
-  sliderTypo: {
-    fontSize: '18px',
-    opacity: '90%',
-    textAlign: 'center',
-    marginTop: '22px',
-  },
-  switchBox: {
-    display: 'flex',
-    justifyContent: 'center',
-    gap: '10px',
-    alignItems: 'center',
-  },
-  priceType: {
-    fontSize: '15px',
-  },
-  PriceingCard: {
-    width: '292.5px',
-    marginRight: '16px',
-    backgroundColor: 'white',
-    color: 'black',
-    padding: '21px 25px',
-    borderRadius: '16px',
   },
 }));
