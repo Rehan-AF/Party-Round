@@ -1,10 +1,10 @@
-import { Collapse, makeStyles } from "@material-ui/core";
-import React from "react";
-import { useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
-import { Sidebar } from "../gridView/Grid";
+import { Collapse, Fade, makeStyles } from '@material-ui/core';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
+import { Sidebar } from '../gridView/Grid';
 
-const SidebarNav = () => {
+const SidebarNav = ({ show }) => {
   const classes = useStyles();
   const { showSideBar } = useSelector((state) => state.Header);
   return (
@@ -16,26 +16,28 @@ const SidebarNav = () => {
       <div className={classes.back}>
         <Sidebar />
       </div>
-      <div className={classes.navLinks}>
-        <NavLink to="/home" className={classes.links}>
-          Home
-        </NavLink>
-        <NavLink to="/home" className={classes.links}>
-          Drops
-        </NavLink>
-        <NavLink to="/home" className={classes.links}>
-          Memes
-        </NavLink>
-        <NavLink to="/home" className={classes.links}>
-          Teams
-        </NavLink>
-        <NavLink to="/home" className={classes.links}>
-          Career
-        </NavLink>
-        <NavLink to="/home" className={classes.links}>
-          FAQs
-        </NavLink>
-      </div>
+      <Fade in={show} timeout={800}>
+        <div className={classes.navLinks}>
+          <NavLink to="/home" className={classes.links}>
+            Home
+          </NavLink>
+          <NavLink to="/home" className={classes.links}>
+            Drops
+          </NavLink>
+          <NavLink to="/home" className={classes.links}>
+            Memes
+          </NavLink>
+          <NavLink to="/home" className={classes.links}>
+            Teams
+          </NavLink>
+          <NavLink to="/home" className={classes.links}>
+            Career
+          </NavLink>
+          <NavLink to="/home" className={classes.links}>
+            FAQs
+          </NavLink>
+        </div>
+      </Fade>
     </Collapse>
   );
 };
@@ -44,34 +46,34 @@ export default SidebarNav;
 const useStyles = makeStyles((theme) => ({
   navBar: {
     zIndex: 10,
-    position: "absolute",
+    position: 'absolute',
     right: 0,
-    width: "100%",
+    width: '100%',
     top: 0,
-    height: "100vh",
+    height: '100vh',
   },
   navContent: {
-    position: "absolute",
+    position: 'absolute',
     zIndex: 20,
     top: 200,
   },
   back: {
-    width: "100vw",
-    height: "100vh",
+    width: '100vw',
+    height: '100vh',
   },
   navLinks: {
-    position: "absolute",
+    position: 'absolute',
     top: 150,
-    display: "flex",
-    flexDirection: "column",
-    gap: "25px",
-    left: 25,
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '25px',
+    right: 25,
   },
   links: {
-    fontSize: "2rem",
-    textDecoration: "none",
-    color: "#333",
+    fontSize: '2rem',
+    textDecoration: 'none',
+    color: '#333',
     lineHeight: 1.5,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
 }));

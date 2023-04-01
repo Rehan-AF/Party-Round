@@ -1,19 +1,19 @@
-import { SideBarGrid } from "../grid";
+import { SideBarGrid } from '../grid';
 
 export const SidebarNav = () => {
   return (
-    <div>
-      <SideBarGrid c1="#ffffff" duration={100} reverseDuration={1100} />
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <SideBarGrid c4="#ffffff" duration={100} reverseDuration={1100} />
       <SideBarGrid
-        c1="#ffffff"
-        c2="#ffffff"
+        c4="#ffffff"
+        c3="#ffffff"
         duration={150}
         reverseDuration={1200}
       />
       <SideBarGrid
-        c1="#ffffff"
-        c2="#ffffff"
+        c4="#ffffff"
         c3="#ffffff"
+        c2="#ffffff"
         duration={250}
         reverseDuration={1150}
       />
