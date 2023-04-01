@@ -1,0 +1,49 @@
+input[type='range']::-webkit-slider-thumb {
+  background: #fafafa !important;
+  height: 25px !important;
+  width: 25px !important;
+}
+input[type='range']::-moz-range-thumb {
+  background: #fafafa !important;
+  height: 25px !important;
+  width: 25px !important;
+}
+
+/* All the same stuff for IE */
+input[type='range']::-ms-thumb {
+  background: #fafafa !important;
+  height: 25px !important;
+  width: 25px !important;
+}
+input[type='range']::-webkit-slider-runnable-track {
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  ) !important;
+  height: 10px !important;
+  border-radius: 10px !important;
+}
+
+input[type='range']::-moz-range-track {
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  ) !important;
+  height: 10px !important;
+  border-radius: 10px !important;
+}
+
+input[type='range']::-ms-track {
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  ) !important;
+  height: 10px !important;
+  border-radius: 10px !important;
+}

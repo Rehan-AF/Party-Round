@@ -11,7 +11,7 @@ const InstaPost = () => {
     <div>
       <div>
         <Typography className={classes.title}>
-          Make your brands social go brrrr.{' '}
+          Make your brands social go brrrr.
         </Typography>
         <Typography className={classes.subTitle}>
           Repurposed content is boring, create your edge with dynamic and
@@ -51,8 +51,10 @@ const useStyle = makeStyles((theme) => ({
     fontSize: '36px',
     fontWeight: 600,
     textAlign: 'center',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       fontSize: '28px',
+      lineHeight: '28px',
+      marginBottom: '32px',
     },
   },
   subTitle: {
@@ -61,7 +63,7 @@ const useStyle = makeStyles((theme) => ({
     marginBottom: '10px',
     marginTop: '10px',
     opacity: '90%',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       fontSize: '21px',
     },
   },
@@ -106,10 +108,14 @@ const useStyle = makeStyles((theme) => ({
   },
   typoSm: {
     display: 'none',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       display: 'block',
       fontSize: '28px',
       fontWeight: 600,
+      lineHeight: '28px',
+      '& br': {
+        display: 'none',
+      },
     },
   },
 }));

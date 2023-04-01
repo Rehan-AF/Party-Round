@@ -16,7 +16,6 @@ const Pricing = () => {
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
-  console.log(state.checkedB);
   return (
     <div>
       <div className={classes.top}>
@@ -34,6 +33,7 @@ const Pricing = () => {
       <div className={classes.desktopSlider}>
         {state.checkedB ? (
           <AnnualSlider
+            show={state.checkedB}
             button={
               <IOSSwitch
                 checked={state.checkedB}
@@ -44,6 +44,7 @@ const Pricing = () => {
           />
         ) : (
           <MonthlySlider
+            show={state.checkedB}
             button={
               <IOSSwitch
                 checked={state.checkedB}
@@ -57,6 +58,7 @@ const Pricing = () => {
       <div className={classes.mobileSlider}>
         {state.checkedB ? (
           <MobileAnnualSlider
+            show={state.checkedB}
             button={
               <IOSSwitch
                 checked={state.checkedB}
@@ -67,6 +69,7 @@ const Pricing = () => {
           />
         ) : (
           <MobileMonthlySlider
+            show={state.checkedB}
             button={
               <IOSSwitch
                 checked={state.checkedB}

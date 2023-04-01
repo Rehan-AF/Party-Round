@@ -11,6 +11,8 @@ import { toggleSideBar } from '../../redux/header/header.slicer';
 import logo from '../../assets/logos/image4.png';
 import logoText from '../../assets/logos/image38.png';
 import FavoriteIcon from '@material-ui/icons/Favorite';
+import { useEffect, useState } from 'react';
+import clsx from 'clsx';
 const Header = () => {
   const { showSideBar } = useSelector((state) => state.Header);
   const classes = useStyles();
@@ -19,6 +21,24 @@ const Header = () => {
   const handleClick = () => {
     dispatch(toggleSideBar(!showSideBar));
   };
+
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset > 100) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <div className={classes.container}>
@@ -39,7 +59,15 @@ const Header = () => {
         <img src={logo} className={classes.logoM} alt="logo" />
         <img src={logoText} className={classes.logo} alt="logo" />
       </div>
-      <img src={logoText} className={classes.Mlogo} alt="logo" />
+      <img
+        src={logoText}
+        // className={classes.Mlogo}
+        alt="logo"
+        className={clsx(classes.Mlogo, {
+          [classes.faceAnimation]: isScrolled === true,
+          [classes.appearAnimation]: isScrolled === false,
+        })}
+      />
       <img src={logo} className={classes.MlogoM} alt="logo" />
       <div className={classes.navbarLinks}>
         <div className={classes.links}>
@@ -93,10 +121,11 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 100,
     [theme.breakpoints.down('md')]: {
       padding: '12px 50px',
-      width: 'calc(100% - 40px)',
+      width: 'calc(100% - 95px)',
     },
     [theme.breakpoints.down('sm')]: {
       padding: '0 20px',
+      width: 'calc(100% - 40px)',
       // width: '100vw',
       // justifyContent: 'flex-Start',
       gap: '30px',
@@ -150,6 +179,32 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       display: 'block',
       width: '34px',
+      transition: 'opacity 1s ease-out',
+    },
+  },
+
+  faceAnimation: {
+    opacity: 1,
+    animation: '$face-animation 1s ease-out forwards',
+  },
+  '@keyframes face-animation': {
+    '0%': {
+      opacity: 1,
+    },
+    '100%': {
+      opacity: 0,
+    },
+  },
+  appearAnimation: {
+    opacity: 0,
+    animation: '$appear-animation 1s ease-out forwards',
+  },
+  '@keyframes appear-animation': {
+    '0%': {
+      opacity: 0,
+    },
+    '100%': {
+      opacity: 1,
     },
   },
   links: {
