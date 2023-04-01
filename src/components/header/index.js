@@ -1,4 +1,4 @@
-import { IconButton, makeStyles, Typography } from '@material-ui/core';
+import { Fade, IconButton, makeStyles, Typography } from '@material-ui/core';
 import CustomBotton from '../buttons';
 import SvgIcons from '../icons';
 import HelpIcon from '@material-ui/icons/Help';
@@ -42,6 +42,10 @@ const Header = () => {
 
   return (
     <div className={classes.container}>
+      <Fade in={showSideBar} timeout={800}>
+        <div onClick={handleClick} className={classes.backDrop}></div>
+      </Fade>
+
       <div className={classes.drawer}>
         <IconButton onClick={handleClick} className={classes.drawerBtn}>
           {showSideBar !== true ? (
@@ -51,10 +55,11 @@ const Header = () => {
           )}
         </IconButton>
 
-        <div>
+        <div className={classes.sideBar}>
           <SidebarNav show={showSideBar} />
         </div>
       </div>
+
       <div className={classes.sidebarBox}>
         <img src={logo} className={classes.logoM} alt="logo" />
         <img src={logoText} className={classes.logo} alt="logo" />
@@ -122,6 +127,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       padding: '12px 50px',
       width: 'calc(100% - 95px)',
+      flexDirection: 'row-reverse',
     },
     [theme.breakpoints.down('sm')]: {
       padding: '0 20px',
@@ -134,12 +140,20 @@ const useStyles = makeStyles((theme) => ({
   drawer: {
     display: 'none',
     flexWrap: 'noWrap',
+    zIndex: 1000,
+
     [theme.breakpoints.down('md')]: {
       display: 'flex',
     },
     '.MuiIconButton-root': {
       padding: 0,
     },
+  },
+  sideBar: {
+    position: 'fixed',
+    left: 0,
+    right: 0,
+    top: 0,
   },
   drawerBtn: {
     width: '35px',
@@ -149,6 +163,9 @@ const useStyles = makeStyles((theme) => ({
     padding: 0,
     minHeight: 0,
     minWidth: 0,
+    [theme.breakpoints.down('md')]: {
+      justifyContent: 'flex-end',
+    },
   },
   sidebarBox: {
     display: 'flex',
@@ -218,6 +235,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     gap: '5px',
   },
+
   navbarLinks: {
     display: 'flex',
     alignItems: 'center',
@@ -237,5 +255,16 @@ const useStyles = makeStyles((theme) => ({
   reactLink: {
     textDecoration: 'none',
     color: 'white',
+  },
+  backDrop: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    height: '100vh',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    opacity: 1,
+    zIndex: 999,
   },
 }));
