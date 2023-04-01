@@ -48,10 +48,6 @@ const SectionRaise = () => {
           Power-up your receipts and drive <br /> <i>engagement </i> <i> </i>to
           new heights.
         </Typography>
-        <Typography className={classes.mobTitle}>
-          Power-up your receipts and drive <i>engagement </i> <i> </i>to new
-          heights.
-        </Typography>
         <Typography className={classes.subTitle}>
           Reinvent your customer roadmap by introducing in-browser gameplays
           with qualifying purchases.
@@ -142,7 +138,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     gap: '60px',
     letterSpacing: '0.60032px',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       flexDirection: 'column',
       alignItems: 'center',
     },
@@ -155,20 +151,22 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       fontSize: '28px',
       lineHeight: '28px  ',
-      display: 'none',
+      '& br': {
+        display: 'none',
+      },
     },
   },
-  mobTitle: {
-    display: 'none',
-    fontSize: '40px',
-    lineHeight: '50px',
-    fontWeight: '800',
-    [theme.breakpoints.down('md')]: {
-      fontSize: '28px',
-      lineHeight: '28px  ',
-      display: 'block',
-    },
-  },
+  // mobTitle: {
+  //   display: 'none',
+  //   fontSize: '40px',
+  //   lineHeight: '50px',
+  //   fontWeight: '800',
+  //   [theme.breakpoints.down('md')]: {
+  //     fontSize: '28px',
+  //     lineHeight: '28px  ',
+  //     display: 'block',
+  //   },
+  // },
   subTitle: {
     marginTop: '12px',
     fontSize: '24px',
@@ -242,6 +240,7 @@ const useStyles = makeStyles((theme) => ({
       display: 'flex',
       marginTop: '40px',
       width: '100%',
+      justifyContent: 'center',
     },
     [theme.breakpoints.down('sm')]: {
       flexWrap: 'wrap',
