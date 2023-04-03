@@ -1,3 +1,6 @@
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+
 body {
   margin: 0;
   /* font-family: "Fahkwang", sans-serif; */
@@ -21,4 +24,18 @@ body {
   overflow-x: scroll;
   display: flex;
   scroll-behavior: smooth;
+}
+
+.slick-slide div {
+  margin: auto;
+  width: 100%;
+}
+.slick-slide {
+  width: 100%;
+}
+.slick-slide {
+  z-index: 1;
+}
+.slick-active {
+  z-index: 10;
 }

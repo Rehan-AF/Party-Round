@@ -7,7 +7,7 @@ const CustomBotton = withStyles((theme) => ({
     borderRadius: '50px',
     fontWeight: 'bold',
     fontSize: '14px',
-    padding: '5px 7px',
+    padding: '4px 7px',
     '&:hover': {
       backgroundColor: 'red',
     },

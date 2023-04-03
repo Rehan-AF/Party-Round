@@ -21,7 +21,6 @@ const Header = () => {
   const handleClick = () => {
     dispatch(toggleSideBar(!showSideBar));
   };
-
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -49,7 +48,7 @@ const Header = () => {
       <div className={classes.drawer}>
         <IconButton onClick={handleClick} className={classes.drawerBtn}>
           {showSideBar !== true ? (
-            <MenuIcon style={{ color: 'white' }} />
+            <MenuIcon style={{ color: 'white', fontSize: '32px' }} />
           ) : (
             <CloseIcon style={{ color: 'black' }} />
           )}
@@ -185,7 +184,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'none',
     [theme.breakpoints.down('md')]: {
       display: 'block',
-      width: '117px',
+      width: '82px',
+      height: '32px',
     },
   },
   logoM: {
@@ -195,7 +195,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'none',
     [theme.breakpoints.down('md')]: {
       display: 'block',
-      width: '34px',
+      width: '32px',
+      height: '32px',
       transition: 'opacity 1s ease-out',
     },
   },

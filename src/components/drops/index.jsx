@@ -1,7 +1,7 @@
 import { makeStyles, Typography } from '@material-ui/core';
 import React from 'react';
-import DropCard from '../dropCard';
-import DropsCarousel from './dropsCarousel';
+
+import DropSlicer from './dropsSlicer';
 
 const Drops = () => {
   const classes = useStyles();
@@ -10,23 +10,8 @@ const Drops = () => {
       <Typography className={classes.title}>
         See our current drops below thats winning hearts.
       </Typography>
-      <div className={classes.Carouseldiv}>
-        <DropsCarousel item={1} />
-      </div>
       <div className={classes.Carouseldiv2}>
-        <DropCard />
-        <DropCard
-          title={'Pool'}
-          Description={
-            'Take your product to the depths of nature as it sits in elements of wind, water and greenery. Think “outdoor”.'
-          }
-        />
-        <DropCard
-          title={'Pool'}
-          Description={
-            'Take your product to the depths of nature as it sits in elements of wind, water and greenery. Think “outdoor”.'
-          }
-        />
+        <DropSlicer />
       </div>
     </div>
   );
@@ -58,8 +43,5 @@ const useStyles = makeStyles((theme) => ({
   Carouseldiv2: {
     display: 'flex',
     justifyContent: 'center',
-    [theme.breakpoints.down('md')]: {
-      display: 'none',
-    },
   },
 }));
