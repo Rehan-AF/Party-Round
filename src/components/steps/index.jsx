@@ -1,46 +1,63 @@
 import { makeStyles, Typography } from '@material-ui/core';
-import React from 'react';
-import img1 from '../../assets/ss1.png';
-import img2 from '../../assets/ss2.png';
-import img3 from '../../assets/ss3.png';
-import MobileCarousel from '../Carousel';
+import React, { useState } from 'react';
+import video1 from '../../assets/videos/video1.webm';
+import video2 from '../../assets/videos/video2.webm';
+import video3 from '../../assets/videos/video3.webm';
 import StepCard from '../stepCard';
 const StepsSection = () => {
   const classes = useStyles();
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+
+  const videoData = [
+    {
+      title: 'Video 1',
+      description: 'Description of Video 1',
+      src: video1,
+    },
+    {
+      title: 'Video 2',
+      description: 'Description of Video 2',
+      src: video2,
+    },
+    {
+      title: 'Video 3',
+      description: 'Description of Video 3',
+      src: video3,
+    },
+  ];
+
+  const onVideoEnded = () => {
+    setCurrentVideoIndex((prevIndex) => {
+      const nextIndex = prevIndex + 1;
+      if (nextIndex < videoData.length) {
+        return nextIndex;
+      } else {
+        return 0;
+      }
+    });
+  };
   return (
     <div>
       <Typography className={classes.title}>
         If you're a business that sells a , we're a perfect fit.
         <br /> Redefine your value proposition.
       </Typography>
-      <div className={classes.StepCardBox}>
+      {/* <div className={classes.StepCardBox}>
         <MobileCarousel item={1} />
-      </div>
+      </div> */}
       <div className={classes.StepCardBox2}>
-        <StepCard
-          img={img1}
-          nmbr={1}
-          title={'Receipt scanned'}
-          detail={
-            'A.I powered verification system used to ensure a valid game entry.'
-          }
-        />
-        <StepCard
-          img={img2}
-          nmbr={2}
-          title={'Immersive gameplay '}
-          detail={
-            'Your brands engagement taken to new heights from our library of games.'
-          }
-        />
-        <StepCard
-          img={img3}
-          nmbr={3}
-          title={'Purposefully deployed'}
-          detail={
-            'Dependent on campaign, players can enjoy an instant win or enter in to a prize pool competition.'
-          }
-        />
+        {videoData.map((video, index) => (
+          <div key={index} className="col-md-4">
+            {/* <StepCard
+              img={video.src}
+              title={video.title}
+              nmbr={index + 1}
+              detail={video.description}
+              playing={index === currentVideoIndex}
+              onEnded={onVideoEnded}
+            /> */}
+          </div>
+        ))}
       </div>
     </div>
   );

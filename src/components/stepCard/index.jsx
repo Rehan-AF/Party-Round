@@ -1,11 +1,45 @@
 import { makeStyles, Typography } from '@material-ui/core';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
-const StepCard = ({ img, nmbr, title, detail }) => {
+const StepCard = ({ img, nmbr, title, detail, onEnded, playing }) => {
   const classes = useStyles();
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+
+    if (playing) {
+      video.play().catch((error) => {
+        console.error('Error playing video:', error);
+      });
+    } else {
+      video.pause();
+    }
+
+    return () => {
+      video.pause();
+    };
+  }, [playing]);
+
+  useEffect(() => {
+    const video = videoRef.current;
+
+    video.addEventListener('ended', onEnded);
+
+    return () => {
+      video.removeEventListener('ended', onEnded);
+    };
+  }, [onEnded]);
   return (
     <div className={classes.card}>
-      <img className={classes.img} src={img} alt="image_failed_to_load" />
+      <vidoe
+        className={classes.img}
+        src={img}
+        // autoPlay
+        ref={videoRef}
+        controls
+        alt="image_failed_to_load"
+      />
       <div className={classes.borderMain}>
         <Typography className={classes.nmbr}>{nmbr}</Typography>
       </div>

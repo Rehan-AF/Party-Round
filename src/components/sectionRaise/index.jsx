@@ -45,12 +45,12 @@ const SectionRaise = () => {
     <div className={classes.container} ref={boxRef}>
       <div>
         <Typography className={classes.title}>
-          Power-up your receipts and drive <br /> <i>engagement </i> <i> </i>to
-          new heights.
+          Level-up your receipts and drive <br />{' '}
+          <i className={classes.gradientText}>engagement </i> <i> </i>to new
+          heights.
         </Typography>
         <Typography className={classes.subTitle}>
-          Reinvent your customer roadmap by introducing in-browser gameplays
-          with qualifying purchases.
+          Host in-browser gameplays for qualifying purchases.
           <br /> <span>#GoodGame</span> <span>#GG</span>
         </Typography>
         <div className={classes.btnBox}>
@@ -138,6 +138,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     gap: '60px',
     letterSpacing: '0.60032px',
+    position: 'relative',
     [theme.breakpoints.down('md')]: {
       flexDirection: 'column',
       alignItems: 'center',
@@ -148,6 +149,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '40px',
     lineHeight: '50px',
     fontWeight: '800',
+    opacity: '90%',
     [theme.breakpoints.down('md')]: {
       fontSize: '28px',
       lineHeight: '28px  ',
@@ -156,23 +158,29 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   },
-  // mobTitle: {
-  //   display: 'none',
-  //   fontSize: '40px',
-  //   lineHeight: '50px',
-  //   fontWeight: '800',
-  //   [theme.breakpoints.down('md')]: {
-  //     fontSize: '28px',
-  //     lineHeight: '28px  ',
-  //     display: 'block',
-  //   },
-  // },
+  gradientText: {
+    background:
+      'linear-gradient(to right, rgba(131, 58, 180, 1), rgba(253, 29, 29, 1), rgba(252, 176, 69, 1))',
+    backgroundClip: 'text',
+    WebkitBackgroundClip: 'text',
+    color: 'transparent',
+    backgroundSize: '200% auto',
+    animation: '$moveGradient 4s linear infinite',
+  },
+  glow: {
+    boxShadow: '0 0 10px #ff9966',
+  },
+  '@keyframes moveGradient': {
+    '0%': { backgroundPosition: '0% 50%' },
+    '50%': { backgroundPosition: '100% 50%' },
+    '100%': { backgroundPosition: '0% 50%' },
+  },
   subTitle: {
     marginTop: '12px',
     fontSize: '24px',
     color: 'hsla(0,0%,100%,.7)',
     lineHeight: '40px',
-    fontWeight: 'bold',
+    fontWeight: '500',
     '& br': {
       display: 'none',
     },
@@ -193,7 +201,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     gap: '10px',
-    marginTop: '64px',
+    marginTop: '145px',
     [theme.breakpoints.down('md')]: {
       display: 'none',
     },
@@ -228,6 +236,7 @@ const useStyles = makeStyles((theme) => ({
   linksBox: {
     display: 'flex',
     gap: '36px',
+    marginTop: '90px',
     [theme.breakpoints.down('md')]: {
       display: 'none',
     },
@@ -250,17 +259,17 @@ const useStyles = makeStyles((theme) => ({
   },
   linksType: {
     display: 'flex',
-    marginTop: '73px',
+    // marginTop: '73px',
     gap: '6px',
     color: '#757575E0',
     alignItems: 'center',
-
+    fontSize: '12px',
     [theme.breakpoints.down('md')]: {
       marginTop: '10px',
     },
   },
   check: {
-    fontSize: '20px',
+    fontSize: '16px',
   },
   scrollDownAnimation: {
     animation: `$Down 1000ms  ${theme.transitions.easing.easeInOut} 1 normal forwards`,

@@ -20,6 +20,8 @@ function App() {
       // fontFamily: "'Poppins', sans-serif",
       fontFamily: "'Inter', sans-serif",
       letterSpacing: 0.6,
+      color: '#FFFFFF',
+      opacity: '90%',
     },
   });
   return (
