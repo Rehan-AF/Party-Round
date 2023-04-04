@@ -3,37 +3,31 @@ import { makeStyles, Typography } from '@material-ui/core';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import CustomBotton from '../buttons';
 
-const PriceCard = () => {
+const PriceCard = ({ title, price, description, details, year }) => {
   const classes = useStyles();
+  let yearlyPrice = price * 12;
+  yearlyPrice = yearlyPrice * 0.1;
   return (
     <div className={classes.PriceingCard}>
       <div className={classes.pricingBox}>
-        <Typography className={classes.priceTitle}>Seed</Typography>
+        <Typography className={classes.priceTitle}>{title}</Typography>
         <Typography className={classes.price}>
-          <span>£ </span>65 /mo
+          <span>£ </span>
+          {year === true ? price * 12 - yearlyPrice : price}/
+          {year === true ? 'yr' : 'mo'}
         </Typography>
-        <Typography className={classes.priceSub}>
-          For brands that want to change the way consumers interact with them.
-        </Typography>
+        <Typography className={classes.priceSub}>{description}</Typography>
       </div>
       <div>
         <ul className={classes.priceDetails}>
-          <li className={classes.priceList}>
-            <CheckCircleIcon />
-            Complex filtering
-          </li>
-          <li className={classes.priceList}>
-            <CheckCircleIcon />
-            1,000 daily events
-          </li>
-          <li className={classes.priceList}>
-            <CheckCircleIcon />
-            Transaction Preview
-          </li>
-          <li className={classes.priceList}>
-            <CheckCircleIcon />
-            Gas refresh rate: 5 sec
-          </li>
+          {details.map((val) => {
+            return (
+              <li className={classes.priceList}>
+                <CheckCircleIcon />
+                {val}
+              </li>
+            );
+          })}
         </ul>
       </div>
       <div className={classes.btnBox}>
@@ -48,7 +42,11 @@ const PriceCard = () => {
 export default PriceCard;
 const useStyles = makeStyles((theme) => ({
   PriceingCard: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
     width: '292.5px',
+    height: '533.52px',
     marginRight: '16px !important',
     backgroundColor: 'white',
     color: 'black',
