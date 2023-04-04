@@ -6,6 +6,7 @@ import { useScrollDirection } from '../../hooks';
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
 import clsx from 'clsx';
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
+import Typed from 'typed.js';
 const SectionRaise = () => {
   const classes = useStyles();
   const boxRef = useRef(null);
@@ -41,18 +42,32 @@ const SectionRaise = () => {
     });
     observer.observe(myRef.current);
   }, [scrollDirection]);
+  useEffect(() => {
+    const typed = new Typed('.typing', {
+      strings: ['engagement', 'revenues'],
+      typeSpeed: 80,
+      backSpeed: 60,
+      backDelay: 1000,
+      loop: false,
+    });
+    return () => {
+      typed.destroy();
+    };
+  }, []);
   return (
     <div className={classes.container} ref={boxRef}>
       <div>
         <Typography className={classes.title}>
-          Level-up your receipts and drive <br />{' '}
-          <i className={classes.gradientText}>engagement </i> <i> </i>to new
-          heights.
+          Level-up your receipts and drive <br />
+          <i className={classes.gradientText}>
+            <span className="typing">engagement</span>
+          </i>
+          <i> </i>to new heights.
         </Typography>
         <Typography className={classes.subTitle}>
           Host in-browser gameplays for qualifying purchases.
-          <br /> <span>#GoodGame</span> <span>#GG</span>
         </Typography>
+        <Typography className={classes.hashTags}>#GoodGame #GG</Typography>
         <div className={classes.btnBox}>
           <CustomBotton variant="simple" children="Get started" />
           <Typography className={classes.typo}>
@@ -134,7 +149,7 @@ export default SectionRaise;
 const useStyles = makeStyles((theme) => ({
   container: {
     display: 'flex',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
     gap: '60px',
     letterSpacing: '0.60032px',
@@ -142,6 +157,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       flexDirection: 'column',
       alignItems: 'center',
+      gap: '60px',
     },
   },
   title: {
@@ -159,16 +175,12 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   gradientText: {
-    background:
-      'linear-gradient(to right, rgba(131, 58, 180, 1), rgba(253, 29, 29, 1), rgba(252, 176, 69, 1))',
+    background: 'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',
     backgroundClip: 'text',
     WebkitBackgroundClip: 'text',
     color: 'transparent',
     backgroundSize: '200% auto',
     animation: '$moveGradient 4s linear infinite',
-  },
-  glow: {
-    boxShadow: '0 0 10px #ff9966',
   },
   '@keyframes moveGradient': {
     '0%': { backgroundPosition: '0% 50%' },
@@ -181,9 +193,6 @@ const useStyles = makeStyles((theme) => ({
     color: 'hsla(0,0%,100%,.7)',
     lineHeight: '40px',
     fontWeight: '500',
-    '& br': {
-      display: 'none',
-    },
     [theme.breakpoints.down('md')]: {
       marginTop: '15px',
       fontSize: '17px',
@@ -193,15 +202,25 @@ const useStyles = makeStyles((theme) => ({
         display: 'block',
       },
     },
-    '& span': {
-      color: '#4484FF',
+  },
+  hashTags: {
+    color: '#4484FF',
+    marginTop: '50px',
+    fontSize: '24px',
+    lineHeight: '40px',
+    fontWeight: '500',
+    [theme.breakpoints.down('md')]: {
+      marginTop: '15px',
+      fontSize: '17px',
+      lineHeight: '20px',
+      fontWeight: '400',
     },
   },
   btnBox: {
     display: 'flex',
     alignItems: 'center',
     gap: '10px',
-    marginTop: '145px',
+    marginTop: '95px',
     [theme.breakpoints.down('md')]: {
       display: 'none',
     },
@@ -253,8 +272,9 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down('sm')]: {
       flexWrap: 'wrap',
-      flexDirection: 'column',
+      justifyContent: 'space-around',
       gap: '0px',
+      paddingTop: '10px',
     },
   },
   linksType: {

@@ -84,7 +84,7 @@ const DropSlicer = () => {
           },
           1280: {
             slidesPerView: 3,
-            spaceBetween: 50,
+            spaceBetween: 32,
             allowTouchMove: false,
             pagination: {
               el: null,

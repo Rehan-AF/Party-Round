@@ -4,6 +4,7 @@ import React from 'react';
 import heart from '../../assets/heart.png';
 
 import InstaCard from '../instaCard/index';
+import Text from '../textfeild';
 
 const InstaPost = () => {
   const classes = useStyle();
@@ -11,7 +12,7 @@ const InstaPost = () => {
     <div>
       <div>
         <Typography className={classes.title}>
-          Make your brands social go brrrr.
+          Make your brands social go <span>brrrr</span>.
         </Typography>
         <Typography className={classes.subTitle}>
           Repurposed content is boring, create your edge with dynamic and
@@ -27,8 +28,9 @@ const InstaPost = () => {
         </div>
         <div>
           <Typography className={classes.typo}>
-            Increase dwell time, <br /> views and interactions, <br />
-            with campaigns that convert.
+            <Text>Increase dwell time,</Text>
+            <Text>views and interactions,</Text>
+            <Text> with campaigns that convert.</Text>
           </Typography>
         </div>
       </div>
@@ -37,8 +39,9 @@ const InstaPost = () => {
       </div>
       <div className={classes.SmBOx}>
         <Typography className={classes.typoSm}>
-          Increase dwell time, <br /> views and interactions, <br />
-          with campaigns that convert.
+          <Text>Increase dwell time,</Text>
+          <Text>views and interactions,</Text>
+          <Text> with campaigns that convert.</Text>
         </Typography>
       </div>
     </div>
@@ -51,11 +54,25 @@ const useStyle = makeStyles((theme) => ({
     fontSize: '36px',
     fontWeight: 600,
     textAlign: 'center',
+    color: '#FAF7F7E5',
     [theme.breakpoints.down('md')]: {
       fontSize: '28px',
       lineHeight: '28px',
       marginBottom: '32px',
     },
+    '& span': {
+      background: 'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',
+      backgroundClip: 'text',
+      WebkitBackgroundClip: 'text',
+      color: 'transparent',
+      backgroundSize: '200% auto',
+      animation: '$moveGradient 4s linear infinite',
+    },
+  },
+  '@keyframes moveGradient': {
+    '0%': { backgroundPosition: '0% 50%' },
+    '50%': { backgroundPosition: '100% 50%' },
+    '100%': { backgroundPosition: '0% 50%' },
   },
   subTitle: {
     textAlign: 'center',
@@ -90,6 +107,9 @@ const useStyle = makeStyles((theme) => ({
   typo: {
     fontWeight: 600,
     fontSize: '35px',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '5px',
     [theme.breakpoints.down('md')]: {
       fontSize: '2.2rem',
     },
@@ -106,10 +126,16 @@ const useStyle = makeStyles((theme) => ({
       justifyContent: 'center',
     },
   },
+  typoBox: {
+    display: 'flex',
+    flexDirection: 'column',
+    lineHeight: '45px',
+  },
   typoSm: {
     display: 'none',
     [theme.breakpoints.down('md')]: {
-      display: 'block',
+      display: 'flex',
+      flexDirection: 'column',
       fontSize: '28px',
       fontWeight: 600,
       lineHeight: '28px',

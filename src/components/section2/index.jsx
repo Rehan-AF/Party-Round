@@ -9,9 +9,10 @@ const SectionTwo = () => {
   return (
     <div className={classes.container}>
       <div>
-        <Text className={classes.typo8}>“Almost 50% of global consumers</Text>
-        <Text className={classes.typo8}> want brands to innovate.”</Text>
-
+        <Typography className={classes.typo8}>
+          <Text>“Almost 50% of global consumers</Text>
+          <Text> want brands to innovate.”</Text>
+        </Typography>
         <div className={classes.grayBox}>
           <Typography className={classes.typogray}>
             Digital Behaviours - Consumer Insights, GWI London
@@ -44,14 +45,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   typo8: {
-    fontSize: '45px',
-    lineHeight: '1em',
-    fontWeight: 'bold',
-    color: '#cdcdcd',
-    [theme.breakpoints.down('md')]: {
-      fontSize: '28px',
-      fontWeight: '600',
-    },
+    display: 'flex',
+    flexDirection: 'column',
   },
   whiteBox: {
     marginTop: '20px',
