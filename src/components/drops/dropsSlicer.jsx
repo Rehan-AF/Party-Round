@@ -17,6 +17,7 @@ import game1 from '../../assets/game1.png';
 import game2 from '../../assets/game2.png';
 import game3 from '../../assets/game3.png';
 import './index.css';
+import PriceCard from '../priceCard';
 
 const data = [
   {
@@ -67,16 +68,16 @@ const DropSlicer = () => {
           // when window width is >= 480px
           300: {
             slidesPerView: 3,
-            spaceBetween: 10,
             pagination: {
               el: null,
             },
+            spaceBetween: 50,
             initialSlide: 0,
             allowTouchMove: true,
             coverflowEffect: {
               rotate: 0,
               stretch: 0,
-              depth: 80,
+              depth: 0,
               modifier: 1,
               slideShadows: false,
               speed: 2000,
@@ -84,7 +85,7 @@ const DropSlicer = () => {
           },
           1280: {
             slidesPerView: 3,
-            spaceBetween: 32,
+            spaceBetween: 10,
             allowTouchMove: false,
             pagination: {
               el: null,
