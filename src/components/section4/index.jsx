@@ -7,10 +7,9 @@ const SectionFour = () => {
     <div className={classes.container}>
       <div>
         <Typography className={classes.title}>
-          Your business,
+          Start your tournament,
           <br />
-          your tournament,
-          <br /> on your terms - effortlessly <spna>with a toggle</spna>
+          <span> effortlessly </span> with a toggle.
         </Typography>
 
         <div>
@@ -45,10 +44,25 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '35px',
     fontWeight: 'bold',
     lineHeight: '45px',
+    '& span': {
+      background: 'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',
+      backgroundClip: 'text',
+      WebkitBackgroundClip: 'text',
+      color: 'transparent',
+      backgroundSize: '200% auto',
+      animation: '$moveGradient 4s linear infinite',
+    },
+
     [theme.breakpoints.down('md')]: {
       fontSize: '28px',
       lineHeight: '28px',
     },
+  },
+
+  '@keyframes moveGradient': {
+    '0%': { backgroundPosition: '0% 50%' },
+    '50%': { backgroundPosition: '100% 50%' },
+    '100%': { backgroundPosition: '0% 50%' },
   },
   typo: {
     marginTop: '32px',

@@ -39,8 +39,7 @@ const StepsSection = () => {
   return (
     <div>
       <Typography className={classes.title}>
-        If you're a business that sells a , we're a perfect fit.
-        <br /> Redefine your value proposition.
+        We give your receipt <span>superpowers</span>
       </Typography>
       {/* <div className={classes.StepCardBox}>
         <MobileCarousel item={1} />
@@ -73,12 +72,25 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     [theme.breakpoints.down('md')]: {
       fontSize: '28px',
-      textAlign: 'start',
+      textAlign: 'center',
       lineHeight: '28px',
       '& br': {
         display: 'none  ',
       },
     },
+    '& span': {
+      background: 'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',
+      backgroundClip: 'text',
+      WebkitBackgroundClip: 'text',
+      color: 'transparent',
+      backgroundSize: '200% auto',
+      animation: '$moveGradient 4s linear infinite',
+    },
+  },
+  '@keyframes moveGradient': {
+    '0%': { backgroundPosition: '0% 50%' },
+    '50%': { backgroundPosition: '100% 50%' },
+    '100%': { backgroundPosition: '0% 50%' },
   },
   StepCardBox: {
     display: 'none',

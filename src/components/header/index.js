@@ -184,8 +184,10 @@ const useStyles = makeStyles((theme) => ({
     display: 'none',
     [theme.breakpoints.down('md')]: {
       display: 'block',
-      width: '82px',
-      height: '32px',
+      // width: '82px',
+      // height: '32px',
+      width: '99px',
+      height: '49px',
     },
   },
   logoM: {

@@ -3,13 +3,20 @@ import { Button, withStyles } from '@material-ui/core';
 const CustomBotton = withStyles((theme) => ({
   text: {
     color: 'white',
-    backgroundColor: 'red',
     borderRadius: '50px',
     fontWeight: 'bold',
     fontSize: '14px',
     padding: '4px 7px',
+    background: 'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',
+
+    backgroundSize: '200% auto',
+    transition: 'all 0.2s ease-out',
+    animation: '$moveGradient 4s linear infinite',
     '&:hover': {
-      backgroundColor: 'red',
+      backgroundPosition: 'right center',
+    },
+    '&:active': {
+      backgroundPosition: 'left center',
     },
   },
   outlined: {
@@ -41,12 +48,29 @@ const CustomBotton = withStyles((theme) => ({
     },
   },
   simple: {
-    backgroundColor: '#FF0000',
     padding: ' 6px 15px',
     fontSize: '14px',
+    background: 'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',
     color: 'white',
+    backgroundSize: '200% auto',
+    transition: 'all 0.2s ease-out',
+    animation: '$moveGradient 4s linear infinite',
     '&:hover': {
-      backgroundColor: '#FF0000',
+      backgroundPosition: 'right center',
+    },
+    '&:active': {
+      backgroundPosition: 'left center',
+    },
+  },
+  '@keyframes moveGradient': {
+    '0%': {
+      backgroundPosition: '0% center',
+    },
+    '50%': {
+      backgroundPosition: '100% center',
+    },
+    '100%': {
+      backgroundPosition: '0% center',
     },
   },
 }))(Button);

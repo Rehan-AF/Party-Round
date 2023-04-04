@@ -9,6 +9,13 @@
   background-size: cover;
   display: flex;
   justify-content: center;
-  /* width: 282px; */
-  /* height: 300px; */
+}
+.swiper-wrapper {
+  display: flex;
+  justify-content: center;
+}
+@media screen and (min-width: 961px) {
+  .swiper-slide {
+    width: 347px !important;
+  }
 }
