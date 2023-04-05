@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { makeStyles, Typography } from '@material-ui/core';
 import React, { useEffect, useRef, useState } from 'react';
 import PriceCard from '../priceCard';
@@ -49,10 +50,13 @@ const data = [
 ];
 const Pricing = () => {
   const classes = useStyles();
+  const ref1 = useRef(null);
+  const ref2 = useRef(null);
+  const ref3 = useRef(null);
   const [state, setState] = useState({
     checkedB: false,
   });
-  const [initialSlideState, setInitialSlide] = useState(1);
+  const [activeIndex, setActiveIndex] = useState(1);
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
@@ -77,17 +81,27 @@ const Pricing = () => {
       priceInput[priceInputValue] * 1 >= 0 &&
       priceInput[priceInputValue] * 1 <= 500
     ) {
-      setInitialSlide(0);
+      ref1.current.style.filter = 'blur(0px)';
+      ref2.current.style.filter = 'blur(5px)';
+      ref3.current.style.filter = 'blur(5px)';
     } else if (
       priceInput[priceInputValue] * 1 > 500 &&
       priceInput[priceInputValue] * 1 <= 2500
     ) {
-      setInitialSlide(1);
+      ref1.current.style.filter = 'blur(5px)';
+      ref2.current.style.filter = 'blur(0px)';
+      ref3.current.style.filter = 'blur(5px)';
     } else {
-      setInitialSlide(2);
+      ref1.current.style.filter = 'blur(5px)';
+      ref2.current.style.filter = 'blur(5px)';
+      ref3.current.style.filter = 'blur(0px)';
     }
   }, [priceInputValue]);
-  console.log(initialSlideState);
+
+  const handleSlideChange = (swiper) => {
+    setActiveIndex(swiper.activeIndex);
+  };
+  console.log(activeIndex);
   return (
     <div>
       <div className={classes.top}>
@@ -147,13 +161,13 @@ const Pricing = () => {
               pagination: {
                 el: null,
               },
-              spaceBetween: 50,
+              spaceBetween: 0,
               initialSlide: 0,
               allowTouchMove: true,
               coverflowEffect: {
                 rotate: 0,
                 stretch: 0,
-                depth: 0,
+                depth: 50,
                 modifier: 1,
                 slideShadows: false,
                 speed: 2000,
@@ -163,11 +177,10 @@ const Pricing = () => {
               slidesPerView: 3,
               spaceBetween: 10,
               allowTouchMove: false,
-              centeredSlides: false,
               pagination: {
                 el: null,
               },
-              initialSlide: initialSlideState,
+              initialSlide: 1,
               coverflowEffect: {
                 rotate: 0,
                 stretch: 0,
@@ -179,20 +192,23 @@ const Pricing = () => {
             },
           }}
           className="mySwiper"
+          onSlideChange={handleSlideChange}
         >
-          {data.map(({ title, price, description, details }, index) => {
-            return (
-              <SwiperSlide key={index}>
-                <PriceCard
-                  title={title}
-                  price={price}
-                  description={description}
-                  year={state.checkedB}
-                  details={details}
-                />
-              </SwiperSlide>
-            );
-          })}
+          {data.map((price, i) => (
+            <SwiperSlide
+              key={i}
+              ref={i === 0 ? ref1 : i === 1 ? ref2 : i === 2 ? ref3 : null}
+              className={classes.swiper}
+            >
+              <PriceCard
+                title={price.title}
+                price={price.price}
+                description={price.description}
+                details={price.details}
+                year={state.checkedB}
+              />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </div>
@@ -220,6 +236,37 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       fontSize: '28px',
       marginBottom: '32px',
+    },
+  },
+  swiper: {
+    '&.swiper-slide': {
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      display: 'flex',
+      justifyContent: 'center',
+    },
+    [theme.breakpoints.up('md')]: {
+      '&.swiper-slide': {
+        width: '347px !important',
+        '&:hover': {
+          filter: 'blur(0px) !important',
+        },
+      },
+      '&.swiper-wrapper': {
+        display: 'flex',
+        justifyContent: 'center',
+      },
+    },
+    [theme.breakpoints.down('md')]: {
+      '&.swiper-slide-active': {
+        filter: 'blur(0px) !important',
+      },
+      '&.swiper-slide-prev': {
+        filter: 'blur(5px) !important',
+      },
+      '&.swiper-slide-next': {
+        filter: 'blur(5px) !important',
+      },
     },
   },
   '@keyframes moveGradient': {
