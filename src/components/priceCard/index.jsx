@@ -53,6 +53,9 @@ const useStyles = makeStyles((theme) => ({
     padding: '21px 25px',
     borderRadius: '16px',
     zIndex: 100,
+    // [theme.breakpoints.down('md')]: {
+    //   height: '100%',
+    // },
   },
   pricingBox: {
     textAlign: 'center',
@@ -88,5 +91,8 @@ const useStyles = makeStyles((theme) => ({
   },
   btnBox: {
     width: '100%',
+    [theme.breakpoints.down('md')]: {
+      width: '242.5px',
+    },
   },
 }));

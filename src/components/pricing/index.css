@@ -4,37 +4,11 @@
   padding-bottom: 50px;
 }
 
-.swiper-slide {
-  background-position: center;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-}
-
 /* @media screen and (min-width: 350px) {
   .swiper-slide {
-    width: 180px !important;
+    width: 106px !important;
   }
 } */
-@media screen and (max-width: 960px) {
-  .swiper-slide {
-    width: 292.5px !important;
-    height: 533.52px !important;
-  }
-  .swiper-wrapper {
-    display: flex;
-    justify-content: center;
-  }
-}
-@media screen and (min-width: 961px) {
-  .swiper-slide {
-    width: 347px !important;
-  }
-  .swiper-wrapper {
-    display: flex;
-    justify-content: center;
-  }
-}
 
 #gradient-range {
   -webkit-appearance: none;

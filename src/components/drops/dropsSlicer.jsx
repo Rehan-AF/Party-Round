@@ -77,7 +77,7 @@ const DropSlicer = () => {
             coverflowEffect: {
               rotate: 0,
               stretch: 0,
-              depth: 0,
+              depth: 50,
               modifier: 1,
               slideShadows: false,
               speed: 2000,
