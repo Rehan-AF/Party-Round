@@ -10,16 +10,31 @@
   display: flex;
   justify-content: center;
 }
+.swiper-pagination-bullet {
+  background-color: white;
+  opacity: 20%;
+}
+.swiper-pagination-bullet-active {
+  background-color: white;
+  opacity: 50%;
+}
 
-/* @media screen and (min-width: 350px) {
+/* @media screen and (max-width: 960px) {
   .swiper-slide {
-    width: 180px !important;
+    width: 292px !important;
   }
 } */
 @media screen and (min-width: 961px) {
   .swiper-slide {
     width: 347px !important;
   }
+  .swiper-pagination-bullet {
+    display: none;
+  }
+  .swiper-pagination-bullet-active {
+    display: none;
+  }
+
   .swiper-wrapper {
     display: flex;
     justify-content: center;

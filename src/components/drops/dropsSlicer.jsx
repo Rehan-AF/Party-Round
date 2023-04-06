@@ -13,9 +13,9 @@ import 'swiper/css/navigation';
 // import required modules
 import { EffectCoverflow, Pagination } from 'swiper';
 import DropCard from '../dropCard';
-import game1 from '../../assets/game1.png';
-import game2 from '../../assets/game2.png';
-import game3 from '../../assets/game3.png';
+import game1 from '../../assets/image40.png';
+import game2 from '../../assets/image41.png';
+import game3 from '../../assets/image42.png';
 import './index.css';
 import PriceCard from '../priceCard';
 
@@ -48,6 +48,7 @@ const DropSlicer = () => {
         grabCursor={true}
         centeredSlides={true}
         slidesPerView={'auto'}
+        pagination={true}
         mousewheel={true}
         speed={800}
         coverflowEffect={{
@@ -61,32 +62,31 @@ const DropSlicer = () => {
         }}
         modules={[EffectCoverflow, Pagination]}
         spaceBetween={0}
-        pagination={{
-          el: false,
-        }}
+        // pagination={{
+        //   el: false,
+        // }}
         breakpoints={{
           // when window width is >= 480px
           300: {
-            slidesPerView: 3,
-            pagination: {
-              el: null,
-            },
-            spaceBetween: 50,
+            slidesPerView: 1,
+            spaceBetween: 0,
             initialSlide: 0,
+            centeredSlides: true,
             allowTouchMove: true,
             coverflowEffect: {
               rotate: 0,
               stretch: 0,
-              depth: 50,
-              modifier: 1,
+              depth: 0,
+              modifier: 2,
               slideShadows: false,
               speed: 2000,
             },
           },
           1280: {
             slidesPerView: 3,
-            spaceBetween: 10,
+            spaceBetween: 30,
             allowTouchMove: false,
+            centeredSlides: true,
             pagination: {
               el: null,
             },
