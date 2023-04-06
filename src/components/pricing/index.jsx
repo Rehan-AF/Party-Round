@@ -60,7 +60,7 @@ const Pricing = () => {
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
-  const [priceInputValue, setPriceInputValue] = useState('0');
+  const [priceInputValue, setPriceInputValue] = useState(0);
   const priceInput = {
     0: '0',
     1: '500',
@@ -72,36 +72,34 @@ const Pricing = () => {
   };
 
   const slider = useRef(null);
+  // useEffect(() => {
+  //   slider.current.setAttribute('min', 0);
+  //   slider.current.setAttribute('max', Object.keys(priceInput).length - 1);
+  // }, []);
   useEffect(() => {
-    slider.current.setAttribute('min', 0);
-    slider.current.setAttribute('max', Object.keys(priceInput).length - 1);
-  }, []);
-  useEffect(() => {
-    if (
-      priceInput[priceInputValue] * 1 >= 0 &&
-      priceInput[priceInputValue] * 1 <= 500
-    ) {
+    if (priceInputValue * 1 >= 0 && priceInputValue * 1 <= 500) {
       ref1.current.style.filter = 'blur(0px)';
       ref2.current.style.filter = 'blur(5px)';
       ref3.current.style.filter = 'blur(5px)';
-    } else if (
-      priceInput[priceInputValue] * 1 > 500 &&
-      priceInput[priceInputValue] * 1 <= 2500
-    ) {
+      setActiveIndex(0);
+    } else if (priceInputValue * 1 > 500 && priceInputValue * 1 <= 2500) {
       ref1.current.style.filter = 'blur(5px)';
       ref2.current.style.filter = 'blur(0px)';
       ref3.current.style.filter = 'blur(5px)';
+      setActiveIndex(1);
     } else {
       ref1.current.style.filter = 'blur(5px)';
+
       ref2.current.style.filter = 'blur(5px)';
+
       ref3.current.style.filter = 'blur(0px)';
+      setActiveIndex(2);
     }
   }, [priceInputValue]);
 
   const handleSlideChange = (swiper) => {
     setActiveIndex(swiper.activeIndex);
   };
-  console.log(activeIndex);
   return (
     <div>
       <div className={classes.top}>
@@ -123,21 +121,26 @@ const Pricing = () => {
           id="gradient-range"
           ref={slider}
           steps={1}
-          defaultValue={priceInputValue}
+          min={0}
+          max={3000}
           onChange={(e) => setPriceInputValue(e.target.value)}
         />
 
-        <span className="tooltip">{priceInput[priceInputValue]}</span>
+        <span className="tooltip">
+          {priceInputValue > 2500 ? '2500+' : priceInputValue}
+        </span>
       </div>
-      <div>
+      <div className={classes.toggleBox}>
+        <Typography>Monthly</Typography>
         <IOSSwitch onChange={(event) => handleChange(event)} name="checkedB" />
+        <Typography>Yearly</Typography>
       </div>
       <div>
         <Swiper
           effect={'coverflow'}
           grabCursor={true}
-          centeredSlides={true}
           slidesPerView={'auto'}
+          centeredSlides={true}
           mousewheel={true}
           speed={800}
           coverflowEffect={{
@@ -157,12 +160,13 @@ const Pricing = () => {
           breakpoints={{
             // when window width is >= 480px
             300: {
-              slidesPerView: 3,
+              slidesPerView: 1,
               pagination: {
                 el: null,
               },
               spaceBetween: 0,
               initialSlide: 0,
+
               allowTouchMove: true,
               coverflowEffect: {
                 rotate: 0,
@@ -198,7 +202,11 @@ const Pricing = () => {
             <SwiperSlide
               key={i}
               ref={i === 0 ? ref1 : i === 1 ? ref2 : i === 2 ? ref3 : null}
-              className={classes.swiper}
+              className={`${classes.swiper} ${
+                activeIndex === i
+                  ? `mobileSwiper-slide-active ${classes.swiperSlideActive}`
+                  : 'mobileSwiper-slide-notActive'
+              }`}
             >
               <PriceCard
                 title={price.title}
@@ -229,7 +237,7 @@ const useStyles = makeStyles((theme) => ({
       background: 'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',
       backgroundClip: 'text',
       WebkitBackgroundClip: 'text',
-      color: 'transparent',
+      color: 'white',
       backgroundSize: '200% auto',
       animation: '$moveGradient 4s linear infinite',
     },
@@ -244,6 +252,26 @@ const useStyles = makeStyles((theme) => ({
       backgroundSize: 'cover',
       display: 'flex',
       justifyContent: 'center',
+      border: '1px solid #445C7C',
+      borderRadius: '16px',
+      marginRight: '0px',
+      borderTopStyle: 'solid',
+      borderTopwidth: '10px',
+      borderTopImage:
+        'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',
+      '&.swiper-slide-active': {
+        transition:
+          'background-color 0.5s ease-in-out , filter 0.5s ease-in-out !important',
+      },
+
+      '&.swiper-slide-prev': {
+        transition:
+          'background-color 0.5s ease-in-out , filter 0.5s ease-in-out !important',
+      },
+      '&.swiper-slide-next': {
+        transition:
+          'background-color 0.5s ease-in-out , filter 0.5s ease-in-out !important',
+      },
     },
     [theme.breakpoints.up('md')]: {
       '&.swiper-slide': {
@@ -258,9 +286,13 @@ const useStyles = makeStyles((theme) => ({
       },
     },
     [theme.breakpoints.down('md')]: {
+      '&.swiper-slide': {
+        width: '100%  !important',
+      },
       '&.swiper-slide-active': {
         filter: 'blur(0px) !important',
       },
+
       '&.swiper-slide-prev': {
         filter: 'blur(5px) !important',
       },
@@ -291,5 +323,11 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: '22px',
       fontSize: '12px',
     },
+  },
+  toggleBox: {
+    display: 'flex',
+    gap: '10px',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 }));

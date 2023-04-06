@@ -56,7 +56,7 @@ const SectionRaise = () => {
   }, []);
   return (
     <div className={classes.container} ref={boxRef}>
-      <div>
+      <div className={classes.subContainer}>
         <Typography className={classes.title}>
           Level-up your receipts and drive <br />
           <i className={classes.gradientText}>
@@ -160,6 +160,12 @@ const useStyles = makeStyles((theme) => ({
       gap: '60px',
     },
   },
+  subContainer: {
+    paddingTop: 40,
+    [theme.breakpoints.down('md')]: {
+      paddingTop: 40,
+    },
+  },
   title: {
     display: 'block',
     fontSize: '40px',
@@ -205,7 +211,7 @@ const useStyles = makeStyles((theme) => ({
   },
   hashTags: {
     color: '#4484FF',
-    marginTop: '50px',
+
     fontSize: '24px',
     lineHeight: '40px',
     fontWeight: '500',
