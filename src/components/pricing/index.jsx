@@ -61,15 +61,6 @@ const Pricing = () => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
   const [priceInputValue, setPriceInputValue] = useState(0);
-  const priceInput = {
-    0: '0',
-    1: '500',
-    2: '1000',
-    3: '1500',
-    4: '2000',
-    5: '2500',
-    6: '2500+',
-  };
 
   const slider = useRef(null);
   // useEffect(() => {

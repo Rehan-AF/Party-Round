@@ -3,8 +3,7 @@ import React, { useState } from 'react';
 import video1 from '../../assets/videos/video1.webm';
 import video2 from '../../assets/videos/video2.webm';
 import video3 from '../../assets/videos/video3.webm';
-import PhoneComponent from '../phone component';
-import StepCard from '../stepCard';
+// import StepCard from '../stepCard';
 const StepsSection = () => {
   const classes = useStyles();
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
@@ -45,7 +44,6 @@ const StepsSection = () => {
       {/* <div className={classes.StepCardBox}>
         <MobileCarousel item={1} />
       </div> */}
-      <PhoneComponent />
       <div className={classes.StepCardBox2}>
         {videoData.map((video, index) => (
           <div key={index} className="col-md-4">

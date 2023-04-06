@@ -6,7 +6,7 @@ import video from '../../assets/videos/Insert.mp4';
 const PhoneComponent = () => {
   const classes = useStyles();
   return (
-    <div style={{ display: 'flex', justifyContent: 'center' }}>
+    <div>
       <div className={classes.container}>
         <img
           src={phone}
@@ -14,7 +14,7 @@ const PhoneComponent = () => {
           className={classes.phone}
           controls={false}
         />
-        <video autoPlay controls={false} loop muted className={classes.video}>
+        <video autoPlay controls={false} muted loop className={classes.video}>
           <source src={video} type="video/mp4" />
         </video>
       </div>
@@ -25,7 +25,6 @@ const PhoneComponent = () => {
 export default PhoneComponent;
 const useStyles = makeStyles((theme) => ({
   container: {
-    background: 'black',
     position: 'relative',
     display: 'flex',
   },
@@ -37,19 +36,25 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   video: {
-    left: '52px',
-    top: '8px',
-    width: '238px',
+    top: '3px',
+    left: '50px',
+    width: '244px',
     position: 'absolute',
-    transform: 'rotateY(-13deg) rotate(8deg) rotateX(20deg) scaleY(1.079)',
-    // transform:
-    //   'perspective(180cm) rotateY(-9deg) rotate(8deg) rotateX(25deg) scaleY(1.11)',
-    borderRadius: '35px',
-    // perspective: '1000px',
-    // perspective: '10200px',
-    perspectiveOsrigin: ' 200px 300px',
+    clipPath:
+      'polygon(70% 0, 80% 0%, 100% 0, 100% 100%, 80% 100%, 0 100%, 0% 80%, 0 1.5%)',
+    transform:
+      'perspective(600cm) rotateY(-12deg) rotate(8deg) rotateX(20deg) scaleY(1.05)',
+    borderRadius: '46px 35px 35px 35px',
     [theme.breakpoints.down('sm')]: {
-      width: '260px',
+      width: '182px',
+      top: '2px',
+      left: '36px',
+      //   position: 'absolute',
+      //   clipPath:
+      //     'polygon(70% 0, 80% 0%, 100% 0, 100% 100%, 80% 100%, 0 100%, 0% 80%, 0 1.5%)',
+      //   transform:
+      //     ' perspective(600cm) rotateY(-12deg) rotate(8deg) rotateX(20deg) scaleY(1.05)',
+      borderRadius: '35px 24px 26px 26px',
     },
   },
 }));
