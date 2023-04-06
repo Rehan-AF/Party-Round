@@ -17,7 +17,6 @@ import game1 from '../../assets/image40.png';
 import game2 from '../../assets/image41.png';
 import game3 from '../../assets/image42.png';
 import './index.css';
-import PriceCard from '../priceCard';
 
 const data = [
   {

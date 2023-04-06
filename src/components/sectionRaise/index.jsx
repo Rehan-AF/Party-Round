@@ -1,12 +1,12 @@
 import { makeStyles, Typography } from '@material-ui/core';
 import React, { useRef, useEffect, useState } from 'react';
 import CustomBotton from '../buttons';
-import img from '../../assets/phonr_main.png';
 import { useScrollDirection } from '../../hooks';
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
 import clsx from 'clsx';
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import Typed from 'typed.js';
+import PhoneComponent from '../phone component';
 const SectionRaise = () => {
   const classes = useStyles();
   const boxRef = useRef(null);
@@ -114,15 +114,15 @@ const SectionRaise = () => {
         </div>
       </div>
       <div>
-        <img
-          src={img}
-          alt="phone"
+        <div
           className={clsx(classes.phone, {
             [classes.scrollDownAnimation]: entryIsVisible.isScrolledDown,
             [classes.scrollUpAnimation]: entryIsVisible.isScrolledUp,
           })}
           ref={myRef}
-        />
+        >
+          <PhoneComponent />
+        </div>
       </div>
       <div className={classes.MobilelinksBox}>
         <Typography className={classes.linksType}>
