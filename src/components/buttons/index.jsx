@@ -31,22 +31,14 @@ const CustomBotton = withStyles((theme) => ({
     },
   },
   contained: {
-    backgroundColor: '#000',
-    color: '#fff',
-    fontSize: '1rem',
-    lineHeight: '1',
-    padding: '16px 32px',
-    borderRadius: '0.5rem',
-    textAlign: 'center',
-    border: '1px solid gray',
-
-    transition: '.2s',
-    '&:hover': {
-      boxShadow: '0 3px 12px 6px rgb(0 0 0 / 12%)',
-      transform: 'scale(1.01) translate(0,-2px)',
-      backgroundColor: '#000',
-    },
+    backgroundColor: '#C6C6CC',
+    padding: ' 6px 15px',
+    fontSize: '14px',
+    color: '#000000',
+    backgroundSize: '200% auto',
+    transition: 'all 0.2s ease-out',
   },
+
   simple: {
     padding: ' 6px 15px',
     fontSize: '14px',

@@ -1,15 +1,3 @@
-.swiper {
-  width: 100%;
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-/* @media screen and (min-width: 350px) {
-  .swiper-slide {
-    width: 106px !important;
-  }
-} */
-
 #gradient-range {
   -webkit-appearance: none;
   width: 100%;
@@ -72,4 +60,13 @@
   margin-top: 0px; /* Adjusted margin-top */
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.carousel__slider-tray .carousel__slide + .carousel__slide {
+  margin-left: 10px;
+}
+@media screen and (max-width: 959px) {
+  .carousel__slide {
+    width: 320 !important;
+  }
 }
