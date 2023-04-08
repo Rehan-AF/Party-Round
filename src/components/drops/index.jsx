@@ -53,8 +53,8 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: 'center',
     },
   },
-  Carouseldiv2: {
-    display: 'flex',
-    justifyContent: 'center',
-  },
+  // Carouseldiv2: {
+  //   display: 'flex',
+  //   justifyContent: 'center',
+  // },
 }));

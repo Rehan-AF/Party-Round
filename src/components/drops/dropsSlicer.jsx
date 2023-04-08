@@ -1,23 +1,17 @@
 import React from 'react';
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-// import './styles.css';
-
-// import required modules
-import { EffectCoverflow, Pagination } from 'swiper';
+import { CarouselProvider, Slider, Slide } from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css';
 import DropCard from '../dropCard';
 import game1 from '../../assets/image40.png';
 import game2 from '../../assets/image41.png';
 import game3 from '../../assets/image42.png';
+import { makeStyles } from '@material-ui/core';
 import './index.css';
-
 const data = [
   {
     title: 'Ball-em',
@@ -40,79 +34,46 @@ const data = [
 ];
 
 const DropSlicer = () => {
+  const classes = useStyles();
   return (
     <>
-      <Swiper
-        effect={'coverflow'}
-        grabCursor={true}
-        centeredSlides={true}
-        slidesPerView={'auto'}
-        pagination={true}
-        mousewheel={true}
-        speed={800}
-        coverflowEffect={{
-          rotate: 0,
-          stretch: 0,
-          depth: 50,
-          modifier: 1,
-          slideShadows: true,
-          blur: 1,
-          speed: 2000,
-        }}
-        modules={[EffectCoverflow, Pagination]}
-        spaceBetween={0}
-        // pagination={{
-        //   el: false,
-        // }}
-        breakpoints={{
-          // when window width is >= 480px
-          300: {
-            slidesPerView: 1,
-            spaceBetween: 0,
-            initialSlide: 0,
-            centeredSlides: true,
-            allowTouchMove: true,
-            coverflowEffect: {
-              rotate: 0,
-              stretch: 0,
-              depth: 0,
-              modifier: 2,
-              slideShadows: false,
-              speed: 2000,
-            },
-          },
-          1280: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-            allowTouchMove: false,
-            centeredSlides: true,
-            pagination: {
-              el: null,
-            },
-            initialSlide: 1,
-            coverflowEffect: {
-              rotate: 0,
-              stretch: 0,
-              depth: 0,
-              modifier: 1,
-              slideShadows: false,
-              speed: 2000,
-            },
-          },
-        }}
-        className="mySwiper"
+      <CarouselProvider
+        naturalSlideWidth={200}
+        naturalSlideHeight={200}
+        isIntrinsicHeight
+        infinite={false}
+        touchEnabled={window.innerWidth > 960 ? false : true}
+        dragEnabled={window.innerWidth > 960 ? false : true}
+        totalSlides={3}
+        visibleSlides={window.innerWidth < 960 ? 1.15 : 3}
+        currentSlide={0}
+        enableSwipe={window.innerWidth > 960 ? false : true}
+        preventMovementUntilSwipeScrollTolerance={true}
       >
-        {data.map(({ title, describe, background }, index) => (
-          <SwiperSlide key={index}>
-            <DropCard
-              title={title}
-              Description={describe}
-              background={background}
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+        <Slider className={classes.tray}>
+          {data.map(({ title, describe, background }, index) => (
+            <Slide key={index} index={index}>
+              <DropCard
+                title={title}
+                Description={describe}
+                background={background}
+              />
+            </Slide>
+          ))}
+        </Slider>
+      </CarouselProvider>
     </>
   );
 };
 export default DropSlicer;
+const useStyles = makeStyles((theme) => ({
+  tray: {
+    '&..carousel__slide': {
+      width: '360px !important',
+    },
+    [theme.breakpoints.up('md')]: {
+      display: 'flex',
+      justifyContent: 'center',
+    },
+  },
+}));

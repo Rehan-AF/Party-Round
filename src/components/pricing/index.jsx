@@ -1,15 +1,17 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { makeStyles, Typography } from '@material-ui/core';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PriceCard from '../priceCard';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import {
+  CarouselProvider,
+  Slider,
+  Slide,
+  WithStore,
+} from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css';
+
 import './index.css';
 import IOSSwitch from '../Switch';
-import { EffectCoverflow, Pagination } from 'swiper';
+
 const data = [
   {
     title: 'Seed',
@@ -48,11 +50,25 @@ const data = [
     ],
   },
 ];
+function Listener(props) {
+  useEffect(() => {
+    if (props.updatePlace) {
+      props.updatePlace(props.currentSlide);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.currentSlide, props.updatePlace]);
+
+  return null;
+}
+
+const WrappedListener = WithStore(Listener, (state) => {
+  return {
+    currentSlide: state.currentSlide,
+  };
+});
+
 const Pricing = () => {
   const classes = useStyles();
-  const ref1 = useRef(null);
-  const ref2 = useRef(null);
-  const ref3 = useRef(null);
   const [state, setState] = useState({
     checkedB: false,
   });
@@ -62,34 +78,19 @@ const Pricing = () => {
   };
   const [priceInputValue, setPriceInputValue] = useState(0);
 
-  const slider = useRef(null);
-  // useEffect(() => {
-  //   slider.current.setAttribute('min', 0);
-  //   slider.current.setAttribute('max', Object.keys(priceInput).length - 1);
-  // }, []);
   useEffect(() => {
     if (priceInputValue * 1 >= 0 && priceInputValue * 1 <= 500) {
-      ref1.current.style.filter = 'blur(0px)';
-      ref2.current.style.filter = 'blur(5px)';
-      ref3.current.style.filter = 'blur(5px)';
       setActiveIndex(0);
     } else if (priceInputValue * 1 > 500 && priceInputValue * 1 <= 2500) {
-      ref1.current.style.filter = 'blur(5px)';
-      ref2.current.style.filter = 'blur(0px)';
-      ref3.current.style.filter = 'blur(5px)';
       setActiveIndex(1);
     } else {
-      ref1.current.style.filter = 'blur(5px)';
-
-      ref2.current.style.filter = 'blur(5px)';
-
-      ref3.current.style.filter = 'blur(0px)';
       setActiveIndex(2);
     }
   }, [priceInputValue]);
 
-  const handleSlideChange = (swiper) => {
-    setActiveIndex(swiper.activeIndex);
+  const updatePlace = (currentSlide) => {
+    const index = Math.round(currentSlide);
+    setActiveIndex(index);
   };
   return (
     <div>
@@ -106,109 +107,72 @@ const Pricing = () => {
         </Typography>
       </div>
 
-      <div className="pricing-slider center-content">
-        <input
-          type="range"
-          id="gradient-range"
-          ref={slider}
-          steps={1}
-          min={0}
-          max={3000}
-          onChange={(e) => setPriceInputValue(e.target.value)}
-        />
-
-        <span className="tooltip">
-          {priceInputValue > 2500 ? '2500+' : priceInputValue}
-        </span>
+      <div className={classes.pricingSlider}>
+        <div>
+          <input
+            type="range"
+            id="gradient-range"
+            steps={1}
+            min={0}
+            max={3000}
+            onChange={(e) => setPriceInputValue(e.target.value)}
+          />
+        </div>
+        <div className={classes.pricingSubDiv}>
+          <Typography className={classes.pricingDetails}>Gameplays*</Typography>
+          <Typography className={classes.pricingDetails}>
+            {priceInputValue > 2500 ? '2500+' : priceInputValue}
+          </Typography>
+        </div>
       </div>
+      <Typography className={classes.suggestion}>
+        Find a plan that suits your business based on accumulated gameplays per
+        month.
+      </Typography>
       <div className={classes.toggleBox}>
         <Typography>Monthly</Typography>
         <IOSSwitch onChange={(event) => handleChange(event)} name="checkedB" />
         <Typography>Yearly</Typography>
       </div>
       <div>
-        <Swiper
-          effect={'coverflow'}
-          grabCursor={true}
-          slidesPerView={'auto'}
-          centeredSlides={true}
-          mousewheel={true}
-          speed={800}
-          coverflowEffect={{
-            rotate: 0,
-            stretch: 0,
-            depth: 50,
-            modifier: 1,
-            slideShadows: true,
-            blur: 1,
-            speed: 2000,
-          }}
-          modules={[EffectCoverflow, Pagination]}
-          spaceBetween={0}
-          pagination={{
-            el: false,
-          }}
-          breakpoints={{
-            // when window width is >= 480px
-            300: {
-              slidesPerView: 1,
-              pagination: {
-                el: null,
-              },
-              spaceBetween: 0,
-              initialSlide: 0,
-
-              allowTouchMove: true,
-              coverflowEffect: {
-                rotate: 0,
-                stretch: 0,
-                depth: 50,
-                modifier: 1,
-                slideShadows: false,
-                speed: 2000,
-              },
-            },
-            1280: {
-              slidesPerView: 3,
-              spaceBetween: 10,
-              allowTouchMove: false,
-              pagination: {
-                el: null,
-              },
-              initialSlide: 1,
-              coverflowEffect: {
-                rotate: 0,
-                stretch: 0,
-                depth: 0,
-                modifier: 1,
-                slideShadows: false,
-                speed: 2000,
-              },
-            },
-          }}
-          className="mySwiper"
-          onSlideChange={handleSlideChange}
+        <CarouselProvider
+          naturalSlideWidth={200}
+          naturalSlideHeight={200}
+          isIntrinsicHeight
+          infinite={false}
+          touchEnabled={window.innerWidth > 960 ? false : true}
+          dragEnabled={window.innerWidth > 960 ? false : true}
+          totalSlides={3}
+          visibleSlides={window.innerWidth < 960 ? 1.09 : 3}
+          currentSlide={window.innerWidth > 960 ? 0 : activeIndex}
+          enableSwipe={window.innerWidth > 960 ? false : true}
+          preventMovementUntilSwipeScrollTolerance={true}
+          className={classes.final}
         >
-          {data.map((price, i) => (
-            <SwiperSlide
-              key={i}
-              ref={i === 0 ? ref1 : i === 1 ? ref2 : i === 2 ? ref3 : null}
-              className={`${classes.swiper} ${
-                activeIndex === i
-                  ? `mobileSwiper-slide-active ${classes.swiperSlideActive}`
-                  : 'mobileSwiper-slide-notActive'
-              }`}
-            >
-              <PriceCard
-                title={price.title}
-                price={price.price}
-                description={price.description}
-                details={price.details}
-                year={state.checkedB}
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+          <WrappedListener updatePlace={updatePlace} />
+          <Slider className={classes.tray}>
+            {data.map((price, i) => (
+              <Slide
+                index={i}
+                key={i}
+                className={`${classes.swiper} ${
+                  activeIndex === i
+                    ? `mobileSwiper-slide-active ${classes.swiperSlideActive}`
+                    : 'mobileSwiper-slide-notActive'
+                }`}
+              >
+                <PriceCard
+                  title={price.title}
+                  price={price.price}
+                  description={price.description}
+                  details={price.details}
+                  year={state.checkedB}
+                  index={activeIndex === i ? true : false}
+                />
+              </Slide>
+            ))}
+          </Slider>
+        </CarouselProvider>
       </div>
     </div>
   );
@@ -237,66 +201,7 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: '32px',
     },
   },
-  swiper: {
-    '&.swiper-slide': {
-      backgroundPosition: 'center',
-      backgroundSize: 'cover',
-      display: 'flex',
-      justifyContent: 'center',
-      border: '1px solid #445C7C',
-      borderRadius: '16px',
-      marginRight: '0px',
-      borderTopStyle: 'solid',
-      borderTopwidth: '10px',
-      borderTopImage:
-        'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',
-      '&.swiper-slide-active': {
-        transition:
-          'background-color 0.5s ease-in-out , filter 0.5s ease-in-out !important',
-      },
 
-      '&.swiper-slide-prev': {
-        transition:
-          'background-color 0.5s ease-in-out , filter 0.5s ease-in-out !important',
-      },
-      '&.swiper-slide-next': {
-        transition:
-          'background-color 0.5s ease-in-out , filter 0.5s ease-in-out !important',
-      },
-    },
-    [theme.breakpoints.up('md')]: {
-      '&.swiper-slide': {
-        width: '347px !important',
-        '&:hover': {
-          filter: 'blur(0px) !important',
-        },
-      },
-      '&.swiper-wrapper': {
-        display: 'flex',
-        justifyContent: 'center',
-      },
-    },
-    [theme.breakpoints.down('md')]: {
-      '&.swiper-slide': {
-        width: '100%  !important',
-      },
-      '&.swiper-slide-active': {
-        filter: 'blur(0px) !important',
-      },
-
-      '&.swiper-slide-prev': {
-        filter: 'blur(5px) !important',
-      },
-      '&.swiper-slide-next': {
-        filter: 'blur(5px) !important',
-      },
-    },
-  },
-  '@keyframes moveGradient': {
-    '0%': { backgroundPosition: '0% 50%' },
-    '50%': { backgroundPosition: '100% 50%' },
-    '100%': { backgroundPosition: '0% 50%' },
-  },
   descrip: {
     fontSize: '24px',
     marginBottom: '50px',
@@ -315,10 +220,54 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '12px',
     },
   },
+  pricingSlider: {
+    display: 'flex',
+    flexDirection: 'column-reverse',
+    [theme.breakpoints.down('md')]: {
+      flexDirection: 'column',
+    },
+  },
+  pricingSubDiv: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    margin: '17px 0',
+    [theme.breakpoints.down('md')]: {
+      margin: '10px 0',
+    },
+  },
+  pricingDetails: {
+    fontSize: '24px',
+    color: '#E2E2E2',
+    fontWeight: '600',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '17px',
+    },
+  },
+  suggestion: {
+    fontSize: '18px',
+    color: '#FFFFFFCC',
+    textAlign: 'center',
+    margin: '10px 0',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '8px',
+      marginTop: '0px',
+    },
+  },
   toggleBox: {
     display: 'flex',
     gap: '10px',
     alignItems: 'center',
     justifyContent: 'center',
+    marginBottom: '45px',
+    '& p': {
+      fontSize: '15px',
+    },
+  },
+
+  tray: {
+    [theme.breakpoints.up('md')]: {
+      display: 'flex',
+      justifyContent: 'center',
+    },
   },
 }));

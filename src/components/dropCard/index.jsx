@@ -28,8 +28,6 @@ const DropCard = ({ Description, title, inspire, background, img }) => {
 export default DropCard;
 const useStyles = makeStyles((theme) => ({
   container: {
-    width: '100%',
-    height: '100%',
     borderRadius: '20px ',
     backgroundColor: 'black',
     backgroundSize: 'contain',
@@ -43,10 +41,11 @@ const useStyles = makeStyles((theme) => ({
   },
   backgroundImg: {
     width: '360px',
-    height: '399.69px',
+    height: '430px',
     // borderRadius: '20px',
     [theme.breakpoints.down('md')]: {
       width: '294px',
+      height: '351px',
       // height: '501px',
     },
   },
