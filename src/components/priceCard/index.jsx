@@ -101,7 +101,11 @@ const useStyles = makeStyles((theme) => ({
     '&.mobileSwiper-slide-notActive': {
       filter: 'blur(5px)',
       backgroundColor: 'black',
-      transition: 'color 0.3s ease-in-out ,background 0.3s ease-in-out',
+      transition:
+        'filter 0.2s ease-in-out, color 0.3s ease-in-out ,background 0.3s ease-in-out',
+      '&:hover': {
+        filter: 'blur(0px)',
+      },
     },
     [theme.breakpoints.up('md')]: {
       width: '292.5px',

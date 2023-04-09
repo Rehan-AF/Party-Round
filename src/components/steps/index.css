@@ -1,0 +1,13 @@
+@media screen and (min-width: 959px) {
+  .carousel__slider-tray {
+    transform: none !important;
+  }
+}
+.carousel__slider-tray .carousel__slide + .carousel__slide {
+  margin-left: 10px;
+}
+@media screen and (max-width: 959px) {
+  .carousel__slide {
+    width: 320 !important;
+  }
+}
