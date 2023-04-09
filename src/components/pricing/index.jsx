@@ -61,7 +61,7 @@ function Listener(props) {
   return null;
 }
 
-const WrappedListener = WithStore(Listener, (state) => {
+export const WrappedListener = WithStore(Listener, (state) => {
   return {
     currentSlide: state.currentSlide,
   };

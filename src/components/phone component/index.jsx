@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       width: '182px',
       top: '2px',
-      left: '36px',
+      left: '37px',
       //   position: 'absolute',
       //   clipPath:
       //     'polygon(70% 0, 80% 0%, 100% 0, 100% 100%, 80% 100%, 0 100%, 0% 80%, 0 1.5%)',
