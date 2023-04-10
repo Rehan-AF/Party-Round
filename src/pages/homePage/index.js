@@ -25,9 +25,7 @@ const HomePage = () => {
     <div>
       <div className={classes.container}>
         <SectionRaise />
-        <div style={{ paddingTop: '177px' }}>
-          <StepsSection />
-        </div>
+        <div style={{ paddingTop: '177px' }}>{/* <StepsSection /> */}</div>
         <div className={classes.sectionOneGap}>
           <SectionTwo />
         </div>
@@ -73,6 +71,9 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.down('md')]: {
       padding: '0 15px 0 15px',
+    },
+    [theme.breakpoints.up('xl')]: {
+      padding: '0px 380px',
     },
     '&.MuiTypography-body1': {
       // fontFamily: '"Fahkwang", sans-serif!important',

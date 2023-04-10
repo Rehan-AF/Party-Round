@@ -16,37 +16,34 @@ const data = [
   {
     title: 'Seed',
     price: 65,
-    description:
-      'For brands that want to change the way consumers interact with them.',
+    description: 'For brands that want to level-up their revenue channels.',
     details: [
-      'Complex filtering',
-      '1,000 daily events',
-      'Transaction Preview',
-      'Gas refresh rate: 5 sec',
+      '500 Accumulated Entries',
+      'Single Games',
+      'Basic Insights',
+      'Single User Access',
     ],
   },
   {
     title: 'Series',
     price: 85,
-    description:
-      "You've got traction with our service and now you want to tell the whole world.",
+    description: 'For brands that need to engage with  a bigger audience.',
     details: [
-      'Complex filtering',
-      '5,000 daily events',
-      'Transaction Preview',
-      'Gas refresh rate: 3 sec',
+      '1K Accumulated Entries ',
+      'Advanced Analytics',
+      'Schedule Games',
+      'Multiple User Access',
     ],
   },
   {
     title: 'Beyond',
     price: 195,
-    description:
-      'For multiple stores that want to leverage our technology and have access to our LABS.',
+    description: 'For large brands who want limitless control.',
     details: [
-      'White-label integration  ',
-      'ZERO gameplay restrictions',
-      'Transaction Preview',
-      'Host multiple tournamaents',
+      '5K Accumulated Entires',
+      'Host Multiple Games',
+      'Priority Support',
+      'Own Domain',
     ],
   },
 ];
@@ -186,7 +183,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     fontSize: '35px',
-    fontWeight: '600',
+    // fontWeight: '600',
     marginBottom: '70px',
     '& span': {
       background: 'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',
@@ -212,7 +209,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   subTitle: {
-    fontWeight: '600',
+    // fontWeight: '600',
     fontSize: '24px',
     marginBottom: '44px',
     [theme.breakpoints.down('md')]: {
@@ -238,7 +235,7 @@ const useStyles = makeStyles((theme) => ({
   pricingDetails: {
     fontSize: '24px',
     color: '#E2E2E2',
-    fontWeight: '600',
+    // fontWeight: '600',
     [theme.breakpoints.down('sm')]: {
       fontSize: '17px',
     },

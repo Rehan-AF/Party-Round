@@ -1,5 +1,11 @@
-import { Fade, IconButton, makeStyles, Typography } from '@material-ui/core';
-import CustomBotton from '../buttons';
+import { useEffect, useState } from 'react';
+import {
+  Button,
+  Fade,
+  IconButton,
+  makeStyles,
+  Typography,
+} from '@material-ui/core';
 import SvgIcons from '../icons';
 import HelpIcon from '@material-ui/icons/Help';
 import { Link } from 'react-router-dom';
@@ -11,8 +17,8 @@ import { toggleSideBar } from '../../redux/header/header.slicer';
 import logo from '../../assets/logos/image4.png';
 import logoText from '../../assets/logos/image38.png';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import { useEffect, useState } from 'react';
 import clsx from 'clsx';
+import googleLogo from '../../assets/logos/google.png';
 const Header = () => {
   const { showSideBar } = useSelector((state) => state.Header);
   const classes = useStyles();
@@ -101,7 +107,10 @@ const Header = () => {
         </div>
         <div className={classes.line}></div>
         <div className={classes.buttonBox}>
-          <CustomBotton variant="text" children="Sign Up" />
+          <Button variant="contained" className={classes.Btn}>
+            <img src={googleLogo} alt="" width={25} />
+            Sign Up
+          </Button>
         </div>
       </div>
     </div>
@@ -121,13 +130,19 @@ const useStyles = makeStyles((theme) => ({
     height: '49px',
     position: 'fixed',
     top: '0',
-    width: 'calc(100% - 131px)',
+    width: 'calc(100% - 130px)',
     zIndex: 100,
     [theme.breakpoints.down('md')]: {
       padding: '12px 50px',
-      width: 'calc(100% - 95px)',
+      width: 'calc(100% - 100px)',
       flexDirection: 'row-reverse',
     },
+    [theme.breakpoints.down('sm')]: {
+      padding: '12px 50px',
+      width: 'calc(100% - 200px)',
+      flexDirection: 'row-reverse',
+    },
+
     [theme.breakpoints.down('sm')]: {
       padding: '0 20px',
       width: 'calc(100% - 40px)',
@@ -170,11 +185,16 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     gap: '3px',
+    paddingLeft: '34px',
     [theme.breakpoints.down('md')]: {
       // flexDirection: 'row-reverse',
       // justifyContent: 'space-between',
       // width: 'calc(100% - 48px)',
+      paddingLeft: '0',
       display: 'none',
+    },
+    [theme.breakpoints.up('xl')]: {
+      paddingLeft: '314px',
     },
   },
   logo: {
@@ -233,7 +253,7 @@ const useStyles = makeStyles((theme) => ({
   },
   navLinks: {
     fontSize: '14px',
-    fontWeight: 'bold',
+    // fontWeight: 'bold',
     display: 'flex',
     alignItems: 'center',
     gap: '5px',
@@ -243,8 +263,13 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     gap: '7px',
+    paddingRight: '34px',
     [theme.breakpoints.down('md')]: {
       display: 'none',
+      paddingRight: '0px',
+    },
+    [theme.breakpoints.up('xl')]: {
+      paddingRight: '314px',
     },
   },
   line: {
@@ -269,5 +294,29 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     opacity: 1,
     zIndex: 999,
+  },
+  buttonBox: {
+    display: 'flex',
+    alignItems: 'center',
+    height: '32px',
+    background: 'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',
+    border: 0,
+    borderRadius: 50,
+    color: 'white',
+    padding: '0 1px',
+  },
+  Btn: {
+    backgroundColor: 'black',
+    color: 'white',
+    borderRadius: 50,
+    padding: '2px 10px',
+    fontSize: '14px',
+    textTransform: 'capitalize',
+    '&:hover': {
+      backgroundColor: 'black',
+    },
+    '& img': {
+      marginRight: 10,
+    },
   },
 }));

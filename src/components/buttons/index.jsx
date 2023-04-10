@@ -4,11 +4,9 @@ const CustomBotton = withStyles((theme) => ({
   text: {
     color: 'white',
     borderRadius: '50px',
-    fontWeight: 'bold',
     fontSize: '14px',
     padding: '4px 7px',
     background: 'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',
-
     backgroundSize: '200% auto',
     transition: 'all 0.2s ease-out',
     animation: '$moveGradient 4s linear infinite',
@@ -30,14 +28,14 @@ const CustomBotton = withStyles((theme) => ({
       padding: '10px 16px',
     },
   },
-  contained: {
-    backgroundColor: '#C6C6CC',
-    padding: ' 6px 15px',
-    fontSize: '14px',
-    color: '#000000',
-    backgroundSize: '200% auto',
-    transition: 'all 0.2s ease-out',
-  },
+  // contained: {
+  //   backgroundColor: '#C6C6CC',
+  //   padding: ' 6px 15px',
+  //   fontSize: '14px',
+  //   color: '#000000',
+  //   backgroundSize: '200% auto',
+  //   transition: 'all 0.2s ease-out',
+  // },
 
   simple: {
     padding: ' 6px 15px',

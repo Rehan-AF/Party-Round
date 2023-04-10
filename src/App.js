@@ -17,8 +17,8 @@ function App() {
     // breakpoints,
     typography: {
       // fontFamily: "'Fahkwang', sans-serif",
-      // fontFamily: "'Poppins', sans-serif",
-      fontFamily: "'Inter', sans-serif",
+      fontFamily: "'Poppins', sans-serif",
+      // fontFamily: "'Inter', sans-serif",
       letterSpacing: 0.6,
       color: '#FFFFFF',
       opacity: '90%',

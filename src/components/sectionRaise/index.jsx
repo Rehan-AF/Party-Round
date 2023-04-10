@@ -1,12 +1,13 @@
-import { makeStyles, Typography } from '@material-ui/core';
+import { Button, makeStyles, Typography } from '@material-ui/core';
 import React, { useRef, useEffect, useState } from 'react';
-import CustomBotton from '../buttons';
+// import CustomBotton from '../buttons';
 import { useScrollDirection } from '../../hooks';
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
 import clsx from 'clsx';
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import Typed from 'typed.js';
 import PhoneComponent from '../phone component';
+import calculator from '../../assets/logos/calculator.png';
 const SectionRaise = () => {
   const classes = useStyles();
   const boxRef = useRef(null);
@@ -69,22 +70,23 @@ const SectionRaise = () => {
         </Typography>
         <Typography className={classes.hashTags}>#GoodGame #GG</Typography>
         <div className={classes.btnBox}>
-          <CustomBotton variant="simple" children="Get started" />
+          <div className={classes.buttonBox}>
+            <Button variant="contained" className={classes.Btn}>
+              <img src={calculator} alt="" width={18} />
+              Calculate
+            </Button>
+          </div>
           <Typography className={classes.typo}>
             Schedule a product demo
             <ArrowRightAltIcon />
           </Typography>
         </div>
         <div className={classes.mobileBtnBox}>
-          <CustomBotton
-            variant="simple"
-            children="Join Waitlist"
-            style={{
-              width: '250px',
-              height: '38px',
-              boxShadow: '4px 4px 8px rgba(0,0,0,0.5)',
-            }}
-          />
+          <div className={classes.buttonBox}>
+            <Button variant="contained" className={classes.Btn}>
+              Join Waitlist
+            </Button>
+          </div>
           <Typography
             className={classes.typo}
             style={{
@@ -170,7 +172,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'block',
     fontSize: '40px',
     lineHeight: '50px',
-    fontWeight: '800',
+    // fontWeight: '800',
     opacity: '90%',
     [theme.breakpoints.down('md')]: {
       fontSize: '28px',
@@ -198,12 +200,12 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '24px',
     color: 'hsla(0,0%,100%,.7)',
     lineHeight: '40px',
-    fontWeight: '500',
+    // fontWeight: '500',
     [theme.breakpoints.down('md')]: {
       marginTop: '15px',
       fontSize: '17px',
       lineHeight: '20px',
-      fontWeight: '400',
+      // fontWeight: '400',
       '& br': {
         display: 'block',
       },
@@ -214,12 +216,12 @@ const useStyles = makeStyles((theme) => ({
 
     fontSize: '24px',
     lineHeight: '40px',
-    fontWeight: '500',
+    // fontWeight: '500',
     [theme.breakpoints.down('md')]: {
       marginTop: '15px',
       fontSize: '17px',
       lineHeight: '20px',
-      fontWeight: '400',
+      // fontWeight: '400',
     },
   },
   btnBox: {
@@ -319,6 +321,40 @@ const useStyles = makeStyles((theme) => ({
 
     '100%': {
       transform: ' translate(0rem, 0rem)  rotate(0deg)',
+    },
+  },
+  buttonBox: {
+    display: 'flex',
+    alignItems: 'center',
+    background: 'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',
+    border: 0,
+    borderRadius: 50,
+    color: 'white',
+    padding: '1px',
+    [theme.breakpoints.down('md')]: {
+      borderRadius: 5,
+    },
+  },
+  Btn: {
+    backgroundColor: 'black',
+    color: 'white',
+    borderRadius: 50,
+    // width: '120px',
+    padding: '7px 12px',
+    fontSize: '14px',
+    width: '120px',
+
+    textTransform: 'capitalize',
+    '&:hover': {
+      backgroundColor: 'black',
+    },
+    '& img': {
+      marginRight: '5px',
+    },
+    [theme.breakpoints.down('md')]: {
+      width: '250px',
+      height: '38px',
+      borderRadius: 5,
     },
   },
 }));

@@ -1,6 +1,6 @@
-import { makeStyles, Typography } from '@material-ui/core';
+import { Button, makeStyles, Typography } from '@material-ui/core';
 import React from 'react';
-import CustomBotton from '../buttons';
+// import CustomBotton from '../buttons';
 import { GridSix } from '../gridView';
 import { SGridEight } from '../gridView/smallGrid';
 const JoinParty = () => {
@@ -15,9 +15,14 @@ const JoinParty = () => {
       </div>
       <div className={classes.subContainer}>
         <Typography className={classes.title}>
-          create an unmatched experience with playe
+          Take the leap, take the win.
         </Typography>
-        <CustomBotton children="Join Party" variant="contained" />
+        <div className={classes.buttonBox}>
+          <Button className={classes.Btn}>
+            {/* <img src={googleLogo} alt="" width={25} /> */}
+            Join Party
+          </Button>
+        </div>
       </div>
     </div>
   );
@@ -28,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     fontSize: '3rem',
     lineHeight: '1',
-    fontWeight: '600',
+    // fontWeight: '600',
     textAlign: 'center',
     [theme.breakpoints.down('md')]: {
       fontSize: '24px',
@@ -66,5 +71,24 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     gap: '15px',
+  },
+  buttonBox: {
+    display: 'flex',
+    alignItems: 'center',
+    background: 'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',
+    border: 0,
+    borderRadius: 5,
+    color: 'white',
+    padding: '2px',
+  },
+  Btn: {
+    backgroundColor: 'black',
+    color: 'white',
+    width: '120px',
+    fontSize: '14px',
+    textTransform: 'capitalize',
+    '&:hover': {
+      backgroundColor: 'black',
+    },
   },
 }));
