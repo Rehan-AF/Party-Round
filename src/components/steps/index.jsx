@@ -89,7 +89,18 @@ const StepsSection = () => {
                   autoplay={true}
                   muted={true}
                   controls={false}
+                  onTimeUpdate={(event) => {
+                    const progressBar = event.target.nextElementSibling;
+                    const progress =
+                      (event.target.currentTime / event.target.duration) * 100;
+                    progressBar.value = progress;
+                  }}
                 />
+                <progress
+                  className={classes.progressBar}
+                  value={0}
+                  max={100}
+                ></progress>
                 <div className={classes.borderMain}>
                   <Typography className={classes.nmbr}>{i + 1}</Typography>
                 </div>
@@ -170,6 +181,25 @@ const useStyles = makeStyles((theme) => ({
     width: 360,
     [theme.breakpoints.down('md')]: {
       width: '300px',
+    },
+  },
+  progressBar: {
+    height: '4px',
+    // background-color: #ddd;
+    marginTop: '0px',
+    width: '100%',
+    backgroundColor: '#007aff',
+
+    '&::-webkit-progress-bar': {
+      backgroundColor: '#000',
+      borderRadius: 0,
+      // transition: 'width 1s ease-in-out',
+    },
+
+    '&::-webkit-progress-value': {
+      backgroundColor: ' #007bff',
+      borderRadius: 0,
+      transition: 'width 1s ease-in-out',
     },
   },
   borderMain: {
