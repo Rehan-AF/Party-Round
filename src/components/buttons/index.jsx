@@ -31,19 +31,12 @@ const CustomBotton = withStyles((theme) => ({
     },
   },
   contained: {
+    backgroundColor: '#C6C6CC',
     padding: ' 6px 15px',
     fontSize: '14px',
-    background: 'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',
-    color: 'white',
+    color: '#000000',
     backgroundSize: '200% auto',
     transition: 'all 0.2s ease-out',
-    animation: '$moveGradient 4s linear infinite',
-    '&:hover': {
-      backgroundPosition: 'right center',
-    },
-    '&:active': {
-      backgroundPosition: 'left center',
-    },
   },
 
   simple: {

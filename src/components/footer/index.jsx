@@ -1,24 +1,50 @@
 import { makeStyles, Typography } from '@material-ui/core';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import footerLogo from '../../assets/logos/footer.png';
 import logoText from '../../assets/logos/image38.png';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import mediumIcon from '../../assets/logos/medium.png';
+import tiktokIcon from '../../assets/logos/tiktok.png';
 const Footer = () => {
   const classes = useStyles();
   return (
     <div className={classes.container}>
       <div className={classes.imgBox}>
-        <img src={footerLogo} alt="" className={classes.logos} />
+        <img src={logoText} alt="logo" className={classes.logo} />
+      </div>
+      <div className={classes.socialLinksBox}>
+        <hr />
+        <Link to="/" className={classes.socialLinks}>
+          <InstagramIcon />
+        </Link>
+        <Link to="/" className={classes.socialLinks}>
+          <TwitterIcon />
+        </Link>
+        <Link to="/" className={classes.socialLinks}>
+          <LinkedInIcon />
+        </Link>
+        <Link to="/" className={classes.socialLinks}>
+          <img src={mediumIcon} alt="as" />
+        </Link>
+        <Link to="/" className={classes.socialLinks}>
+          <img src={tiktokIcon} alt="as" />
+        </Link>
+        <hr />
+      </div>
+      <div>
+        <Typography className={classes.typo}>
+          Playe and all representations of its logo, brand mark and icon are
+          held solely by Playe Limited. All rights reserved.
+        </Typography>
       </div>
       <div className={classes.subContainer}>
-        <div>
-          <Typography className={classes.typo1}>
-            Playe and all representations of its logo, brand mark and icon{' '}
-            <br /> are held solely by Playe Limited. All rights reserved.
-          </Typography>
+        <div className={classes.link2Box}>
+          <Typography className={classes.subHead}>About us </Typography>
+          <Typography className={classes.subHead}>Roadmap </Typography>
         </div>
         <div className={classes.centerBox}>
-          <img src={logoText} alt="logo" className={classes.logo} />
           <Typography className={classes.typo2}>
             Copyright © 2023 Playe, Limited.
           </Typography>
@@ -37,12 +63,6 @@ const Footer = () => {
           </div>
         </div>
         <div className={classes.link2Box}>
-          <Typography className={classes.head}>Company </Typography>
-          <Typography className={classes.subHead}>About us </Typography>
-          <Typography className={classes.subHead}>Roadmap </Typography>
-        </div>
-        <div className={classes.link2Box}>
-          <Typography className={classes.head}>Discover </Typography>
           <Typography className={classes.subHead}>Case studies</Typography>
           <Typography className={classes.subHead}>Product Roadmap</Typography>
         </div>
@@ -69,31 +89,20 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
   },
   subContainer: {
-    display: 'flex',
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr 1fr',
     alignItems: 'center',
-    justifyContent: 'space-between',
-    gap: '50px',
-    flexWrap: 'wrap',
+    textAlign: 'center',
+    width: '100%',
     [theme.breakpoints.down('md')]: {
-      paddingTop: '30px',
+      gridTemplateColumns: '1fr 1fr',
+      gridRowGap: '18px',
     },
   },
   logo: {
     width: '86px',
   },
-  logos: {
-    width: 'calc(100% - 300px)',
-    [theme.breakpoints.down('sm')]: {
-      width: '100%',
-    },
-    position: 'center',
-  },
-  typo1: {
-    fontSize: '12px',
-    color: '#CACFDB',
-    flex: '1 1 auto',
-    textAlign: 'center',
-  },
+
   centerBox: {
     display: 'flex',
     flexDirection: 'column',
@@ -101,11 +110,29 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     textAlign: 'center',
     gap: '11px  ',
+    [theme.breakpoints.down('md')]: {
+      order: -1,
+      gridColumnStart: 1,
+      gridColumnEnd: 4,
+    },
+  },
+  typo: {
+    fontSize: '12px',
+    color: '#CACFDB',
+    margin: '25px 0',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '8px',
+      textAlign: 'center',
+    },
   },
   typo2: {
     fontSize: '12px',
     fontWeight: '500',
     color: '#CACFDB',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '8px',
+      textAlign: 'center',
+    },
   },
 
   linksBox: {
@@ -116,8 +143,48 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   links: {
-    textDecoration: 'underline',
-    fontWeight: '600',
+    '& p': {
+      textDecoration: 'underline',
+      fontWeight: '600',
+      color: '#FFFFFF',
+      fontSize: '14px',
+      [theme.breakpoints.down('md')]: {
+        fontSize: '10px',
+      },
+    },
+  },
+  socialLinksBox: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: '28px',
+    '& hr': {
+      width: '300px',
+      [theme.breakpoints.down('md')]: {
+        width: '100px',
+      },
+      [theme.breakpoints.down('sm')]: {
+        width: '60px',
+      },
+    },
+    [theme.breakpoints.down('md')]: {
+      gap: '10px',
+    },
+  },
+  subHead: {
+    fontSize: '12px',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '10px',
+    },
+  },
+  socialLinks: {
+    textDecoration: 'none',
     color: '#FFFFFF',
+    '& svg': {
+      fontSize: '30px',
+    },
+    '& img': {
+      width: '28px',
+    },
   },
 }));
