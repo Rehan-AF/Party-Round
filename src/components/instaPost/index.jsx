@@ -52,7 +52,7 @@ export default InstaPost;
 const useStyle = makeStyles((theme) => ({
   title: {
     fontSize: '36px',
-    fontWeight: 600,
+    // fontWeight: 600,
     textAlign: 'center',
     color: '#FAF7F7E5',
     [theme.breakpoints.down('md')]: {
@@ -105,7 +105,7 @@ const useStyle = makeStyles((theme) => ({
     },
   },
   typo: {
-    fontWeight: 600,
+    // fontWeight: 600,
     fontSize: '35px',
     display: 'flex',
     flexDirection: 'column',
@@ -137,7 +137,7 @@ const useStyle = makeStyles((theme) => ({
       display: 'flex',
       flexDirection: 'column',
       fontSize: '28px',
-      fontWeight: 600,
+      // fontWeight: 600,
       lineHeight: '28px',
       '& br': {
         display: 'none',

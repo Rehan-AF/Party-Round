@@ -100,7 +100,12 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   logo: {
-    width: '86px',
+    width: '125px',
+    marginBottom: '20px',
+    [theme.breakpoints.down('md')]: {
+      marginBottom: '15px',
+      width: '86px',
+    },
   },
 
   centerBox: {
@@ -127,7 +132,7 @@ const useStyles = makeStyles((theme) => ({
   },
   typo2: {
     fontSize: '12px',
-    fontWeight: '500',
+    // fontWeight: '500',
     color: '#CACFDB',
     [theme.breakpoints.down('md')]: {
       fontSize: '8px',
@@ -145,7 +150,7 @@ const useStyles = makeStyles((theme) => ({
   links: {
     '& p': {
       textDecoration: 'underline',
-      fontWeight: '600',
+      // fontWeight: '600',
       color: '#FFFFFF',
       fontSize: '14px',
       [theme.breakpoints.down('md')]: {
@@ -182,8 +187,10 @@ const useStyles = makeStyles((theme) => ({
     color: '#FFFFFF',
     '& svg': {
       fontSize: '30px',
+      opacity: '80%',
     },
     '& img': {
+      opacity: '80%',
       width: '28px',
     },
   },

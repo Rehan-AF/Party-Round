@@ -36,7 +36,7 @@ export default Text;
 const useStyles = makeStyles((theme) => ({
   typo: {
     display: 'inline',
-    fontWeight: 600,
+    // fontWeight: 600,
     fontSize: '35px',
     lineHeight: '35px',
     [theme.breakpoints.down('md')]: {

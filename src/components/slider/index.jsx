@@ -1048,7 +1048,7 @@ const useStyles = makeStyles((theme) => ({
   },
   sliderInfo: {
     fontSize: '30px',
-    fontWeight: '600',
+    // fontWeight: '600',
     [theme.breakpoints.down('md')]: {
       fontSize: '18px',
     },
@@ -1090,11 +1090,11 @@ const useStyles = makeStyles((theme) => ({
   },
   priceTitle: {
     fontSize: '27px',
-    fontWeight: '900',
+    // fontWeight: '900',
     marginBottom: '15px',
   },
   price: {
-    fontWeight: '900',
+    // fontWeight: '900',
     fontSize: '46px',
     marginBottom: '12px',
     '& span': {

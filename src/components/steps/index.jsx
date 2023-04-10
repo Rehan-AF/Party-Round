@@ -127,7 +127,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     fontSize: 36,
     color: '#FFFFFFE5',
-    fontWeight: 600,
+    // fontWeight: 600,
     letterSpacing: '0',
     textAlign: 'center',
     [theme.breakpoints.down('md')]: {
@@ -223,7 +223,7 @@ const useStyles = makeStyles((theme) => ({
   },
   Videotitle: {
     fontSize: '24px',
-    fontWeight: '800',
+    // fontWeight: '800',
     letterSpacing: '0.6px',
     marginTop: 20,
   },

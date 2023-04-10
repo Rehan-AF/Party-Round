@@ -1,9 +1,9 @@
-import { makeStyles, Typography } from "@material-ui/core";
-import clsx from "clsx";
-import React, { useEffect, useRef, useState } from "react";
-import phoneOne from "../../assets/tiltPhone1.png";
-import phoneTwo from "../../assets/tiltPhone2.png";
-import { useScrollDirection } from "../../hooks";
+import { makeStyles, Typography } from '@material-ui/core';
+import clsx from 'clsx';
+import React, { useEffect, useRef, useState } from 'react';
+import phoneOne from '../../assets/tiltPhone1.png';
+import phoneTwo from '../../assets/tiltPhone2.png';
+import { useScrollDirection } from '../../hooks';
 const SectionSix = () => {
   const classes = useStyles();
   const boxRef = useRef(null);
@@ -17,13 +17,13 @@ const SectionSix = () => {
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       const entry = entries[0];
-      if (scrollDirection === "up") {
+      if (scrollDirection === 'up') {
         setEntryIsVesible((prev) => ({
           ...prev,
           isScrolledDown: false,
           isScrolledUp: entry.isIntersecting,
         }));
-      } else if (scrollDirection === "down") {
+      } else if (scrollDirection === 'down') {
         setEntryIsVesible((prev) => ({
           ...prev,
           isScrolledDown: entry.isIntersecting,
@@ -75,67 +75,67 @@ const SectionSix = () => {
 export default SectionSix;
 const useStyles = makeStyles((theme) => ({
   container: {
-    display: "flex",
-    flexDirection: "row-reverse",
-    alignItems: "center",
-    justifyContent: "space-between",
-    [theme.breakpoints.down("sm")]: {
-      flexDirection: "column",
-      gap: "180px",
-      alignItems: "center",
+    display: 'flex',
+    flexDirection: 'row-reverse',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+      gap: '180px',
+      alignItems: 'center',
     },
   },
   subDiv: {
-    marginTop: "5rem",
+    marginTop: '5rem',
   },
   title: {
-    lineHeight: "1",
-    fontSize: "4rem",
-    fontWeight: "bold",
-    [theme.breakpoints.down("md")]: {
-      fontSize: "3rem",
+    lineHeight: '1',
+    fontSize: '4rem',
+    // fontWeight: "bold",
+    [theme.breakpoints.down('md')]: {
+      fontSize: '3rem',
     },
   },
   typo: {
-    marginTop: "32px",
-    fontSize: "1.2rem",
-    lineHeight: "1.1",
-    color: "hsla(0,0%,100%,.8)",
-    [theme.breakpoints.down("md")]: {
-      fontSize: "1rem",
+    marginTop: '32px',
+    fontSize: '1.2rem',
+    lineHeight: '1.1',
+    color: 'hsla(0,0%,100%,.8)',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '1rem',
     },
   },
   img: {
-    display: "flex",
-    margin: "0 auto",
+    display: 'flex',
+    margin: '0 auto',
   },
   phoneOne: {
-    width: "324px",
-    position: "relative",
-    left: "274px",
-    top: "-80px",
-    [theme.breakpoints.down("md")]: {
-      width: "224px",
+    width: '324px',
+    position: 'relative',
+    left: '274px',
+    top: '-80px',
+    [theme.breakpoints.down('md')]: {
+      width: '224px',
     },
-    [theme.breakpoints.down("sm")]: {
-      width: "167px",
-      left: "32%",
-      top: "-100px",
+    [theme.breakpoints.down('sm')]: {
+      width: '167px',
+      left: '32%',
+      top: '-100px',
     },
   },
   phoneTwo: {
-    width: "324px",
+    width: '324px',
     zIndex: 2,
-    position: "relative",
-    top: "78px",
-    left: "-246px",
-    [theme.breakpoints.down("md")]: {
-      width: "224px",
+    position: 'relative',
+    top: '78px',
+    left: '-246px',
+    [theme.breakpoints.down('md')]: {
+      width: '224px',
       // top: "49px",
       // left: "152px",
     },
-    [theme.breakpoints.down("md")]: {
-      width: "167px ",
+    [theme.breakpoints.down('md')]: {
+      width: '167px ',
       top: 0,
       left: -157,
     },
@@ -143,25 +143,25 @@ const useStyles = makeStyles((theme) => ({
   scrollDownAnimationOne: {
     animation: `$DownOne 1000ms  ${theme.transitions.easing.easeInOut} 1 normal forwards`,
   },
-  "@keyframes DownOne": {
-    "0%": {
-      transform: " translate(0rem, 0rem)",
+  '@keyframes DownOne': {
+    '0%': {
+      transform: ' translate(0rem, 0rem)',
     },
 
-    "100%": {
-      transform: " translate(0rem , 2rem)",
+    '100%': {
+      transform: ' translate(0rem , 2rem)',
     },
   },
   scrollUpAnimationOne: {
     animation: `$UpOne 1000ms  ${theme.transitions.easing.easeInOut} 1 normal forwards`,
   },
-  "@keyframes UpOne": {
-    "0%": {
-      transform: " translate(0rem, 2rem)",
+  '@keyframes UpOne': {
+    '0%': {
+      transform: ' translate(0rem, 2rem)',
     },
 
-    "100%": {
-      transform: " translate(0rem , 0rem)",
+    '100%': {
+      transform: ' translate(0rem , 0rem)',
     },
   },
 }));

@@ -1,7 +1,7 @@
 import React from 'react';
-import { makeStyles, Typography } from '@material-ui/core';
+import { Button, makeStyles, Typography } from '@material-ui/core';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
-import CustomBotton from '../buttons';
+// import CustomBotton from '../buttons';
 
 const PriceCard = ({ title, price, description, details, year, index }) => {
   const classes = useStyles();
@@ -63,8 +63,8 @@ const PriceCard = ({ title, price, description, details, year, index }) => {
           })}
         </ul>
       </div>
-      <div className={classes.btnBox}>
-        <CustomBotton
+      {/* <div className={classes.btnBox}>
+         <CustomBotton
           variant="contained"
           className={`${classes.btnBox} ${
             index
@@ -73,7 +73,12 @@ const PriceCard = ({ title, price, description, details, year, index }) => {
           }`}
         >
           Start Now
-        </CustomBotton>
+        </CustomBotton> 
+      </div>*/}
+      <div className={classes.buttonBox}>
+        <Button variant="contained" className={classes.Btn}>
+          Start Now
+        </Button>
       </div>
     </div>
   );
@@ -121,7 +126,7 @@ const useStyles = makeStyles((theme) => ({
   },
   priceTitle: {
     fontSize: '27px',
-    fontWeight: '900',
+    // fontWeight: '900',
     marginBottom: '15px',
     '&.mobileSwiper-slide-active': {
       color: 'black',
@@ -137,7 +142,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   price: {
-    fontWeight: '900',
+    // fontWeight: '900',
     fontSize: '46px',
     marginBottom: '12px',
     '& span': {
@@ -192,24 +197,43 @@ const useStyles = makeStyles((theme) => ({
     gap: '14px',
     marginBottom: '13px',
   },
-  btnBox: {
-    width: '100%',
-    [theme.breakpoints.down('md')]: {
-      width: '242.5px',
-    },
-    fontSize: '14px',
+  // btnBox: {
+  //   width: '100%',
+  //   [theme.breakpoints.down('md')]: {
+  //     width: '242.5px',
+  //   },
+  //   fontSize: '14px',
 
-    '&.mobileSwiper-slide-active': {
-      color: '#FFFFFF',
-      backgroundColor: '#292929',
-      padding: ' 6px 15px',
-      transition: 'color 0.3s ease-in-out ,background 0.3s ease-in-out',
-    },
-    '&.mobileSwiper-slide-notActive': {
-      color: '#000000',
-      backgroundColor: '#C6C6CC',
-      padding: ' 6px 15px',
-      transition: 'color 0.3s ease-in-out ,background 0.3s ease-in-out',
+  //   '&.mobileSwiper-slide-active': {
+  //     color: '#FFFFFF',
+  //     backgroundColor: '#292929',
+  //     padding: ' 6px 15px',
+  //     transition: 'color 0.3s ease-in-out ,background 0.3s ease-in-out',
+  //   },
+  //   '&.mobileSwiper-slide-notActive': {
+  //     color: '#000000',
+  //     backgroundColor: '#C6C6CC',
+  //     padding: ' 6px 15px',
+  //     transition: 'color 0.3s ease-in-out ,background 0.3s ease-in-out',
+  //   },
+  // },
+  buttonBox: {
+    display: 'flex',
+    alignItems: 'center',
+    background: 'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',
+    border: 0,
+    borderRadius: 5,
+    color: 'white',
+    padding: '1px',
+  },
+  Btn: {
+    backgroundColor: 'black',
+    color: 'white',
+    width: '100%',
+    fontSize: '14px',
+    textTransform: 'capitalize',
+    '&:hover': {
+      backgroundColor: 'black',
     },
   },
 }));

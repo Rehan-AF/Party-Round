@@ -21,7 +21,7 @@ export default Drops;
 const useStyles = makeStyles((theme) => ({
   title: {
     fontSize: '35px',
-    fontWeight: 600,
+    // fontWeight: 600,
     textAlign: 'center',
     '& span': {
       background: 'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',

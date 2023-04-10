@@ -1,5 +1,5 @@
-import { makeStyles, Typography } from "@material-ui/core";
-import InvestmentsCard from "../InvestmentsCard ";
+import { makeStyles, Typography } from '@material-ui/core';
+import InvestmentsCard from '../InvestmentsCard ';
 const SectionFive = () => {
   const classes = useStyles();
 
@@ -49,31 +49,31 @@ const SectionFive = () => {
 export default SectionFive;
 const useStyles = makeStyles((theme) => ({
   container: {
-    display: "flex",
-    flexDirection: "row-reverse",
-    alignItems: "center",
-    position: "relative",
-    justifyContent: "space-between",
-    [theme.breakpoints.down("sm")]: {
-      flexDirection: "column",
-      alignItems: "center",
+    display: 'flex',
+    flexDirection: 'row-reverse',
+    alignItems: 'center',
+    position: 'relative',
+    justifyContent: 'space-between',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+      alignItems: 'center',
     },
   },
   title: {
-    lineHeight: "1",
-    fontSize: "4rem",
-    fontWeight: "bold",
-    [theme.breakpoints.down("md")]: {
-      fontSize: "3rem",
+    lineHeight: '1',
+    fontSize: '4rem',
+    // fontWeight: "bold",
+    [theme.breakpoints.down('md')]: {
+      fontSize: '3rem',
     },
   },
   typo: {
-    marginTop: "32px",
-    fontSize: "1.2rem",
-    lineHeight: "1.1",
-    color: "hsla(0,0%,100%,.8)",
-    [theme.breakpoints.down("md")]: {
-      fontSize: "1rem",
+    marginTop: '32px',
+    fontSize: '1.2rem',
+    lineHeight: '1.1',
+    color: 'hsla(0,0%,100%,.8)',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '1rem',
     },
   },
 }));

@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
     color: 'white',
     fontSize: '3rem',
     lineHeight: '1em',
-    fontWeight: 'bold',
+    // fontWeight: 'bold',
     [theme.breakpoints.down('md')]: {
       fontSize: '1.2rem',
     },
@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       fontSize: '16px',
       lineHeight: '24px',
-      fontWeight: '600',
+      // fontWeight: '600',
     },
   },
 }));

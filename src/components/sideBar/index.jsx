@@ -74,6 +74,6 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: 'none',
     color: '#333',
     lineHeight: 1.5,
-    fontWeight: 'bold',
+    // fontWeight: 'bold',
   },
 }));

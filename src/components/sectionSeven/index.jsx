@@ -1,6 +1,6 @@
-import { makeStyles, Typography } from "@material-ui/core";
-import React from "react";
-import video from "../../assets/nftCard.mp4";
+import { makeStyles, Typography } from '@material-ui/core';
+import React from 'react';
+import video from '../../assets/nftCard.mp4';
 const SectionSeven = () => {
   const classes = useStyles();
   return (
@@ -37,42 +37,42 @@ const SectionSeven = () => {
 export default SectionSeven;
 const useStyles = makeStyles((theme) => ({
   container: {
-    display: "flex",
-    alignItems: "center",
-    position: "relative",
-    justifyContent: "space-between",
-    [theme.breakpoints.down("sm")]: {
-      flexDirection: "column",
-      alignItems: "center",
+    display: 'flex',
+    alignItems: 'center',
+    position: 'relative',
+    justifyContent: 'space-between',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+      alignItems: 'center',
     },
   },
   section: {
-    width: "100%",
+    width: '100%',
   },
   title: {
-    lineHeight: "1",
-    fontSize: "3.5rem",
-    fontWeight: "bold",
-    [theme.breakpoints.down("md")]: {
-      fontSize: "3rem",
+    lineHeight: '1',
+    fontSize: '3.5rem',
+    // fontWeight: "bold",
+    [theme.breakpoints.down('md')]: {
+      fontSize: '3rem',
     },
   },
   typo: {
-    marginTop: "32px",
-    fontSize: "1.2rem",
-    lineHeight: "1.1",
-    color: "hsla(0,0%,100%,.8)",
-    [theme.breakpoints.down("md")]: {
-      fontSize: "1rem",
+    marginTop: '32px',
+    fontSize: '1.2rem',
+    lineHeight: '1.1',
+    color: 'hsla(0,0%,100%,.8)',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '1rem',
     },
   },
   video: {
-    width: "100%",
-    [theme.breakpoints.down("md")]: {
-      width: "400px",
+    width: '100%',
+    [theme.breakpoints.down('md')]: {
+      width: '400px',
     },
-    [theme.breakpoints.down("sm")]: {
-      width: "277px",
+    [theme.breakpoints.down('sm')]: {
+      width: '277px',
     },
   },
 }));

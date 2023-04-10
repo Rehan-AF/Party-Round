@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     fontSize: '35px',
-    fontWeight: 'bold',
+    // fontWeight: 'bold',
     lineHeight: '45px',
     '& span': {
       background: 'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',

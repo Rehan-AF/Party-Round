@@ -82,7 +82,7 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: '1',
     fontSize: '3.5rem',
     marginRight: '1rem',
-    fontWeight: 'bold',
+    // fontWeight: 'bold',
     [theme.breakpoints.down('md')]: {
       fontSize: '28px',
       textAlign: 'center',

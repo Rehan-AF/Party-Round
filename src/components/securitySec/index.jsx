@@ -36,11 +36,11 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     fontSize: '35px',
-    fontWeight: '800',
+    // fontWeight: '800',
     textAlign: 'center',
     [theme.breakpoints.down('md')]: {
       fontSize: '28px',
-      fontWeight: '600',
+      // fontWeight: '600',
     },
   },
   print: {
@@ -89,14 +89,14 @@ const useStyles = makeStyles((theme) => ({
   },
   Typo: {
     fontSize: '40px',
-    fontWeight: '700',
+    // fontWeight: '700',
     color: 'rgba(192, 192, 192, 0.9)',
     opacity: '90%',
     textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
     marginLeft: '75px',
     [theme.breakpoints.down('md')]: {
       fontSize: '28px',
-      fontWeight: '600',
+      // fontWeight: '600',
       marginLeft: '11px',
     },
   },

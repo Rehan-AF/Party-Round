@@ -75,21 +75,21 @@ export default FAQ;
 const useStyles = makeStyles((theme) => ({
   title: {
     fontSize: '35px',
-    fontWeight: '800',
+    // fontWeight: '800',
     textAlign: 'center',
     marginBottom: '150px',
     [theme.breakpoints.down('md')]: {
       marginBottom: '50px',
       fontSize: '28px',
-      fontWeight: '600',
+      // fontWeight: '600',
     },
   },
   subTitle: {
     fontSize: '24px',
-    fontWeight: '800',
+    // fontWeight: '800',
     [theme.breakpoints.down('md')]: {
       fontSize: '13px',
-      fontWeight: '700',
+      // fontWeight: '700',
     },
   },
   AccordionDiv: {
@@ -109,7 +109,7 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     fontSize: '27px',
     color: '#A8A8A8',
-    fontWeight: '800',
+    // fontWeight: '800',
   },
   details: {
     fontSize: '18px',
