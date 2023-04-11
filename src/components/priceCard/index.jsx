@@ -112,7 +112,7 @@ const useStyles = makeStyles((theme) => ({
         filter: 'blur(0px)',
       },
     },
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up('lg')]: {
       width: '292.5px',
     },
   },

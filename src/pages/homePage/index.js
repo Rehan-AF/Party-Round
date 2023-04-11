@@ -25,36 +25,36 @@ const HomePage = () => {
     <div>
       <div className={classes.container}>
         <SectionRaise />
-        <div style={{ paddingTop: '177px' }}>
-          <StepsSection />
-        </div>
-        <div className={classes.sectionOneGap}>
-          <SectionTwo />
-        </div>
-        <div className={classes.sectionThreeGap}>
-          <InstaPost />
-          {/* <SectionThree /> */}
-        </div>
-        <div className={classes.sectionFourGap}>
-          <SectionFour />
-        </div>
-        <div className={classes.sectionFiveGap}>
-          <Drops />
-          {/* <SectionFive /> */}
-        </div>
-        <div className={classes.sectionSevenGap}>
-          {/* <SectionSeven /> */}
-          <Pricing />
-        </div>
-        <div className={classes.sectionGap}>
-          <Security />
-        </div>
-        <div className={classes.sectionEightGap}>
-          <SectionEight />
-        </div>
-        <div className={classes.sectionNineGap}>
-          <FAQ />
-          {/* <Investors /> */}
+        <div className={classes.sunContainer}>
+          <div style={{ paddingTop: '177px' }}>{/* <StepsSection /> */}</div>
+          <div className={classes.sectionOneGap}>
+            <SectionTwo />
+          </div>
+          <div className={classes.sectionThreeGap}>
+            <InstaPost />
+            {/* <SectionThree /> */}
+          </div>
+          <div className={classes.sectionFourGap}>
+            <SectionFour />
+          </div>
+          <div className={classes.sectionFiveGap}>
+            <Drops />
+            {/* <SectionFive /> */}
+          </div>
+          <div className={classes.sectionSevenGap}>
+            {/* <SectionSeven /> */}
+            <Pricing />
+          </div>
+          <div className={classes.sectionGap}>
+            <Security />
+          </div>
+          <div className={classes.sectionEightGap}>
+            <SectionEight />
+          </div>
+          <div className={classes.sectionNineGap}>
+            <FAQ />
+            {/* <Investors /> */}
+          </div>
         </div>
         <div className={classes.sectionLast}>
           <JoinParty />
@@ -72,6 +72,9 @@ const useStyles = makeStyles((theme) => ({
     padding: '0px 100px 0 100px',
 
     [theme.breakpoints.down('md')]: {
+      padding: '0 50px',
+    },
+    [theme.breakpoints.down('sm')]: {
       padding: '0 15px 0 15px',
     },
     [theme.breakpoints.up('xl')]: {
@@ -79,6 +82,16 @@ const useStyles = makeStyles((theme) => ({
     },
     '&.MuiTypography-body1': {
       // fontFamily: '"Fahkwang", sans-serif!important',
+    },
+  },
+  sunContainer: {
+    padding: '0 70px',
+
+    [theme.breakpoints.up('xl')]: {
+      padding: '0 345px',
+    },
+    [theme.breakpoints.down('md')]: {
+      padding: '0 ',
     },
   },
   sectionGap: {

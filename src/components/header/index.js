@@ -135,17 +135,14 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       padding: '12px 50px',
       width: 'calc(100% - 100px)',
-      flexDirection: 'row-reverse',
-    },
-    [theme.breakpoints.down('sm')]: {
-      padding: '12px 50px',
-      width: 'calc(100% - 200px)',
-      flexDirection: 'row-reverse',
+      flexDirection: 'row',
     },
 
     [theme.breakpoints.down('sm')]: {
       padding: '0 20px',
       width: 'calc(100% - 40px)',
+      flexDirection: 'row-reverse',
+
       // width: '100vw',
       // justifyContent: 'flex-Start',
       gap: '30px',
@@ -156,7 +153,7 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'noWrap',
     zIndex: 1000,
 
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       display: 'flex',
     },
     '.MuiIconButton-root': {
@@ -187,6 +184,9 @@ const useStyles = makeStyles((theme) => ({
     gap: '3px',
     paddingLeft: '34px',
     [theme.breakpoints.down('md')]: {
+      paddingLeft: '0',
+    },
+    [theme.breakpoints.down('sm')]: {
       // flexDirection: 'row-reverse',
       // justifyContent: 'space-between',
       // width: 'calc(100% - 48px)',
@@ -202,7 +202,7 @@ const useStyles = makeStyles((theme) => ({
   },
   Mlogo: {
     display: 'none',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       display: 'block',
       // width: '82px',
       // height: '32px',
@@ -215,7 +215,7 @@ const useStyles = makeStyles((theme) => ({
   },
   MlogoM: {
     display: 'none',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       display: 'block',
       width: '32px',
       height: '32px',
@@ -265,8 +265,10 @@ const useStyles = makeStyles((theme) => ({
     gap: '7px',
     paddingRight: '34px',
     [theme.breakpoints.down('md')]: {
-      display: 'none',
       paddingRight: '0px',
+    },
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
     },
     [theme.breakpoints.up('xl')]: {
       paddingRight: '314px',

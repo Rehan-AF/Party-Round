@@ -1,6 +1,7 @@
 @media screen and (min-width: 959px) {
   .carousel__slider-tray {
     transform: none !important;
+    justify-content: space-between;
   }
 }
 .carousel__slider-tray .carousel__slide + .carousel__slide {

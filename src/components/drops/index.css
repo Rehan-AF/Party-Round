@@ -1,5 +1,7 @@
-.carousel__slide {
-  width: 360px !important;
+@media screen and (min-width: 1280px) {
+  .carousel__slide {
+    width: 360px !important;
+  }
 }
 @media screen and (max-width: 959px) {
   .carousel__slide {

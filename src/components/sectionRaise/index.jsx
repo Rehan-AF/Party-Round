@@ -90,7 +90,7 @@ const SectionRaise = () => {
           <Typography
             className={classes.typo}
             style={{
-              width: '186px',
+              width: '200px',
               textShadow: '2px 2px 1px rgba(0,0,0,0.8)',
             }}
           >
@@ -156,7 +156,7 @@ const useStyles = makeStyles((theme) => ({
     gap: '60px',
     letterSpacing: '0.60032px',
     position: 'relative',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
       alignItems: 'center',
       gap: '60px',
@@ -229,13 +229,13 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     gap: '10px',
     marginTop: '95px',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       display: 'none',
     },
   },
   mobileBtnBox: {
     display: 'none',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
@@ -256,7 +256,7 @@ const useStyles = makeStyles((theme) => ({
   phone: {
     width: '350px',
 
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       width: '260px',
     },
   },
@@ -265,19 +265,23 @@ const useStyles = makeStyles((theme) => ({
     gap: '36px',
     marginTop: '90px',
     [theme.breakpoints.down('md')]: {
+      gap: '15px',
+      flexWrap: 'wrap',
+    },
+    [theme.breakpoints.down('sm')]: {
       display: 'none',
     },
   },
   MobilelinksBox: {
     display: 'none',
-    [theme.breakpoints.down('md')]: {
-      gap: '15px',
-      flexWrap: 'wrap',
-      display: 'flex',
-      marginTop: '40px',
-      width: '100%',
-      justifyContent: 'center',
-    },
+    // [theme.breakpoints.down('md')]: {
+    //   gap: '15px',
+    //   flexWrap: 'wrap',
+    //   display: 'flex',
+    //   marginTop: '40px',
+    //   width: '100%',
+    //   justifyContent: 'center',
+    // },
     [theme.breakpoints.down('sm')]: {
       flexWrap: 'wrap',
       justifyContent: 'space-around',
@@ -331,7 +335,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 50,
     color: 'white',
     padding: '1px',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       borderRadius: 5,
     },
   },
@@ -351,7 +355,7 @@ const useStyles = makeStyles((theme) => ({
     '& img': {
       marginRight: '5px',
     },
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       width: '250px',
       height: '38px',
       borderRadius: 5,

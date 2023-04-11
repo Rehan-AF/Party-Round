@@ -123,8 +123,15 @@ const useStyles = makeStyles((theme) => ({
     right: '188px',
     zIndex: 1,
     width: '324px',
+    [theme.breakpoints.up('lg')]: {
+      top: '-100px',
+      right: '99px',
+    },
     [theme.breakpoints.down('md')]: {
       position: 'static',
+    },
+    [theme.breakpoints.up('xl')]: {
+      right: '112px',
     },
   },
   postThree: {

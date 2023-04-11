@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   phone: {
     width: '350px',
 
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       width: '260px',
     },
   },
@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     transform:
       'perspective(600cm) rotateY(-12deg) rotate(8deg) rotateX(20deg) scaleY(1.05)',
     borderRadius: '46px 35px 35px 35px',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       width: '182px',
       top: '2px',
       left: '37px',
