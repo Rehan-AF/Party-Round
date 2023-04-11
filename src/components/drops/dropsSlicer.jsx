@@ -69,8 +69,11 @@ export default DropSlicer;
 const useStyles = makeStyles((theme) => ({
   tray: {
     '&.carousel__slide': {
-      width: '360px !important',
+      [theme.breakpoints.up('md')]: {
+        width: '360px !important',
+      },
     },
+
     [theme.breakpoints.up('md')]: {
       display: 'flex',
       justifyContent: 'center',

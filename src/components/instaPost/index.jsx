@@ -9,7 +9,7 @@ import Text from '../textfeild';
 const InstaPost = () => {
   const classes = useStyle();
   return (
-    <div>
+    <div className={classes.container}>
       <div>
         <Typography className={classes.title}>
           Make your brands social go <span>brrrr</span>.
@@ -84,23 +84,50 @@ const useStyle = makeStyles((theme) => ({
       fontSize: '21px',
     },
   },
+  img1Box: {
+    position: 'relative',
+  },
+  img2Box: {
+    position: 'relative',
+    [theme.breakpoints.down('sm')]: {
+      display: 'flex',
+      justifyContent: 'flex-end',
+    },
+  },
   heartTop: {
     width: '69px',
     transform: 'rotate(-30.05deg)',
+    position: 'absolute',
+    left: '-135px',
+    [theme.breakpoints.down('md')]: {
+      left: '0px',
+    },
+    [theme.breakpoints.down('sm')]: {
+      position: 'static',
+    },
   },
   heartBottom: {
     width: '69px',
     transform: 'rotate(14.17deg)',
-  },
-  img2Box: {
-    display: 'flex',
-    justifyContent: 'end',
+    position: 'absolute',
+    right: '-143px',
+    [theme.breakpoints.down('md')]: {
+      right: '0',
+      left: '250px',
+    },
+    [theme.breakpoints.down('sm')]: {
+      position: 'static',
+    },
   },
   content: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
+    marginTop: '100px',
+    [theme.breakpoints.down('md')]: {},
     [theme.breakpoints.down('sm')]: {
+      marginTop: '0px',
+      // marginTop: '100px',
       justifyContent: 'center',
     },
   },
@@ -133,12 +160,13 @@ const useStyle = makeStyles((theme) => ({
   },
   typoSm: {
     display: 'none',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       display: 'flex',
       flexDirection: 'column',
       fontSize: '28px',
       // fontWeight: 600,
       lineHeight: '28px',
+
       '& br': {
         display: 'none',
       },

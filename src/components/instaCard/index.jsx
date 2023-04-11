@@ -18,9 +18,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
   },
   card: {
-    width: '611px',
-    height: '697px',
-    marginLeft: '50px',
+    width: '486px',
     [theme.breakpoints.down('md')]: {
       width: '311px',
       height: '397px',
@@ -30,11 +28,11 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   post: {
-    width: '579px',
-    height: '455px',
     position: 'absolute ',
-    top: '127px',
-    left: '51px',
+    top: '104px',
+    left: '0px',
+    width: '462px',
+    height: '372px',
     [theme.breakpoints.down('md')]: {
       width: '294px',
       height: '259px',
