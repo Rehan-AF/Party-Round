@@ -225,6 +225,9 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 5,
     color: 'white',
     padding: '1px',
+
+    backgroundSize: '200% auto',
+    animation: '$moveGradient 4s linear infinite',
   },
   Btn: {
     backgroundColor: 'black',

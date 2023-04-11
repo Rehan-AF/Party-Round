@@ -306,6 +306,13 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 50,
     color: 'white',
     padding: '0 1px',
+    backgroundSize: '200% auto',
+    animation: '$moveGradient 4s linear infinite',
+  },
+  '@keyframes moveGradient': {
+    '0%': { backgroundPosition: '0% 50%' },
+    '50%': { backgroundPosition: '100% 50%' },
+    '100%': { backgroundPosition: '0% 50%' },
   },
   Btn: {
     backgroundColor: 'black',
