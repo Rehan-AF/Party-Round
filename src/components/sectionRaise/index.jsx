@@ -335,6 +335,8 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 50,
     color: 'white',
     padding: '1px',
+    backgroundSize: '200% auto',
+    animation: '$moveGradient 4s linear infinite',
     [theme.breakpoints.down('sm')]: {
       borderRadius: 5,
     },
