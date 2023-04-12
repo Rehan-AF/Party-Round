@@ -222,7 +222,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     background: 'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',
     border: 0,
-    borderRadius: 5,
+    borderRadius: 50,
     color: 'white',
     padding: '1px',
 
@@ -234,6 +234,7 @@ const useStyles = makeStyles((theme) => ({
     color: 'white',
     width: '100%',
     fontSize: '14px',
+    borderRadius: 50,
     textTransform: 'capitalize',
     '&:hover': {
       backgroundColor: 'black',

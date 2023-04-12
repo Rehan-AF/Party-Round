@@ -70,6 +70,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     position: 'relative',
     justifyContent: 'space-between',
+    color: '#F6F6F6E5',
     [theme.breakpoints.down('md')]: {
       gap: '30px',
       flexWrap: 'wrap',
@@ -92,7 +93,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '32px',
     fontSize: '1.2rem',
     lineHeight: '1.1',
-    color: 'hsla(0,0%,100%,.8)',
+    color: '#C9C9C9',
     [theme.breakpoints.down('md')]: {
       fontSize: '1rem',
     },

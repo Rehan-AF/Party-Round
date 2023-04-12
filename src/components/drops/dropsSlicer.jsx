@@ -14,21 +14,21 @@ import { makeStyles } from '@material-ui/core';
 import './index.css';
 const data = [
   {
-    title: 'Ball-em',
+    title: 'UV Tennis',
     describe:
-      'Perfectly chosen, different sized blocks give your audience the context of shape and size of your product.',
+      'Play against the master as you race to increasing your dexterity and of course your score. ',
     background: game1,
   },
   {
-    title: 'Pool',
+    title: 'Table Tennis',
     describe:
-      'Take your product to the depths of nature as it sits in elements of wind, water and greenery. Think “outdoor”.',
+      'A home game inspired by the nations favourite puts your racket skills to the test, progressively getting harder.',
     background: game2,
   },
   {
-    title: 'Pool',
+    title: 'BIT-Ball',
     describe:
-      'Take your product to the depths of nature as it sits in elements of wind, water and greenery. Think “outdoor”.',
+      'Retro inspired graphics to give you a nostalgic gameplay. Save the 1x1 from entering into the goal.',
     background: game3,
   },
 ];

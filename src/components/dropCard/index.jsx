@@ -78,10 +78,12 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     fontSize: '41px',
+    color: '#F6F6F6',
     // fontWeight: 600,
   },
   subTitle: {
     fontSize: '14px',
     marginTop: '15px',
+    color: '#C9C9C9',
   },
 }));

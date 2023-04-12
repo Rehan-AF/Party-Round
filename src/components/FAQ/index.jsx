@@ -77,6 +77,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '35px',
     // fontWeight: '800',
     textAlign: 'center',
+    color: '#F6F6F6E5',
     marginBottom: '150px',
     [theme.breakpoints.down('md')]: {
       marginBottom: '50px',
@@ -108,7 +109,7 @@ const useStyles = makeStyles((theme) => ({
   },
   icon: {
     fontSize: '27px',
-    color: '#A8A8A8',
+    color: '#c9c9c9',
     // fontWeight: '800',
   },
   details: {
