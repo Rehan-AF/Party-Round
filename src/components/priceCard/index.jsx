@@ -95,9 +95,15 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 100,
     border: '1px solid #445C7C',
     borderRadius: '16px',
-    // [theme.breakpoints.down('md')]: {
-    //   height: '100%',
-    // },
+
+    [theme.breakpoints.up('md')]: {
+      // height: '100%',
+      width: '250px',
+    },
+    [theme.breakpoints.up('lg')]: {
+      // height: '100%',
+      width: '250px',
+    },
     '&.mobileSwiper-slide-active': {
       filter: 'blur(0px)',
       backgroundColor: '#E8E8E8',
@@ -112,9 +118,9 @@ const useStyles = makeStyles((theme) => ({
         filter: 'blur(0px)',
       },
     },
-    [theme.breakpoints.up('lg')]: {
-      width: '292.5px',
-    },
+    // [theme.breakpoints.up('md')]: {
+    //   width: '292.5px',
+    // },
   },
   '@keyframes moveGradient': {
     '0%': { backgroundPosition: '0% 50%' },

@@ -78,6 +78,14 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       justifyContent: 'center',
     },
+    [theme.breakpoints.up('md')]: {
+      width: 870,
+      margin: '0 auto',
+    },
+    [theme.breakpoints.up('lg')]: {
+      width: 1092,
+      margin: '0 auto',
+    },
   },
   title: {
     lineHeight: '1',

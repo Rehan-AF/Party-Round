@@ -148,6 +148,10 @@ const useStyles = makeStyles((theme) => ({
       // justifyContent: 'flex-Start',
       gap: '30px',
     },
+    [theme.breakpoints.up('xl')]: {
+      justifyContent: 'center',
+      gap: 700,
+    },
   },
   drawer: {
     display: 'none',
@@ -193,9 +197,6 @@ const useStyles = makeStyles((theme) => ({
       // width: 'calc(100% - 48px)',
       paddingLeft: '0',
       display: 'none',
-    },
-    [theme.breakpoints.up('xl')]: {
-      paddingLeft: '314px',
     },
   },
   logo: {
@@ -271,9 +272,6 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down('sm')]: {
       display: 'none',
-    },
-    [theme.breakpoints.up('xl')]: {
-      paddingRight: '314px',
     },
   },
   line: {

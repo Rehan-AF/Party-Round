@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     position: 'relative',
     gap: '23px',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
       alignItems: 'center',
@@ -84,6 +84,12 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '24px',
     lineHeight: '1.1',
     color: 'hsla(0,0%,100%,.8)',
+    [theme.breakpoints.up('md')]: {
+      width: '544px',
+    },
+    [theme.breakpoints.up('lg')]: {
+      width: '600px',
+    },
 
     [theme.breakpoints.down('md')]: {
       fontSize: '21px',

@@ -77,22 +77,19 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       padding: '0 15px 0 15px',
     },
-    [theme.breakpoints.up('xl')]: {
-      padding: '0px 380px',
-    },
+
     '&.MuiTypography-body1': {
       // fontFamily: '"Fahkwang", sans-serif!important',
     },
   },
   sunContainer: {
-    padding: '0 70px',
-
-    [theme.breakpoints.up('xl')]: {
-      padding: '0 345px',
-    },
-    [theme.breakpoints.down('md')]: {
-      padding: '0 ',
-    },
+    // padding: '0 70px',
+    // [theme.breakpoints.up('xl')]: {
+    //   padding: '0 345px',
+    // },
+    // [theme.breakpoints.down('md')]: {
+    //   padding: '0 ',
+    // },
   },
   sectionGap: {
     paddingTop: '12rem',

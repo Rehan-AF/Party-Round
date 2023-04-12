@@ -20,10 +20,10 @@ const Security = () => {
         content of the ticket.
       </Typography>
       <div className={classes.typoBox}>
-        <Typography className={classes.Typo}>
+        {/* <Typography className={classes.Typo}>
           We are on a mission to reshape the way <br /> consumers engage with
           brands
-        </Typography>
+        </Typography> */}
       </div>
     </div>
   );
@@ -37,6 +37,14 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     gap: '30px',
+    [theme.breakpoints.up('md')]: {
+      width: 870,
+      margin: '0 auto',
+    },
+    [theme.breakpoints.up('lg')]: {
+      width: 1092,
+      margin: '0 auto',
+    },
   },
   smTitle: {
     textTransform: 'uppercase',
