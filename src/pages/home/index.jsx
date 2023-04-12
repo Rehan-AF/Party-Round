@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core';
 import React from 'react';
-// import { GridLarge, GridSmall } from '../../components/gridView/Grid';
+import { GridLarge, GridSmall } from '../../components/gridView/Grid';
 import HomePage from '../homePage';
 
 const Home = () => {

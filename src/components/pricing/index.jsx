@@ -254,6 +254,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('md')]: {
       width: 926,
     },
+    [theme.breakpoints.up('lg')]: {
+      width: 1100,
+    },
   },
   pricingSubDiv: {
     display: 'flex',
