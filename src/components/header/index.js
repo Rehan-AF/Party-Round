@@ -213,6 +213,7 @@ const useStyles = makeStyles((theme) => ({
   },
   logoM: {
     width: '34px',
+    marginBottom: '4px',
   },
   MlogoM: {
     display: 'none',

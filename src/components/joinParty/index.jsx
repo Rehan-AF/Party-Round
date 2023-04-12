@@ -3,6 +3,7 @@ import React from 'react';
 // import CustomBotton from '../buttons';
 import { GridSix } from '../gridView';
 import { SGridEight } from '../gridView/smallGrid';
+import rocket from '../../assets/rocket.png';
 const JoinParty = () => {
   const classes = useStyles();
   return (
@@ -19,8 +20,8 @@ const JoinParty = () => {
         </Typography>
         <div className={classes.buttonBox}>
           <Button className={classes.Btn}>
-            {/* <img src={googleLogo} alt="" width={25} /> */}
-            Join Party
+            <img src={rocket} alt="" width={25} />
+            <div>Get Started</div>
           </Button>
         </div>
       </div>
@@ -91,10 +92,15 @@ const useStyles = makeStyles((theme) => ({
   Btn: {
     backgroundColor: 'black',
     color: 'white',
-    width: '120px',
+    // width: '120px',
     fontSize: '14px',
     borderRadius: 50,
     textTransform: 'capitalize',
+    '&.MuiButton-label': {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '5px',
+    },
     '&:hover': {
       backgroundColor: 'black',
     },
