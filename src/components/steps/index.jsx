@@ -61,7 +61,9 @@ const StepsSection = () => {
         infinite={false}
         touchEnabled={window.innerWidth > 960 ? false : true}
         dragEnabled={window.innerWidth > 960 ? false : true}
-        totalSlides={3}
+        totalSlides={
+          window.innerWidth > 525 ? 2 : window.innerWidth > 960 ? 3 : 3
+        }
         visibleSlides={window.innerWidth < 960 ? 1.15 : 3}
         currentSlide={window.innerWidth > 960 ? 1 : activeIndex}
         enableSwipe={window.innerWidth > 960 ? false : true}

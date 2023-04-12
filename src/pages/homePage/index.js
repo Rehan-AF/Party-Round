@@ -26,7 +26,9 @@ const HomePage = () => {
       <div className={classes.container}>
         <SectionRaise />
         <div className={classes.sunContainer}>
-          <div style={{ paddingTop: '177px' }}>{/* <StepsSection /> */}</div>
+          <div style={{ paddingTop: '177px' }}>
+            <StepsSection />
+          </div>
           <div className={classes.sectionOneGap}>
             <SectionTwo />
           </div>
