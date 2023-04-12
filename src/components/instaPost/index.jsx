@@ -11,6 +11,7 @@ const InstaPost = () => {
   return (
     <div className={classes.container}>
       <div>
+        <Typography className={classes.smTitle}>social proof</Typography>
         <Typography className={classes.title}>
           Make your brands social go <span>brrrr</span>.
         </Typography>
@@ -50,6 +51,19 @@ const InstaPost = () => {
 
 export default InstaPost;
 const useStyle = makeStyles((theme) => ({
+  smTitle: {
+    textTransform: 'uppercase',
+    textAlign: 'center',
+    marginBottom: '5px',
+    fontWeight: '600',
+    fontSize: '10px',
+    background: 'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',
+    backgroundClip: 'text',
+    WebkitBackgroundClip: 'text',
+    color: 'transparent',
+    backgroundSize: '200% auto',
+    animation: '$moveGradient 4s linear infinite',
+  },
   title: {
     fontSize: '36px',
     // fontWeight: 600,

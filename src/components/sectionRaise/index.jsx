@@ -77,7 +77,7 @@ const SectionRaise = () => {
             </Button>
           </div>
           <Typography className={classes.typo}>
-            Schedule a product demo
+            How much can your brand make?
             <ArrowRightAltIcon />
           </Typography>
         </div>
@@ -252,6 +252,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     gap: '10px',
+    color: '#F6F6F6',
   },
   phone: {
     width: '350px',

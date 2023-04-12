@@ -50,6 +50,7 @@ const StepsSection = () => {
   };
   return (
     <div>
+      <Typography className={classes.smTitle}>CUSTOMER JOURNEY</Typography>
       <Typography className={classes.title}>
         We give your receipt <span>superpowers</span>
       </Typography>
@@ -123,6 +124,18 @@ const useStyles = makeStyles((theme) => ({
       display: 'flex',
       justifyContent: 'center',
     },
+  },
+  smTitle: {
+    textAlign: 'center',
+    marginBottom: '5px',
+    fontWeight: '600',
+    fontSize: '10px',
+    background: 'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',
+    backgroundClip: 'text',
+    WebkitBackgroundClip: 'text',
+    color: 'transparent',
+    backgroundSize: '200% auto',
+    animation: '$moveGradient 4s linear infinite',
   },
   title: {
     fontSize: 36,

@@ -132,6 +132,7 @@ const useStyles = makeStyles((theme) => ({
     top: '0',
     width: 'calc(100% - 130px)',
     zIndex: 100,
+    opacity: '90%',
     [theme.breakpoints.down('md')]: {
       padding: '12px 50px',
       width: 'calc(100% - 100px)',

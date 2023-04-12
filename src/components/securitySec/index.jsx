@@ -6,9 +6,13 @@ const Security = () => {
   const classes = useStyles();
   return (
     <div className={classes.container}>
-      <Typography className={classes.title}>
-        Security measures powered by A.I.
-      </Typography>
+      <div>
+        <Typography className={classes.smTitle}>protection</Typography>
+
+        <Typography className={classes.title}>
+          Security measures powered by A.I.
+        </Typography>
+      </div>
       <img src={Fingerprint} alt="" className={classes.print} />
       <Typography className={classes.description}>
         Minimise the risk of fraud with built in Optical Character Recognition
@@ -34,9 +38,28 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     gap: '30px',
   },
+  smTitle: {
+    textTransform: 'uppercase',
+    textAlign: 'center',
+    marginBottom: '5px',
+    fontWeight: '600',
+    fontSize: '10px',
+    background: 'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',
+    backgroundClip: 'text',
+    WebkitBackgroundClip: 'text',
+    color: 'transparent',
+    backgroundSize: '200% auto',
+    animation: '$moveGradient 4s linear infinite',
+  },
+  '@keyframes moveGradient': {
+    '0%': { backgroundPosition: '0% 50%' },
+    '50%': { backgroundPosition: '100% 50%' },
+    '100%': { backgroundPosition: '0% 50%' },
+  },
   title: {
     fontSize: '35px',
     // fontWeight: '800',
+    color: '#F6F6F6E5',
     textAlign: 'center',
     [theme.breakpoints.down('md')]: {
       fontSize: '28px',
@@ -54,6 +77,7 @@ const useStyles = makeStyles((theme) => ({
   description: {
     fontSize: '24px',
     textAlign: 'center',
+    color: '#C9C9C9',
     [theme.breakpoints.down('md')]: {
       fontSize: '17px',
     },

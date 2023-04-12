@@ -41,7 +41,7 @@ const CheckListCard = () => {
             <SvgIcons loading={true} className={classes.iconsLoading} />
           )}
           <Typography className={classes.typo} ref={myRef}>
-            Foster loyalty
+            Increase your ATV
           </Typography>
         </div>
         <div className={classes.subDiv}>
@@ -50,7 +50,7 @@ const CheckListCard = () => {
           ) : (
             <SvgIcons loading={true} className={classes.iconsLoading} />
           )}
-          <Typography className={classes.typo}>be buzz-worthy </Typography>
+          <Typography className={classes.typo}>Become discoverable </Typography>
         </div>
       </div>
     </div>
@@ -121,6 +121,7 @@ const useStyles = makeStyles((theme) => ({
   },
   typo: {
     fontSize: '1.7rem',
+    opacity: '90%',
     [theme.breakpoints.down('md')]: {
       fontSize: '1.2rem',
     },

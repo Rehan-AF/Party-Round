@@ -92,16 +92,18 @@ const Pricing = () => {
   return (
     <div>
       <div className={classes.top}>
+        <Typography className={classes.smTitle}>CALM</Typography>
+
         <Typography className={classes.title}>
           Simple <span>pricing</span> that works at any scale.
         </Typography>
         <Typography className={classes.descrip}>
-          Forget complex pricing structures, we believe in simple , transparent
-          pricing that works for everyone, whether you’re big or small..
+          Host your first game for free, hover on the card. No commitment. No
+          credit card required.
         </Typography>
-        <Typography className={classes.subTitle}>
+        {/* <Typography className={classes.subTitle}>
           Each plan includes a 7-day trial and you can cancel at any time.
-        </Typography>
+        </Typography> */}
       </div>
 
       <div className={classes.pricingSlider}>
@@ -181,15 +183,29 @@ const useStyles = makeStyles((theme) => ({
   top: {
     textAlign: 'center',
   },
+  smTitle: {
+    textTransform: 'uppercase',
+    textAlign: 'center',
+    marginBottom: '5px',
+    fontWeight: '600',
+    fontSize: '10px',
+    background: 'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',
+    backgroundClip: 'text',
+    WebkitBackgroundClip: 'text',
+    color: 'transparent',
+    backgroundSize: '200% auto',
+    animation: '$moveGradient 4s linear infinite',
+  },
   title: {
     fontSize: '35px',
     // fontWeight: '600',
+    color: '#F6F6F6E5',
     marginBottom: '70px',
     '& span': {
       background: 'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',
       backgroundClip: 'text',
       WebkitBackgroundClip: 'text',
-      color: 'white',
+      color: 'transparent',
       backgroundSize: '200% auto',
       animation: '$moveGradient 4s linear infinite',
     },
@@ -198,7 +214,11 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: '32px',
     },
   },
-
+  '@keyframes moveGradient': {
+    '0%': { backgroundPosition: '0% 50%' },
+    '50%': { backgroundPosition: '100% 50%' },
+    '100%': { backgroundPosition: '0% 50%' },
+  },
   descrip: {
     fontSize: '24px',
     marginBottom: '50px',
@@ -242,7 +262,7 @@ const useStyles = makeStyles((theme) => ({
   },
   suggestion: {
     fontSize: '18px',
-    color: '#FFFFFFCC',
+    color: '#F6F6F6CC',
     textAlign: 'center',
     margin: '10px 0',
     [theme.breakpoints.down('md')]: {

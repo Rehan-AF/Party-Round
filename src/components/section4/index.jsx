@@ -6,6 +6,8 @@ const SectionFour = () => {
   return (
     <div className={classes.container}>
       <div>
+        <Typography className={classes.smTitle}>dEFINE</Typography>
+
         <Typography className={classes.title}>
           Start your tournament,
           <br />
@@ -40,10 +42,23 @@ const useStyles = makeStyles((theme) => ({
       gap: '60px',
     },
   },
+  smTitle: {
+    textTransform: 'uppercase',
+    marginBottom: '5px',
+    fontWeight: '600',
+    fontSize: '10px',
+    background: 'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',
+    backgroundClip: 'text',
+    WebkitBackgroundClip: 'text',
+    color: 'transparent',
+    backgroundSize: '200% auto',
+    animation: '$moveGradient 4s linear infinite',
+  },
   title: {
     fontSize: '35px',
     // fontWeight: 'bold',
     lineHeight: '45px',
+    opacity: '90%',
     '& span': {
       background: 'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',
       backgroundClip: 'text',
@@ -69,6 +84,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '24px',
     lineHeight: '1.1',
     color: 'hsla(0,0%,100%,.8)',
+
     [theme.breakpoints.down('md')]: {
       fontSize: '21px',
     },
