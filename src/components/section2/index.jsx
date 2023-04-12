@@ -2,7 +2,7 @@ import { makeStyles, Typography } from '@material-ui/core';
 import React from 'react';
 import CheckListCard from '../checkListCard';
 import Text from '../textfeild';
-
+import quatationMarks from '../../assets/quatationMarks.png';
 const SectionTwo = () => {
   const classes = useStyles();
 
@@ -10,6 +10,13 @@ const SectionTwo = () => {
     <div className={classes.container}>
       <div>
         <Typography className={classes.typo8}>
+          <Text>
+            <img
+              src={quatationMarks}
+              alt=""
+              className={classes.quatationMarks}
+            />
+          </Text>
           <Text>“Almost 50% of global consumers</Text>
           <Text> want brands to innovate.”</Text>
         </Typography>
@@ -47,6 +54,10 @@ const useStyles = makeStyles((theme) => ({
   typo8: {
     display: 'flex',
     flexDirection: 'column',
+  },
+  quatationMarks: {
+    width: '50px',
+    opacity: '80%',
   },
   whiteBox: {
     marginTop: '20px',

@@ -84,17 +84,18 @@ const SectionRaise = () => {
         <div className={classes.mobileBtnBox}>
           <div className={classes.buttonBox}>
             <Button variant="contained" className={classes.Btn}>
-              Join Waitlist
+              <img src={calculator} alt="" width={18} />
+              Calculate
             </Button>
           </div>
           <Typography
             className={classes.typo}
             style={{
-              width: '200px',
+              width: '260px',
               textShadow: '2px 2px 1px rgba(0,0,0,0.8)',
             }}
           >
-            Schedule a product demo
+            How much can your brand make?
           </Typography>
         </div>
         <div className={classes.linksBox}>
@@ -240,6 +241,7 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: 'column',
       alignItems: 'center',
       position: 'fixed',
+      borderRadius: 50,
       zIndex: 10,
       left: '50%',
       right: '50%',
@@ -338,9 +340,6 @@ const useStyles = makeStyles((theme) => ({
     padding: '1px',
     backgroundSize: '200% auto',
     animation: '$moveGradient 4s linear infinite',
-    [theme.breakpoints.down('sm')]: {
-      borderRadius: 5,
-    },
   },
   Btn: {
     backgroundColor: 'black',
@@ -361,7 +360,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       width: '250px',
       height: '38px',
-      borderRadius: 5,
     },
   },
 }));

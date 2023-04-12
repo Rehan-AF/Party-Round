@@ -95,11 +95,11 @@ const Pricing = () => {
         <Typography className={classes.smTitle}>CALM</Typography>
 
         <Typography className={classes.title}>
-          Simple <span>pricing</span> that works at any scale.
+          Simple <span>pricing</span> that works at any <span>scale</span>.
         </Typography>
         <Typography className={classes.descrip}>
-          Host your first game for free, hover on the card. No commitment. No
-          credit card required.
+          Transparent pricing that works for everyone whether you're big or
+          small
         </Typography>
         {/* <Typography className={classes.subTitle}>
           Each plan includes a 7-day trial and you can cancel at any time.
@@ -200,7 +200,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '35px',
     // fontWeight: '600',
     color: '#F6F6F6E5',
-    marginBottom: '70px',
+    marginBottom: '50px',
     '& span': {
       background: 'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',
       backgroundClip: 'text',

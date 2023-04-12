@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '28px',
       lineHeight: '28px',
     },
-    color: '#cdcdcd',
+    color: '#F6F6F6E5',
   },
   scrollUpAnimationOne: {
     color: '#4d4d4d',
