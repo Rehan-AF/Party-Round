@@ -5,7 +5,7 @@ import { useScrollDirection } from '../../hooks';
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
 import clsx from 'clsx';
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
-import Typed from 'typed.js';
+// import Typed from 'typed.js';
 import PhoneComponent from '../phone component';
 import calculator from '../../assets/logos/calculator.png';
 const SectionRaise = () => {
@@ -43,30 +43,26 @@ const SectionRaise = () => {
     });
     observer.observe(myRef.current);
   }, [scrollDirection]);
-  useEffect(() => {
-    const typed = new Typed('.typing', {
-      strings: ['engagement', 'revenues'],
-      typeSpeed: 80,
-      backSpeed: 60,
-      backDelay: 1000,
-      loop: false,
-    });
-    return () => {
-      typed.destroy();
-    };
-  }, []);
+  // useEffect(() => {
+  //   const typed = new Typed('.typing', {
+  //     strings: ['engagement', 'revenues'],
+  //     typeSpeed: 80,
+  //     backSpeed: 60,
+  //     backDelay: 1000,
+  //     loop: false,
+  //   });
+  //   return () => {
+  //     typed.destroy();
+  //   };
+  // }, []);
   return (
     <div className={classes.container} ref={boxRef}>
       <div className={classes.subContainer}>
         <Typography className={classes.title}>
-          Level-up your receipts and drive <br />
-          <i className={classes.gradientText}>
-            <span className="typing">engagement</span>
-          </i>
-          <i> </i>to new heights.
+          Take the <span>leap</span>, take the <span>win</span>. <br />
         </Typography>
         <Typography className={classes.subTitle}>
-          Host in-browser gameplays for qualifying purchases.
+          Level-up your bottom line, host a game.
         </Typography>
         <Typography className={classes.hashTags}>#GoodGame #GG</Typography>
         <div className={classes.btnBox}>
@@ -162,6 +158,10 @@ const useStyles = makeStyles((theme) => ({
       alignItems: 'center',
       gap: '60px',
     },
+    [theme.breakpoints.up('xl')]: {
+      justifyContent: 'center',
+      gap: 350,
+    },
   },
   subContainer: {
     paddingTop: 40,
@@ -175,6 +175,14 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: '50px',
     // fontWeight: '800',
     opacity: '90%',
+    '& span': {
+      background: 'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',
+      backgroundClip: 'text',
+      WebkitBackgroundClip: 'text',
+      color: 'transparent',
+      backgroundSize: '200% auto',
+      animation: '$moveGradient 4s linear infinite',
+    },
     [theme.breakpoints.down('md')]: {
       fontSize: '28px',
       lineHeight: '28px  ',
@@ -183,14 +191,7 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   },
-  gradientText: {
-    background: 'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',
-    backgroundClip: 'text',
-    WebkitBackgroundClip: 'text',
-    color: 'transparent',
-    backgroundSize: '200% auto',
-    animation: '$moveGradient 4s linear infinite',
-  },
+
   '@keyframes moveGradient': {
     '0%': { backgroundPosition: '0% 50%' },
     '50%': { backgroundPosition: '100% 50%' },

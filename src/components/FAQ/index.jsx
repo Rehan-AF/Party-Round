@@ -38,7 +38,7 @@ const FAQ = () => {
     setExpanded(isExpanded ? panel : false);
   };
   return (
-    <div>
+    <div className={classes.container}>
       <Typography className={classes.title}>
         Frequently asked questions.
       </Typography>
@@ -73,6 +73,16 @@ const FAQ = () => {
 export default FAQ;
 
 const useStyles = makeStyles((theme) => ({
+  container: {
+    [theme.breakpoints.up('md')]: {
+      width: 870,
+      margin: '0 auto',
+    },
+    [theme.breakpoints.up('lg')]: {
+      width: 1092,
+      margin: '0 auto',
+    },
+  },
   title: {
     fontSize: '35px',
     // fontWeight: '800',

@@ -90,7 +90,7 @@ const Pricing = () => {
     setActiveIndex(index);
   };
   return (
-    <div>
+    <div className={classes.container}>
       <div className={classes.top}>
         <Typography className={classes.smTitle}>CALM</Typography>
 
@@ -180,6 +180,14 @@ const Pricing = () => {
 export default Pricing;
 
 const useStyles = makeStyles((theme) => ({
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      display: 'block',
+    },
+  },
   top: {
     textAlign: 'center',
   },
@@ -242,6 +250,9 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column-reverse',
     [theme.breakpoints.down('md')]: {
       flexDirection: 'column',
+    },
+    [theme.breakpoints.up('md')]: {
+      width: 926,
     },
   },
   pricingSubDiv: {

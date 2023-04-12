@@ -51,6 +51,12 @@ const InstaPost = () => {
 
 export default InstaPost;
 const useStyle = makeStyles((theme) => ({
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   smTitle: {
     textTransform: 'uppercase',
     textAlign: 'center',
@@ -94,25 +100,36 @@ const useStyle = makeStyles((theme) => ({
     marginBottom: '10px',
     marginTop: '10px',
     opacity: '90%',
+    [theme.breakpoints.up('md')]: {
+      width: '880px',
+    },
+    [theme.breakpoints.up('lg')]: {
+      width: '1083px',
+    },
     [theme.breakpoints.down('md')]: {
       fontSize: '21px',
     },
   },
   img1Box: {
+    width: '100%',
     position: 'relative',
   },
   img2Box: {
     position: 'relative',
+
     [theme.breakpoints.down('sm')]: {
       display: 'flex',
       justifyContent: 'flex-end',
+    },
+    [theme.breakpoints.up('md')]: {
+      width: '100%',
     },
   },
   heartTop: {
     width: '69px',
     transform: 'rotate(-30.05deg)',
     position: 'absolute',
-    left: '-135px',
+    left: '0px',
     [theme.breakpoints.down('md')]: {
       left: '0px',
     },
@@ -124,10 +141,9 @@ const useStyle = makeStyles((theme) => ({
     width: '69px',
     transform: 'rotate(14.17deg)',
     position: 'absolute',
-    right: '-143px',
+    right: '0px',
     [theme.breakpoints.down('md')]: {
       right: '0',
-      left: '250px',
     },
     [theme.breakpoints.down('sm')]: {
       position: 'static',
@@ -136,9 +152,14 @@ const useStyle = makeStyles((theme) => ({
   content: {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-between',
     marginTop: '100px',
-    [theme.breakpoints.down('md')]: {},
+    [theme.breakpoints.up('md')]: {
+      justifyContent: 'center',
+      gap: '178px',
+    },
+    [theme.breakpoints.up('lg')]: {
+      gap: '92px',
+    },
     [theme.breakpoints.down('sm')]: {
       marginTop: '0px',
       // marginTop: '100px',

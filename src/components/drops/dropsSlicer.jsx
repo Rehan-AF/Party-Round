@@ -38,15 +38,17 @@ const DropSlicer = () => {
   return (
     <>
       <CarouselProvider
-        naturalSlideWidth={200}
+        naturalSlideWidth={294}
         naturalSlideHeight={200}
         isIntrinsicHeight
         infinite={false}
         touchEnabled={window.innerWidth > 960 ? false : true}
         dragEnabled={window.innerWidth > 960 ? false : true}
-        totalSlides={3}
+        totalSlides={
+          window.innerWidth > 530 ? 2 : window.innerWidth > 960 ? 3 : 3
+        }
         visibleSlides={window.innerWidth < 960 ? 1.15 : 3}
-        currentSlide={0}
+        currentSlide={window.innerWidth > 960 ? 1 : 0}
         enableSwipe={window.innerWidth > 960 ? false : true}
         preventMovementUntilSwipeScrollTolerance={true}
       >

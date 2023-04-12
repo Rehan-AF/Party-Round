@@ -65,8 +65,14 @@
 .carousel__slider-tray .carousel__slide + .carousel__slide {
   margin-left: 10px;
 }
+
+@media screen and (min-width: 1280px) {
+  .carousel__slide {
+    width: 360px !important;
+  }
+}
 @media screen and (max-width: 959px) {
   .carousel__slide {
-    width: 320 !important;
+    width: 320px !important;
   }
 }

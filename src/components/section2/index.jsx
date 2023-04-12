@@ -41,8 +41,14 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-between',
     gap: '100px',
 
+    [theme.breakpoints.up('lg')]: {
+      gap: 168,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
     [theme.breakpoints.down('md')]: {
-      gap: '82px',
+      gap: 125,
+      justifyContent: 'center',
       alignItems: 'center',
     },
     [theme.breakpoints.down('sm')]: {

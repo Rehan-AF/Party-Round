@@ -72,5 +72,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     paddingTop: '49px',
+    [theme.breakpoints.down('sm')]: {
+      display: 'block',
+    },
   },
 }));
