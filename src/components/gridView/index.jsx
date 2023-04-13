@@ -1,46 +1,69 @@
-import React from "react";
-import { Grid } from "../grid";
+import React from 'react';
+import { Grid } from '../grid';
+import { makeStyles } from '@material-ui/core';
 
 export const GridOne = () => {
+  const classes = useStyles();
   return (
     <div>
-      <Grid c11="#ff6c2e" />
-      <Grid c11="#ff4c02" c12="#fc5fff" />
+      <Grid c10="#ff8b37" c12="#ff6c2e" />
+      <Grid c9="#998cfe" c11="#ff4c02" c12="#fc5fff" />
       <Grid c12="#ff045f" />
-      <Grid c11="#8e36ff" c12="#8e36ff" />
-      <Grid c19="#41f2cd" c11="#3890ff" />
-      <Grid c8="#41f2cd" c10="#3de5c2" c11="#588afe" c12="#588afe" />
-      <Grid c11="#4fa0ff" c12="#998cfe" />
-      <Grid c11="#9995fe" />
+      <Grid c11="#8e36ff" />
+      <Grid c9="#41f2cd" c10="#3890ff" />
+      <Grid />
+      <Grid c1="#588afe" c11="#4fa0ff" c12="#998cfe" />
+      <Grid c11="#9995fe" c2="#3890ff" />
       <Grid c12="#ff045f" />
       <Grid />
       <Grid />
-      <Grid />
+      <div className={classes.lar}>
+        <Grid c11="#3890ff" />
+      </div>
     </div>
   );
 };
 
 export const Gridtwo = () => {
+  const classes = useStyles();
   return (
     <div>
-      <Grid />
-      <Grid />
+      <Grid c12="#8e36ff" />
+      <Grid c9="#ff4c02" c11="#fc5fff" />
       <Grid />
       <Grid c12="#ff414f" />
-      <Grid c11="#ff8b37" c12="#ff4c00" />
-      <Grid c10="#ff80db" c11="#ffb039" />
+      <Grid c1="#4fa0ff" c11="#ff8b37" c12="#ff4c00" />
+      <Grid c1="#3de5c2" c2="#998cfe" c10="#ff80db" c11="#ffb039" />
       <Grid />
       <Grid />
       <Grid c1="#ff4c00" />
       <Grid c2="#ff045f" />
-      <Grid c9="#ff3e12" c10="#e57d32" />
-      <Grid c8="#ff2172" c9="#f9205e" c10="#f53e4d" c11="#fd45f6" />
+      <div className={`${classes.lar} ${classes.exLar}`}>
+        <Grid c9="#ff3e12" c10="#e57d32" />
+        <Grid c8="#ff2172" c9="#f9205e" c10="#f53e4d" c11="#fd45f6" />
+      </div>
       <Grid c12="#ff46f8" />
       <Grid c8="#e01fd9" c11="#855aff" />
-      <Grid c10="#7192fe" />
+      <Grid c1="#ff414f" c2="#998cfe" />
+      <Grid c2="#e01fd9" c3="#998cfe" />
+      <Grid c1="#ff8b37" c8="#7192fe" c9="#3de5c2" c10="#ff8b37" />
+      <Grid c11="#7192fe" />
+      <div className={classes.mid}>
+        <Grid c10="#7192fe" c12="#ff8b37" />
+      </div>
+      <div className={classes.onlyLar}>
+        <Grid />
+        <Grid />
+        <Grid c1="#ff414f" c12="#7192fe" />
+        <Grid c2="#7192fe" c11="#ff414f" />
+        <Grid c1="#ff414f" c12="#7192fe" />
+        <Grid c2="#7192fe" c11="#ff414f" />
+        <Grid c1="#ff414f" c12="#7192fe" />
+      </div>
     </div>
   );
 };
+
 export const GridThree = () => {
   return (
     <div>
@@ -50,9 +73,12 @@ export const GridThree = () => {
       <Grid />
       <Grid />
       <Grid />
-      <Grid />
-      <Grid />
-      <Grid />
+      <Grid c2="#fc5fff" c11="#7192fe" />
+      <Grid c1="#8e36ff" c12="#8e36ff" />
+      <Grid c2="#fc5fff" c11="#7192fe" />
+      <Grid c1="#8e36ff" c12="#8e36ff" />
+      <Grid c2="#fc5fff" c11="#7192fe" />
+      <Grid c1="#8e36ff" c12="#8e36ff" />
     </div>
   );
 };
@@ -61,10 +87,10 @@ export const GridFour = () => {
     <div>
       <Grid />
       <Grid />
-      <Grid c12="#fc2160" c1="#7192fe" c2="#7192fe" />
-      <Grid c12="#ff414f" c2="#4dc7f7" />
-      <Grid c11="#ff8b37" c2="#7192fe" />
-      <Grid c3="#2e708c" c4="#3ff1cc" />
+      <Grid />
+      <Grid />
+      <Grid />
+      <Grid />
       <Grid />
       <Grid />
       <Grid />
@@ -73,15 +99,51 @@ export const GridFour = () => {
     </div>
   );
 };
+// eslint-disable-next-line no-lone-blocks
+{
+  /**
+colors 
+#ff6c2e orange
+#ff4c02 orange
+#fc5fff pink
+#ff045f red
+#8e36ff  purple
+#41f2cd  green
+#3890ff blue
+#3de5c2  green
+#588afe blue
+#4fa0ff blue
+#998cfe purple
+#9995fe purple
+#ff414f redish 
+#ff8b37  orange
+*/
+}
 export const GridFive = () => {
+  const classes = useStyles();
   return (
     <div>
-      <Grid c1="#e01fd9" />
-      <Grid c2="#ff045f" c3="#ff8b37" />
-      <Grid c4="#ffb039" />
+      <div className={classes.onlyLar}>
+        <Grid c1="#e01fd9" c12="#ff045f" />
+        <Grid c2="#ff045f" c3="#3de5c2" c11="#3890ff" c10="#9995fe" />
+        <Grid c4="#ffb039" c11="#ff8b37" />
+        <Grid c12="#8e36ff" />
+        <Grid c10="#8e36ff" />
+      </div>
       <Grid />
       <Grid />
       <Grid />
+      <div className={classes.onlyMid}>
+        <Grid c1="#e01fd9" c12="#8e36ff" />
+        <Grid c2="#ff045f" c11="#3890ff" c10="#9995fe" />
+        <Grid c2="#3de5c2" c3="#ff8b37" c10="#3890ff" />
+      </div>
+      <div className={classes.onlyLar}>
+        <Grid c12="#e01fd9" c1="#ff045f" />
+        <Grid c11="#ff045f" c2="#3de5c2" c13="#9995fe" />
+        <Grid c12="#ff8b37" />
+        <Grid c1="#8e36ff" />
+      </div>
       <Grid />
       <Grid />
       <Grid />
@@ -172,3 +234,44 @@ export const GridSix = () => {
     </div>
   );
 };
+const useStyles = makeStyles((theme) => ({
+  lar: {
+    opacity: 0,
+
+    [theme.breakpoints.down('md')]: {
+      opacity: 1,
+    },
+    [theme.breakpoints.up('xl')]: {
+      opacity: 1,
+    },
+  },
+  mid: {
+    opacity: 0,
+    [theme.breakpoints.up('lg')]: {
+      opacity: 1,
+    },
+    [theme.breakpoints.down('sm')]: {
+      opacity: 1,
+    },
+  },
+  exLar: {
+    [theme.breakpoints.up('xl')]: {
+      opacity: 0,
+    },
+  },
+  onlyLar: {
+    display: 'none',
+    [theme.breakpoints.up('lg')]: {
+      display: 'block',
+    },
+  },
+  onlyMid: {
+    display: 'none',
+    [theme.breakpoints.up('md')]: {
+      display: 'block',
+    },
+    [theme.breakpoints.up('lg')]: {
+      display: 'none',
+    },
+  },
+}));

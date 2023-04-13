@@ -89,7 +89,7 @@ const StepsSection = () => {
                   alt="image_failed_to_load"
                   ref={(el) => (videoRefs.current[i] = el)}
                   onEnded={() => handleVideoEnded(i)}
-                  autoplay={true}
+                  autoplay={false}
                   muted={true}
                   controls={false}
                   playsinline
