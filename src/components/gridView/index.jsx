@@ -105,17 +105,6 @@ export const GridFive = () => {
   const classes = useStyles();
   return (
     <div>
-      {/**
-colors 
-#cc4065
-#2b2fa1
-#ecc62f
-#378379
-#7b142d
-#30122a
-#a6551e
-#17261f
-*/}
       <div className={classes.onlyLar}>
         <Grid c12="#2b2fa1" c1="#ff045f" />
         <Grid c2="#ff045f" c3="#378379" c11="#3890ff" c10="#7b142d" />

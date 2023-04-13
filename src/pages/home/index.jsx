@@ -10,7 +10,9 @@ const Home = () => {
       <div className={classes.grid}>
         <GridLarge />
       </div>
-      <div className={classes.smallGrid}>{/* <GridSmall /> */}</div>
+      <div className={classes.smallGrid}>
+        <GridSmall />
+      </div>
       <div className={classes.home}>
         <HomePage />
       </div>
