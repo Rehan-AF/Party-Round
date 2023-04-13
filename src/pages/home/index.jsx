@@ -7,7 +7,9 @@ const Home = () => {
   const classes = useStyles();
   return (
     <div className={classes.container}>
-      <div className={classes.grid}>{/* <GridLarge /> */}</div>
+      <div className={classes.grid}>
+        <GridLarge />
+      </div>
       <div className={classes.smallGrid}>{/* <GridSmall /> */}</div>
       <div className={classes.home}>
         <HomePage />
