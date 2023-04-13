@@ -92,6 +92,7 @@ const StepsSection = () => {
                   autoplay={true}
                   muted={true}
                   controls={false}
+                  playsinline
                   onTimeUpdate={(event) => {
                     const progressBar = event.target.nextElementSibling;
                     const progress =

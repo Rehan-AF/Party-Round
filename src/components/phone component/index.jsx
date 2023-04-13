@@ -14,7 +14,14 @@ const PhoneComponent = () => {
           className={classes.phone}
           controls={false}
         />
-        <video autoPlay controls={false} muted loop className={classes.video}>
+        <video
+          autoPlay
+          controls={false}
+          muted
+          loop
+          playsinline
+          className={classes.video}
+        >
           <source src={video} type="video/mp4" />
         </video>
       </div>
