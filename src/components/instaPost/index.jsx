@@ -120,6 +120,7 @@ const useStyle = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       display: 'flex',
       justifyContent: 'flex-end',
+      width: '100%',
     },
     [theme.breakpoints.up('md')]: {
       width: '100%',
