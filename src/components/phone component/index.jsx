@@ -19,7 +19,7 @@ const PhoneComponent = () => {
           controls={false}
           muted
           loop
-          playsinline
+          playsInline
           className={classes.video}
         >
           <source src={video} type="video/mp4" />
