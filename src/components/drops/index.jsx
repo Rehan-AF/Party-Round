@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '35px',
     // fontWeight: 600,
     textAlign: 'center',
-    opacity: '90%',
+    color: '#f6f6f6',
     '& span': {
       background: 'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',
       backgroundClip: 'text',

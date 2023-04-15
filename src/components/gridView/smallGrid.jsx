@@ -13,6 +13,8 @@ export const SGridOne = () => {
       <SmallGrid c2="#7b142d" />
       <SmallGrid />
       <SmallGrid />
+      <SmallGrid />
+      <SmallGrid />
     </div>
   );
 };
@@ -39,11 +41,11 @@ export const SGridThree = () => {
   return (
     <div>
       <SmallGrid />
-      <SmallGrid />
       <SmallGrid c2="#ecc62f" />
       <SmallGrid c4="#a6551e" />
       <SmallGrid c1="#378379" c2="#17261f" />
       <SmallGrid c4="#7b142d" />
+      <SmallGrid />
       <SmallGrid />
       <SmallGrid />
       <SmallGrid />
@@ -80,9 +82,9 @@ export const SGridFive = () => {
     <div>
       <SmallGrid />
       <SmallGrid />
-      <SmallGrid />
       <SmallGrid c1="#ecc62f" />
       <SmallGrid c2="#7b142d" />
+      <SmallGrid />
       <SmallGrid />
       <SmallGrid />
       <SmallGrid />

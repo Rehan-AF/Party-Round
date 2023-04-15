@@ -19,7 +19,7 @@ const PhoneComponent = () => {
           controls={false}
           muted
           loop
-          playsInline
+          playsInline={true}
           className={classes.video}
         >
           <source src={video} type="video/mp4" />
@@ -52,6 +52,7 @@ const useStyles = makeStyles((theme) => ({
     transform:
       'perspective(600cm) rotateY(-12deg) rotate(8deg) rotateX(20deg) scaleY(1.05)',
     borderRadius: '46px 35px 35px 35px',
+    ZIndex: -1,
     [theme.breakpoints.down('md')]: {
       width: '182px',
       top: '2px',

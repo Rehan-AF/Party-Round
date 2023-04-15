@@ -142,7 +142,7 @@ const Pricing = () => {
           touchEnabled={window.innerWidth > 960 ? false : true}
           dragEnabled={window.innerWidth > 960 ? false : true}
           totalSlides={3}
-          visibleSlides={window.innerWidth < 960 ? 1.09 : 3}
+          visibleSlides={window.innerWidth < 960 ? 1.15 : 3}
           currentSlide={window.innerWidth > 960 ? 0 : activeIndex}
           enableSwipe={window.innerWidth > 960 ? false : true}
           preventMovementUntilSwipeScrollTolerance={true}
@@ -207,7 +207,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     fontSize: '35px',
     // fontWeight: '600',
-    color: '#F6F6F6E5',
+    color: '#f6f6f6',
     marginBottom: '50px',
     '& span': {
       background: 'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',
@@ -231,9 +231,13 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '24px',
     marginBottom: '50px',
     opacity: '90%',
+    color: '#c9c9c9',
     [theme.breakpoints.down('md')]: {
       marginBottom: '22px',
       fontSize: '17px',
+    },
+    [theme.breakpoints.down('sm')]: {
+      lineHeight: 1.1,
     },
   },
   subTitle: {

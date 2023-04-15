@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     fontSize: '35px',
     // fontWeight: '800',
-    color: '#F6F6F6E5',
+    color: '#f6f6f6',
     textAlign: 'center',
     [theme.breakpoints.down('md')]: {
       fontSize: '28px',
@@ -86,8 +86,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '24px',
     textAlign: 'center',
     color: '#C9C9C9',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       fontSize: '17px',
+      lineHeight: 1.1,
     },
   },
   typoBox: {

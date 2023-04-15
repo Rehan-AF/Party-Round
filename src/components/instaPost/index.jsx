@@ -74,7 +74,7 @@ const useStyle = makeStyles((theme) => ({
     fontSize: '36px',
     // fontWeight: 600,
     textAlign: 'center',
-    color: '#FAF7F7E5',
+    color: '#f6f6f6',
     [theme.breakpoints.down('md')]: {
       fontSize: '28px',
       lineHeight: '28px',
@@ -100,14 +100,16 @@ const useStyle = makeStyles((theme) => ({
     marginBottom: '10px',
     marginTop: '10px',
     opacity: '90%',
+    color: '#c9c9c9',
     [theme.breakpoints.up('md')]: {
       width: '880px',
     },
     [theme.breakpoints.up('lg')]: {
       width: '1083px',
     },
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       fontSize: '21px',
+      lineHeight: 1.1,
     },
   },
   img1Box: {

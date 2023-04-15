@@ -1,7 +1,7 @@
 #gradient-range {
   -webkit-appearance: none;
   width: 100%;
-  height: 20px;
+  height: 10px;
   background: linear-gradient(to left, #a2c554, #c75454, #9454c7, #54b2c7);
   outline: none;
   padding: 0;
@@ -17,13 +17,15 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: #818080;
+  background-color: #ffffff;
+
   background-image: url('../../assets/logos/arrows.png');
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
   border: 5px solid #fff;
   margin-top: 0px;
   background-position: center;
   background-repeat: no-repeat;
+  background-size: contain;
 }
 @keyframes moveGradient {
   0% {
@@ -63,7 +65,7 @@
 }
 
 .carousel__slider-tray .carousel__slide + .carousel__slide {
-  margin-left: 10px;
+  /* margin-right: 10px; */
 }
 
 @media screen and (min-width: 1280px) {
@@ -74,5 +76,9 @@
 @media screen and (max-width: 959px) {
   .carousel__slide {
     width: 320px !important;
+  }
+  .carousel__slider-tray {
+    justify-content: space-evenly;
+    margin-left: 6.5%;
   }
 }

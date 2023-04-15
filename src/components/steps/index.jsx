@@ -34,13 +34,23 @@ const StepsSection = () => {
   const videoRefs = useRef([]);
 
   useEffect(() => {
-    videoRefs.current[0].play();
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          videoRefs.current[0].play();
+        }
+      });
+    });
+    observer.observe(videoRefs.current[0]);
   }, []);
 
   function handleVideoEnded(index) {
     if (index < videoData.length - 1) {
       videoRefs.current[index + 1].play();
       setActiveIndex(index + 1);
+    } else {
+      videoRefs.current[0].play();
+      setActiveIndex(0);
     }
   }
   console.log(activeIndex, 'active index');
@@ -89,10 +99,10 @@ const StepsSection = () => {
                   alt="image_failed_to_load"
                   ref={(el) => (videoRefs.current[i] = el)}
                   onEnded={() => handleVideoEnded(i)}
-                  autoplay={false}
+                  autoPlay={false}
                   muted={true}
                   controls={false}
-                  playsInline
+                  playsInline={true}
                   onTimeUpdate={(event) => {
                     const progressBar = event.target.nextElementSibling;
                     const progress =
@@ -215,7 +225,7 @@ const useStyles = makeStyles((theme) => ({
     '&::-webkit-progress-value': {
       backgroundColor: ' #007bff',
       borderRadius: 0,
-      transition: 'width 1s ease-in-out',
+      transition: 'width 0.1s ease-in',
     },
   },
   borderMain: {
