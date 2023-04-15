@@ -92,18 +92,18 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '3.5rem',
     marginRight: '1rem',
     // fontWeight: 'bold',
+    color: '#f6f6f6',
     [theme.breakpoints.down('md')]: {
       fontSize: '28px',
-      textAlign: 'center',
     },
   },
   typo: {
     marginTop: '32px',
     fontSize: '1.2rem',
-    lineHeight: '1.1',
     color: '#C9C9C9',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       fontSize: '1rem',
+      lineHeight: 1.1,
     },
   },
   postBox: {

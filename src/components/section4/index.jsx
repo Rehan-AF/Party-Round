@@ -58,7 +58,8 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '35px',
     // fontWeight: 'bold',
     lineHeight: '45px',
-    opacity: '90%',
+    color: '#f6f6f6',
+
     '& span': {
       background: 'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',
       backgroundClip: 'text',
@@ -82,8 +83,7 @@ const useStyles = makeStyles((theme) => ({
   typo: {
     marginTop: '32px',
     fontSize: '24px',
-    lineHeight: '1.1',
-    color: 'hsla(0,0%,100%,.8)',
+    color: '#c9c9c9',
     [theme.breakpoints.up('md')]: {
       width: '544px',
     },
@@ -91,8 +91,9 @@ const useStyles = makeStyles((theme) => ({
       width: '600px',
     },
 
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       fontSize: '21px',
+      lineHeight: 1.1,
     },
   },
 }));

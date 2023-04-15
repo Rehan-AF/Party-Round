@@ -102,7 +102,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.up('lg')]: {
       // height: '100%',
-      width: '250px',
+      width: '305px',
     },
     '&.mobileSwiper-slide-active': {
       filter: 'blur(0px)',
@@ -110,7 +110,7 @@ const useStyles = makeStyles((theme) => ({
       transition: 'color 0.3s ease-in-out ,background 0.3s ease-in-out',
     },
     '&.mobileSwiper-slide-notActive': {
-      filter: 'blur(5px)',
+      // filter: 'blur(5px)',
       backgroundColor: 'black',
       transition:
         'filter 0.2s ease-in-out, color 0.3s ease-in-out ,background 0.3s ease-in-out',

@@ -174,7 +174,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '40px',
     lineHeight: '50px',
     // fontWeight: '800',
-    opacity: '90%',
+    color: '#F6F6F6',
     '& span': {
       background: 'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',
       backgroundClip: 'text',
@@ -200,7 +200,7 @@ const useStyles = makeStyles((theme) => ({
   subTitle: {
     marginTop: '12px',
     fontSize: '24px',
-    color: 'hsla(0,0%,100%,.7)',
+    color: '#C9C9C9',
     lineHeight: '40px',
     // fontWeight: '500',
     [theme.breakpoints.down('md')]: {
@@ -269,7 +269,7 @@ const useStyles = makeStyles((theme) => ({
     gap: '36px',
     marginTop: '90px',
     [theme.breakpoints.down('md')]: {
-      gap: '15px',
+      gap: '10px',
       flexWrap: 'wrap',
     },
     [theme.breakpoints.down('sm')]: {
@@ -278,30 +278,26 @@ const useStyles = makeStyles((theme) => ({
   },
   MobilelinksBox: {
     display: 'none',
-    // [theme.breakpoints.down('md')]: {
-    //   gap: '15px',
-    //   flexWrap: 'wrap',
-    //   display: 'flex',
-    //   marginTop: '40px',
-    //   width: '100%',
-    //   justifyContent: 'center',
-    // },
+
     [theme.breakpoints.down('sm')]: {
+      display: 'flex',
       flexWrap: 'wrap',
       justifyContent: 'space-around',
       gap: '0px',
-      paddingTop: '10px',
+      width: '100%',
+      marginTop: '40px',
     },
   },
   linksType: {
     display: 'flex',
     // marginTop: '73px',
     gap: '6px',
-    color: '#757575E0',
+    color: '#c9c9c9',
     alignItems: 'center',
     fontSize: '12px',
     [theme.breakpoints.down('md')]: {
       marginTop: '10px',
+      gap: '3px',
     },
   },
   check: {
@@ -313,10 +309,12 @@ const useStyles = makeStyles((theme) => ({
   '@keyframes Down': {
     '0%': {
       transform: ' translate(0rem, 0rem) rotate(0deg)',
+      '-webkit-transform': ' translate(0rem, 0rem) rotate(0deg)',
     },
 
     '100%': {
       transform: ' translate(1rem , 5rem) rotate(-10deg)',
+      '-webkit-transform': ' translate(1rem , 5rem) rotate(-10deg)',
     },
   },
   scrollUpAnimation: {
@@ -325,10 +323,12 @@ const useStyles = makeStyles((theme) => ({
   '@keyframes Up': {
     '0%': {
       transform: ' translate(1rem , 5rem) rotate(-10deg)',
+      '-webkit-transform': 'translate(1rem , 5rem) rotate(-10deg)',
     },
 
     '100%': {
       transform: ' translate(0rem, 0rem)  rotate(0deg)',
+      '-webkit-transform': ' translate(0rem, 0rem)  rotate(0deg)',
     },
   },
   buttonBox: {
