@@ -41,6 +41,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       width: '260px',
     },
+    // [theme.breakpoints.down('sm')]: {
+    //   width: '235px',
+    // },
   },
   video: {
     top: '3px',
@@ -63,6 +66,16 @@ const useStyles = makeStyles((theme) => ({
       //   transform:
       //     ' perspective(600cm) rotateY(-12deg) rotate(8deg) rotateX(20deg) scaleY(1.05)',
       borderRadius: '35px 24px 26px 26px',
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: '182px',
+      top: '2px',
+      left: '37px',
+      //   position: 'absolute',
+      //   clipPath:
+      //     'polygon(70% 0, 80% 0%, 100% 0, 100% 100%, 80% 100%, 0 100%, 0% 80%, 0 1.5%)',
+      //   transform:
+      //     ' perspective(600cm) rotateY(-12deg) rotate(8deg) rotateX(20deg) scaleY(1.05)',
     },
   },
 }));
