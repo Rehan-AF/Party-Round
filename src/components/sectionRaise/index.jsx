@@ -112,6 +112,7 @@ const SectionRaise = () => {
           </Typography>
         </div>
       </div>
+      <div className={classes.phoneLayer}></div>
       <div>
         <div
           className={clsx(classes.phone, {
@@ -243,7 +244,7 @@ const useStyles = makeStyles((theme) => ({
       alignItems: 'center',
       position: 'fixed',
       borderRadius: 50,
-      zIndex: 10,
+      zIndex: 99,
       left: '50%',
       right: '50%',
       bottom: '50px',
@@ -263,6 +264,14 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       width: '260px',
     },
+  },
+  phoneLayer: {
+    position: 'absolute',
+    height: '100vh',
+    width: '100vw',
+    backgroundColor: 'transparent',
+    top: '180px',
+    zIndex: 20,
   },
   linksBox: {
     display: 'flex',
@@ -305,6 +314,7 @@ const useStyles = makeStyles((theme) => ({
   },
   scrollDownAnimation: {
     animation: `$Down 1000ms  ${theme.transitions.easing.easeInOut} 1 normal forwards`,
+    animationFillMode: 'forwards',
   },
   '@keyframes Down': {
     '0%': {
@@ -319,6 +329,7 @@ const useStyles = makeStyles((theme) => ({
   },
   scrollUpAnimation: {
     animation: `$Up 1000ms  ${theme.transitions.easing.easeInOut} 1 normal forwards`,
+    animationFillMode: 'forwards',
   },
   '@keyframes Up': {
     '0%': {
