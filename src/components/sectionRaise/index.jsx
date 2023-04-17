@@ -121,7 +121,7 @@ const SectionRaise = () => {
           })}
           ref={myRef}
         >
-          <PhoneComponent />
+          <PhoneComponent className={classes.PhoneComponent} />
         </div>
       </div>
       <div className={classes.MobilelinksBox}>
@@ -273,6 +273,9 @@ const useStyles = makeStyles((theme) => ({
     top: '180px',
     zIndex: 20,
   },
+  // PhoneComponent: {
+  //   zIndex: 3,
+  // },
   linksBox: {
     display: 'flex',
     gap: '36px',
