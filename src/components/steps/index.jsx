@@ -32,16 +32,20 @@ const StepsSection = () => {
   const classes = useStyles();
 
   const videoRefs = useRef([]);
+  const play = useRef();
 
   useEffect(() => {
+    let options = {
+      threshold: 0.5,
+    };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           videoRefs.current[0].play();
         }
       });
-    });
-    observer.observe(videoRefs.current[0]);
+    }, options);
+    observer.observe(play.current);
   }, []);
 
   function handleVideoEnded(index) {
@@ -81,49 +85,54 @@ const StepsSection = () => {
         className={classes.final}
       >
         <WrappedListener updatePlace={updatePlace} />
-        <Slider className={`${classes.tray} mainTray`}>
-          {videoData.map(({ src, title, description }, i) => (
-            <Slide
-              index={i}
-              key={i}
-              className={`${classes.swiper} ${
-                activeIndex === i
-                  ? `mobileSwiper-slide-active ${classes.swiperSlideActive}`
-                  : 'mobileSwiper-slide-notActive'
-              }`}
-            >
-              <div className={classes.card}>
-                <video
-                  className={classes.img}
-                  src={src}
-                  alt="image_failed_to_load"
-                  ref={(el) => (videoRefs.current[i] = el)}
-                  onEnded={() => handleVideoEnded(i)}
-                  autoPlay={false}
-                  muted={true}
-                  controls={false}
-                  playsInline={true}
-                  onTimeUpdate={(event) => {
-                    const progressBar = event.target.nextElementSibling;
-                    const progress =
-                      (event.target.currentTime / event.target.duration) * 100;
-                    progressBar.value = progress;
-                  }}
-                />
-                <progress
-                  className={classes.progressBar}
-                  value={0}
-                  max={100}
-                ></progress>
-                <div className={classes.borderMain}>
-                  <Typography className={classes.nmbr}>{i + 1}</Typography>
+        <div ref={play}>
+          <Slider className={`${classes.tray} mainTray`}>
+            {videoData.map(({ src, title, description }, i) => (
+              <Slide
+                index={i}
+                key={i}
+                className={`${classes.swiper} ${
+                  activeIndex === i
+                    ? `mobileSwiper-slide-active ${classes.swiperSlideActive}`
+                    : 'mobileSwiper-slide-notActive'
+                }`}
+              >
+                <div className={classes.card}>
+                  <video
+                    className={classes.img}
+                    src={src}
+                    alt="image_failed_to_load"
+                    ref={(el) => (videoRefs.current[i] = el)}
+                    onEnded={() => handleVideoEnded(i)}
+                    autoPlay={false}
+                    muted={true}
+                    controls={false}
+                    playsInline={true}
+                    onTimeUpdate={(event) => {
+                      const progressBar = event.target.nextElementSibling;
+                      const progress =
+                        (event.target.currentTime / event.target.duration) *
+                        100;
+                      progressBar.value = progress;
+                    }}
+                  />
+                  <progress
+                    className={classes.progressBar}
+                    value={0}
+                    max={100}
+                  ></progress>
+                  <div className={classes.borderMain}>
+                    <Typography className={classes.nmbr}>{i + 1}</Typography>
+                  </div>
+                  <Typography className={classes.Videotitle}>
+                    {title}
+                  </Typography>
+                  <Typography>{description}</Typography>
                 </div>
-                <Typography className={classes.Videotitle}>{title}</Typography>
-                <Typography>{description}</Typography>
-              </div>
-            </Slide>
-          ))}
-        </Slider>
+              </Slide>
+            ))}
+          </Slider>
+        </div>
       </CarouselProvider>
     </div>
   );
