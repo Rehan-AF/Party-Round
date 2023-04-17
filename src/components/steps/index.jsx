@@ -1,9 +1,12 @@
 import { makeStyles, Typography } from '@material-ui/core';
 import { CarouselProvider, Slide, Slider } from 'pure-react-carousel';
 import React, { useEffect, useRef, useState } from 'react';
-import video1 from '../../assets/videos/Video1.mp4';
+// import video1 from '../../assets/videos/Video1.mp4';
 import video2 from '../../assets/videos/Video2.mp4';
 import video3 from '../../assets/videos/Video3.mp4';
+import vd1 from '../../assets/videos/vd1.webm';
+import vd2 from '../../assets/videos/vd2.webm';
+import vd3 from '../../assets/videos/vd3.webm';
 import { WrappedListener } from '../pricing';
 import './index.css';
 const videoData = [
@@ -11,19 +14,19 @@ const videoData = [
     title: 'Receipt scanned',
     description:
       'A.I powered verification system used to ensure a valid game entry.',
-    src: video1,
+    src: vd1,
   },
   {
     title: 'Immersive gameplay',
     description:
       'Your brands engagement taken to  new heights from our library of games.',
-    src: video2,
+    src: vd2,
   },
   {
     title: 'Purposefully deployed',
     description:
       'Dependent on campaign, players can enjoy an instant win or enter in to a prize pool competition.',
-    src: video3,
+    src: vd3,
   },
 ];
 const StepsSection = () => {
