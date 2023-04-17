@@ -38,17 +38,17 @@ const StepsSection = () => {
   const play = useRef();
 
   useEffect(() => {
-    let options = {
-      threshold: 0.5,
-    };
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          videoRefs.current[0].play();
-        }
-      });
-    }, options);
-    observer.observe(play.current);
+    //   let options = {
+    //     threshold: 0.5,
+    //   };
+    //   const observer = new IntersectionObserver((entries) => {
+    //     entries.forEach((entry) => {
+    //       if (entry.isIntersecting) {
+    videoRefs.current[0].play();
+    //       }
+    //     });
+    //   }, options);
+    //   observer.observe(play.current);
   }, []);
 
   function handleVideoEnded(index) {
