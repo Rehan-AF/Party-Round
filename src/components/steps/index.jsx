@@ -56,7 +56,7 @@ const StepsSection = () => {
           if (index === activeIndex) {
             return;
           }
-          videoRefs.current[activeIndex - 1].play();
+          videoRefs.current[index].play();
           setActiveIndex(index);
         } else {
           videoRefs.current[index].pause();
