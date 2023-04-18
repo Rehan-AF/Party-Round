@@ -36,37 +36,15 @@ const StepsSection = () => {
   const play = useRef();
 
   useEffect(() => {
-    // const observer = new IntersectionObserver((entries) => {
-    //   const entry = entries[0];
-    //   if (entry.isIntersecting) {
-    //     videoRefs.current[0].play();
-    //   }
-    // });
-    // observer.observe(play.current);
-    const handleScroll = () => {
-      const elements = document.querySelectorAll('.video-wrapper');
-      const threshold = 1;
-
-      elements.forEach((element, index) => {
-        const rect = element.getBoundingClientRect();
-        const isVisible =
-          rect.top <= window.innerHeight * threshold &&
-          rect.bottom >= window.innerHeight * threshold;
-        if (isVisible) {
-          if (index === activeIndex) {
-            return;
-          }
-          videoRefs.current[index].play();
-          setActiveIndex(index);
-        } else {
-          videoRefs.current[index].pause();
-        }
-      });
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [activeIndex]);
+    const observer = new IntersectionObserver((entries, index) => {
+      const entry = entries[0];
+      if (entry.isIntersecting) {
+        videoRefs.current[0].play();
+      }
+    });
+    observer.observe(play.current);
+  }, []);
+  console.log(videoRefs.current);
 
   function handleVideoEnded(index) {
     if (index < videoData.length - 1) {
@@ -105,7 +83,7 @@ const StepsSection = () => {
         className={classes.final}
       >
         <WrappedListener updatePlace={updatePlace} />
-        <div ref={play} className="video-wrapper">
+        <div ref={play}>
           <Slider className={`${classes.tray} mainTray`}>
             {videoData.map(({ src, title, description }, i) => (
               <Slide
