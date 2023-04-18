@@ -1,12 +1,10 @@
 import { makeStyles, Typography } from '@material-ui/core';
 import { CarouselProvider, Slide, Slider } from 'pure-react-carousel';
 import React, { useEffect, useRef, useState } from 'react';
-// import video1 from '../../assets/videos/Video1.mp4';
-import video2 from '../../assets/videos/Video2.mp4';
-import video3 from '../../assets/videos/Video3.mp4';
-import vd1 from '../../assets/videos/vd1.webm';
-import vd2 from '../../assets/videos/vd2.webm';
-import vd3 from '../../assets/videos/vd3.webm';
+import video1 from '../../assets/videos/video1.mp4';
+import video2 from '../../assets/videos/video2.mp4';
+import video3 from '../../assets/videos/video3.mp4';
+
 import { WrappedListener } from '../pricing';
 import './index.css';
 const videoData = [
@@ -14,19 +12,19 @@ const videoData = [
     title: 'Receipt scanned',
     description:
       'A.I powered verification system used to ensure a valid game entry.',
-    src: vd1,
+    src: video1,
   },
   {
     title: 'Immersive gameplay',
     description:
       'Your brands engagement taken to  new heights from our library of games.',
-    src: vd2,
+    src: video2,
   },
   {
     title: 'Purposefully deployed',
     description:
       'Dependent on campaign, players can enjoy an instant win or enter in to a prize pool competition.',
-    src: vd3,
+    src: video3,
   },
 ];
 const StepsSection = () => {
@@ -38,18 +36,37 @@ const StepsSection = () => {
   const play = useRef();
 
   useEffect(() => {
-    //   let options = {
-    //     threshold: 0.5,
-    //   };
-    //   const observer = new IntersectionObserver((entries) => {
-    //     entries.forEach((entry) => {
-    //       if (entry.isIntersecting) {
-    videoRefs.current[0].play();
-    //       }
-    //     });
-    //   }, options);
-    //   observer.observe(play.current);
-  }, []);
+    // const observer = new IntersectionObserver((entries) => {
+    //   const entry = entries[0];
+    //   if (entry.isIntersecting) {
+    //     videoRefs.current[0].play();
+    //   }
+    // });
+    // observer.observe(play.current);
+    const handleScroll = () => {
+      const elements = document.querySelectorAll('.video-wrapper');
+      const threshold = 1;
+
+      elements.forEach((element, index) => {
+        const rect = element.getBoundingClientRect();
+        const isVisible =
+          rect.top <= window.innerHeight * threshold &&
+          rect.bottom >= window.innerHeight * threshold;
+        if (isVisible) {
+          if (index === activeIndex) {
+            return;
+          }
+          videoRefs.current[activeIndex - 1].play();
+          setActiveIndex(index);
+        } else {
+          videoRefs.current[index].pause();
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [activeIndex]);
 
   function handleVideoEnded(index) {
     if (index < videoData.length - 1) {
@@ -88,7 +105,7 @@ const StepsSection = () => {
         className={classes.final}
       >
         <WrappedListener updatePlace={updatePlace} />
-        <div ref={play}>
+        <div ref={play} className="video-wrapper">
           <Slider className={`${classes.tray} mainTray`}>
             {videoData.map(({ src, title, description }, i) => (
               <Slide
