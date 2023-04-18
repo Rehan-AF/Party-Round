@@ -44,7 +44,6 @@ const StepsSection = () => {
     });
     observer.observe(play.current);
   }, []);
-  console.log(videoRefs.current);
 
   function handleVideoEnded(index) {
     if (index < videoData.length - 1) {
