@@ -79,32 +79,32 @@ const Header = () => {
         })}
       />
       <img src={logo} className={classes.MlogoM} alt="logo" />
+      <div className={classes.links}>
+        <Link to="/" className={classes.reactLink}>
+          <Typography className={classes.navLinks}>
+            <FavoriteIcon style={{ fontSize: '12px' }} />
+            Pinned
+          </Typography>
+        </Link>
+        <Link to="/" className={classes.reactLink}>
+          <Typography className={classes.navLinks}>
+            <SvgIcons drop={true} /> Drops
+          </Typography>
+        </Link>
+        <Link to="/" className={classes.reactLink}>
+          <Typography className={classes.navLinks}>
+            <SvgIcons career={true} style={{ width: '12px' }} />
+            Pricing
+          </Typography>
+        </Link>
+        <Link to="/" className={classes.reactLink}>
+          <Typography className={classes.navLinks}>
+            <HelpIcon style={{ fontSize: '14px' }} />
+            FAQs
+          </Typography>
+        </Link>
+      </div>
       <div className={classes.navbarLinks}>
-        <div className={classes.links}>
-          <Link to="/" className={classes.reactLink}>
-            <Typography className={classes.navLinks}>
-              <FavoriteIcon style={{ fontSize: '15px' }} />
-              Pinned
-            </Typography>
-          </Link>
-          <Link to="/" className={classes.reactLink}>
-            <Typography className={classes.navLinks}>
-              <SvgIcons drop={true} /> Drops
-            </Typography>
-          </Link>
-          <Link to="/" className={classes.reactLink}>
-            <Typography className={classes.navLinks}>
-              <SvgIcons career={true} />
-              Pricing
-            </Typography>
-          </Link>
-          <Link to="/" className={classes.reactLink}>
-            <Typography className={classes.navLinks}>
-              <HelpIcon fontSize="small" />
-              FAQs
-            </Typography>
-          </Link>
-        </div>
         <div className={classes.line}></div>
         <div className={classes.buttonBox}>
           <Button variant="contained" className={classes.Btn}>
@@ -255,7 +255,7 @@ const useStyles = makeStyles((theme) => ({
     gap: '40px',
   },
   navLinks: {
-    fontSize: '14px',
+    fontSize: '12px',
     // fontWeight: 'bold',
     display: 'flex',
     alignItems: 'center',

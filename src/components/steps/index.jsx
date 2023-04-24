@@ -4,9 +4,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import video1 from '../../assets/videos/video1.mp4';
 import video2 from '../../assets/videos/video2.mp4';
 import video3 from '../../assets/videos/video3.mp4';
-
 import { WrappedListener } from '../pricing';
 import './index.css';
+
 const videoData = [
   {
     title: 'Receipt scanned',
@@ -27,23 +27,27 @@ const videoData = [
     src: video3,
   },
 ];
-const StepsSection = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
 
+const StepsSection = () => {
   const classes = useStyles();
+
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [hasPlayed, setHasPlayed] = useState(false);
 
   const videoRefs = useRef([]);
   const play = useRef();
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries, index) => {
+    const observer = new IntersectionObserver((entries) => {
       const entry = entries[0];
-      if (entry.isIntersecting) {
+      if (!hasPlayed && entry.isIntersecting) {
         videoRefs.current[0].play();
+        setHasPlayed(true);
       }
+      console.log(hasPlayed, 'has played');
     });
     observer.observe(play.current);
-  }, []);
+  }, [hasPlayed]);
 
   function handleVideoEnded(index) {
     if (index < videoData.length - 1) {
@@ -54,7 +58,6 @@ const StepsSection = () => {
       setActiveIndex(0);
     }
   }
-  console.log(activeIndex, 'active index');
   const updatePlace = (currentSlide) => {
     const index = Math.round(currentSlide);
     setActiveIndex(index);
@@ -100,7 +103,10 @@ const StepsSection = () => {
                     src={src}
                     alt="image_failed_to_load"
                     ref={(el) => (videoRefs.current[i] = el)}
-                    onEnded={() => handleVideoEnded(i)}
+                    onEnded={() => {
+                      handleVideoEnded(i);
+                      console.log(activeIndex);
+                    }}
                     autoPlay={false}
                     muted={true}
                     controls={false}
@@ -225,13 +231,13 @@ const useStyles = makeStyles((theme) => ({
     '&::-webkit-progress-bar': {
       backgroundColor: '#000',
       borderRadius: 0,
-      // transition: 'width 1s ease-in-out',
+      transition: 'width 0s ease-in',
     },
 
     '&::-webkit-progress-value': {
       backgroundColor: ' #007bff',
       borderRadius: 0,
-      transition: 'width 0.1s ease-in',
+      transition: 'width 0.4s ease-in-out',
     },
   },
   borderMain: {
