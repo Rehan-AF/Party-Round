@@ -143,9 +143,10 @@ const useStyles = makeStyles((theme) => ({
       padding: '0 20px',
       width: 'calc(100% - 40px)',
       flexDirection: 'row-reverse',
+      alignItems: 'center',
 
       // width: '100vw',
-      // justifyContent: 'flex-Start',
+      justifyContent: 'space-around',
       gap: '30px',
     },
     [theme.breakpoints.up('xl')]: {
@@ -200,7 +201,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   logo: {
-    width: '117px',
+    width: '97px',
   },
   Mlogo: {
     display: 'none',
@@ -208,20 +209,20 @@ const useStyles = makeStyles((theme) => ({
       display: 'block',
       // width: '82px',
       // height: '32px',
-      width: '99px',
-      height: '49px',
+      width: '97px',
+      height: '47px',
     },
   },
   logoM: {
-    width: '34px',
-    marginBottom: '4px',
+    width: '28px',
+    // marginBottom: '4px',
   },
   MlogoM: {
     display: 'none',
     [theme.breakpoints.down('sm')]: {
       display: 'block',
-      width: '32px',
-      height: '32px',
+      width: '28px',
+      height: '28px',
       transition: 'opacity 1s ease-out',
     },
   },
@@ -253,6 +254,9 @@ const useStyles = makeStyles((theme) => ({
   links: {
     display: 'flex',
     gap: '40px',
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+    },
   },
   navLinks: {
     fontSize: '12px',
@@ -300,7 +304,7 @@ const useStyles = makeStyles((theme) => ({
   buttonBox: {
     display: 'flex',
     alignItems: 'center',
-    height: '32px',
+    height: '29px',
     background: 'linear-gradient(-45deg, #A2C754, #C75454, #9454C7, #54B2C7)',
     border: 0,
     borderRadius: 50,
@@ -318,7 +322,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'black',
     color: 'white',
     borderRadius: 50,
-    padding: '2px 10px',
+    padding: '1px 10px',
     fontSize: '14px',
     textTransform: 'capitalize',
     '&:hover': {
@@ -326,6 +330,7 @@ const useStyles = makeStyles((theme) => ({
     },
     '& img': {
       marginRight: 10,
+      width: '20px',
     },
   },
 }));

@@ -13,7 +13,7 @@ export const GridOne = () => {
       <Grid c9="#30122a" c10="#17261f" />
       <Grid />
       <Grid c1="#378379" />
-      <Grid c2="#ecc62f" />
+      <Grid />
       <Grid />
       <Grid />
       <Grid />
@@ -42,6 +42,8 @@ export const Gridtwo = () => {
         <Grid c9="#17261f" c10="#2b2fa1" />
         <Grid c8="#30122a" c9="#ecc62f" c10="#7b142d" c11="#cc4065" />
       </div>
+      <Grid />
+      <Grid />
 
       <Grid c12="#7b142d" />
       <Grid c8="#a6551e" c11="#ecc62f" />
