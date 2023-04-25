@@ -6,11 +6,11 @@ export const SGridOne = () => {
     <div>
       <SmallGrid />
       <SmallGrid />
-      <SmallGrid c4="#cc4065" />
-      <SmallGrid c4="#2b2fa1" />
-      <SmallGrid c3="#ecc62f" />
-      <SmallGrid c3="#378379" />
-      <SmallGrid c2="#7b142d" />
+      <SmallGrid />
+      <SmallGrid />
+      <SmallGrid />
+      <SmallGrid />
+      <SmallGrid />
       <SmallGrid />
       <SmallGrid />
       <SmallGrid />
