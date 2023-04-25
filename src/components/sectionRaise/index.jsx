@@ -153,6 +153,7 @@ const SectionRaise = () => {
             index={activeStep}
             onChangeIndex={handleStepChange}
             enableMouseEvents
+            className={classes.carousel}
           >
             {tutorialSteps.map((step, index) => (
               <div key={step.label} className={classes.linksBox}>
@@ -232,6 +233,7 @@ const useStyles = makeStyles((theme) => ({
       alignItems: 'center',
       justifyContent: 'center',
       gap: '60px',
+      top: -160,
     },
     [theme.breakpoints.up('xl')]: {
       justifyContent: 'center',
@@ -457,6 +459,13 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       width: '250px',
       height: '38px',
+    },
+  },
+  carousel: {
+    position: 'relative',
+    top: -55,
+    [theme.breakpoints.down('sm')]: {
+      top: -45,
     },
   },
 }));
