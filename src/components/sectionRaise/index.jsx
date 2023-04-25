@@ -1,4 +1,4 @@
-import { Button, makeStyles, Typography } from '@material-ui/core';
+import { Button, makeStyles, Typography, useTheme } from '@material-ui/core';
 import React from 'react';
 // import CustomBotton from '../buttons';
 // import { useScrollDirection } from '../../hooks';
@@ -8,8 +8,34 @@ import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 // import PhoneComponent from '../phone component';
 import calculator from '../../assets/logos/calculator.jpeg';
 import backgroundVideo from '../../assets/videos/Tetris.mp4';
+import SwipeableViews from 'react-swipeable-views';
+import { autoPlay } from 'react-swipeable-views-utils';
+
+const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+
+const tutorialSteps = [
+  {
+    label: '7 day free trial',
+  },
+  {
+    label: 'No cookie notices required',
+  },
+  {
+    label: 'GDPR compliant',
+  },
+  {
+    label: 'No apps required',
+  },
+];
+
 const SectionRaise = () => {
   const classes = useStyles();
+  const theme = useTheme();
+  const [activeStep, setActiveStep] = React.useState(0);
+
+  const handleStepChange = (step) => {
+    setActiveStep(step);
+  };
   // const boxRef = useRef(null);
   // const myRef = useRef();
 
@@ -122,7 +148,24 @@ const SectionRaise = () => {
               How much can your brand make?
             </Typography>
           </div>
-          <div className={classes.linksBox}>
+          <AutoPlaySwipeableViews
+            axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+            index={activeStep}
+            onChangeIndex={handleStepChange}
+            enableMouseEvents
+          >
+            {tutorialSteps.map((step, index) => (
+              <div key={step.label} className={classes.linksBox}>
+                {Math.abs(activeStep - index) <= 2 ? (
+                  <Typography className={classes.linksType}>
+                    <CheckCircleOutlineIcon className={classes.check} />
+                    {step.label}
+                  </Typography>
+                ) : null}
+              </div>
+            ))}
+          </AutoPlaySwipeableViews>
+          {/* <div className={classes.linksBox}>
             <Typography className={classes.linksType}>
               <CheckCircleOutlineIcon className={classes.check} />7 day free
               trial
@@ -139,7 +182,7 @@ const SectionRaise = () => {
               <CheckCircleOutlineIcon className={classes.check} />
               No apps required
             </Typography>
-          </div>
+          </div> */}
         </div>
 
         <div>
@@ -152,23 +195,6 @@ const SectionRaise = () => {
         >
           <PhoneComponent className={classes.PhoneComponent} />
         </div> */}
-        </div>
-        <div className={classes.MobilelinksBox}>
-          <Typography className={classes.linksType}>
-            <CheckCircleOutlineIcon className={classes.check} />7 day free trial
-          </Typography>
-          <Typography className={classes.linksType}>
-            <CheckCircleOutlineIcon className={classes.check} />
-            No cookie notices required
-          </Typography>
-          <Typography className={classes.linksType}>
-            <CheckCircleOutlineIcon className={classes.check} />
-            GDPR compliant
-          </Typography>
-          <Typography className={classes.linksType}>
-            <CheckCircleOutlineIcon className={classes.check} />
-            No apps required
-          </Typography>
         </div>
       </div>
     </div>
@@ -219,6 +245,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
+    position: 'absolute',
     [theme.breakpoints.down('md')]: {
       paddingTop: 40,
     },
@@ -338,36 +365,29 @@ const useStyles = makeStyles((theme) => ({
   //   zIndex: 3,
   // },
   linksBox: {
-    display: 'flex',
-    gap: '36px',
     marginTop: '90px',
-    [theme.breakpoints.down('md')]: {
-      gap: '10px',
-      flexWrap: 'wrap',
-    },
-    [theme.breakpoints.down('sm')]: {
-      display: 'none',
-    },
   },
-  MobilelinksBox: {
-    display: 'none',
+  // MobilelinksBox: {
+  //   display: 'none',
 
-    [theme.breakpoints.down('sm')]: {
-      display: 'flex',
-      // flexWrap: 'wrap',
-      flexDirection: 'column',
-      justifyContent: 'start',
-      alignItems: 'center',
-      gap: '0px',
-      width: '100%',
-    },
-  },
+  //   [theme.breakpoints.down('sm')]: {
+  //     display: 'flex',
+  //     // flexWrap: 'wrap',
+  //     flexDirection: 'column',
+  //     justifyContent: 'start',
+  //     alignItems: 'center',
+  //     gap: '0px',
+  //     width: '100%',
+  //   },
+  // },
   linksType: {
     display: 'flex',
     // marginTop: '73px',
     gap: '6px',
     color: '#c9c9c9',
     alignItems: 'center',
+    textAlign: 'center',
+    justifyContent: 'center',
     fontSize: '12px',
     [theme.breakpoints.down('md')]: {
       marginTop: '10px',
