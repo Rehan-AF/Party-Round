@@ -144,13 +144,10 @@ const useStyles = makeStyles((theme) => ({
       width: 'calc(100% - 40px)',
       flexDirection: 'row-reverse',
       alignItems: 'center',
-
-      // width: '100vw',
       gap: '30px',
     },
     [theme.breakpoints.up('xl')]: {
-      justifyContent: 'center',
-      gap: 700,
+      justifyContent: 'space-between',
     },
   },
   drawer: {
@@ -214,7 +211,7 @@ const useStyles = makeStyles((theme) => ({
   },
   logoM: {
     width: '28px',
-    // marginBottom: '4px',
+    marginBottom: '4px',
   },
   MlogoM: {
     display: 'none',
