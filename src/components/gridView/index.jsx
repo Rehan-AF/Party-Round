@@ -6,19 +6,19 @@ export const GridOne = () => {
   const classes = useStyles();
   return (
     <div>
-      <Grid c12="#cc4065" />
-      <Grid c11="#2b2fa1" c12="#ecc62f" />
-      <Grid c12="#378379" />
-      <Grid c11="#7b142d" />
-      <Grid c9="#30122a" c10="#17261f" />
       <Grid />
-      <Grid c1="#378379" />
+      <Grid />
+      <Grid />
+      <Grid />
+      <Grid />
+      <Grid />
+      <Grid />
       <Grid />
       <Grid />
       <Grid />
       <Grid />
       <div className={classes.lar}>
-        <Grid c11="#2b2fa1" />
+        <Grid />
       </div>
     </div>
   );

@@ -2,12 +2,11 @@ import { Button, makeStyles, Typography } from '@material-ui/core';
 import React from 'react';
 // import CustomBotton from '../buttons';
 // import { useScrollDirection } from '../../hooks';
-import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
 // import clsx from 'clsx';
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 // import Typed from 'typed.js';
 // import PhoneComponent from '../phone component';
-import calculator from '../../assets/logos/calculator.png';
+import calculator from '../../assets/logos/calculator.jpeg';
 import backgroundVideo from '../../assets/videos/Tetris.mp4';
 const SectionRaise = () => {
   const classes = useStyles();
@@ -79,10 +78,16 @@ const SectionRaise = () => {
       <div className={classes.main}>
         <div className={classes.subContainer}>
           <Typography className={classes.title}>
-            <b>Take</b> the <span>leap</span>,
+            <b>
+              <i>take</i>
+            </b>{' '}
+            the <span>leap</span>,
           </Typography>
           <Typography className={classes.gradientTitle}>
-            Take the <b>win</b>
+            take the{' '}
+            <b>
+              <i>win</i>
+            </b>
             <span>.</span>
           </Typography>
           <Typography className={classes.subTitle}>
@@ -110,7 +115,7 @@ const SectionRaise = () => {
             <Typography
               className={classes.typo}
               style={{
-                width: '260px',
+                width: '174px',
                 textShadow: '2px 2px 1px rgba(0,0,0,0.8)',
               }}
             >
@@ -176,10 +181,13 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
   },
   videoTag: {
-    width: '100vw !important',
+    width: '100vw',
     height: '100vh',
     objectFit: ' fill',
     objectPosition: 'center',
+    [theme.breakpoints.down('sm')]: {
+      objectFit: ' cover',
+    },
   },
   main: {
     position: 'absolute',

@@ -146,7 +146,6 @@ const useStyles = makeStyles((theme) => ({
       alignItems: 'center',
 
       // width: '100vw',
-      justifyContent: 'space-around',
       gap: '30px',
     },
     [theme.breakpoints.up('xl')]: {
