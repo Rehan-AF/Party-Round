@@ -44,9 +44,7 @@ const DropSlicer = () => {
         infinite={false}
         touchEnabled={window.innerWidth > 960 ? false : true}
         dragEnabled={window.innerWidth > 960 ? false : true}
-        totalSlides={
-          window.innerWidth > 530 ? 2 : window.innerWidth > 960 ? 3 : 3
-        }
+        totalSlides={3}
         visibleSlides={window.innerWidth < 960 ? 1.15 : 3}
         currentSlide={window.innerWidth > 960 ? 1 : 0}
         enableSwipe={window.innerWidth > 960 ? false : true}
