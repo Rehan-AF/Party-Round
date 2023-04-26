@@ -68,6 +68,7 @@ const Header = () => {
       <div className={classes.sidebarBox}>
         <img src={logo} className={classes.logoM} alt="logo" />
         <img src={logoText} className={classes.logo} alt="logo" />
+        <button className={classes.beta}>beta</button>
       </div>
       <img
         src={logoText}
@@ -83,12 +84,12 @@ const Header = () => {
         <Link to="/" className={classes.reactLink}>
           <Typography className={classes.navLinks}>
             <FavoriteIcon style={{ fontSize: '12px' }} />
-            Pinned
+            Discover
           </Typography>
         </Link>
         <Link to="/" className={classes.reactLink}>
           <Typography className={classes.navLinks}>
-            <SvgIcons drop={true} /> Drops
+            <SvgIcons drop={true} /> Vault
           </Typography>
         </Link>
         <Link to="/" className={classes.reactLink}>
@@ -185,6 +186,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     gap: '3px',
     paddingLeft: '34px',
+    position: 'relative',
     [theme.breakpoints.down('md')]: {
       paddingLeft: '0',
     },
@@ -199,6 +201,18 @@ const useStyles = makeStyles((theme) => ({
   logo: {
     width: '97px',
   },
+  beta: {
+    outline: 'none',
+    position: 'absolute',
+    right: -44,
+    border: '1px solid #9454C7',
+    background: 'transparent',
+    color: '#9454C7',
+    borderRadius: '30px',
+    padding: '1px 8px',
+    fontSize: 12,
+    marginBottom: '17px',
+  },
   Mlogo: {
     display: 'none',
     [theme.breakpoints.down('sm')]: {
@@ -211,7 +225,7 @@ const useStyles = makeStyles((theme) => ({
   },
   logoM: {
     width: '28px',
-    marginBottom: '4px',
+    marginBottom: '9px',
   },
   MlogoM: {
     display: 'none',
